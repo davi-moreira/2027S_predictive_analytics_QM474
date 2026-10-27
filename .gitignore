@@ -1,0 +1,118 @@
+# R/RStudio
+.Rproj.user
+.Rhistory
+.RData
+.Ruserdata
+.DS_Store
+
+# Quarto
+/.quarto/
+_freeze/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.ipynb_checkpoints/
+*.pyc
+.venv/
+venv/
+env/
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Admin (keep out of public repo)
+_adm_stuff/
+_announcements/
+_grades/
+_grade/
+grades/
+grade/
+_students_contact/
+_tas/
+_accomodation/
+_course_eval/
+_reflection_*/
+
+# Course materials to exclude
+_complementary_material/
+_syllabus/
+_syllabus_docx/
+_notebook_lm/
+_test_ignore/
+_00_py4ps_install_guide/
+_handouts/
+_homework/
+_lecture_notes/
+_quizzes/
+_midterm_exam/
+# _participation/ holds keyed confirmation quizzes and the syllabus-quiz answer key.
+# This repo is public and students read it; the content mirrors to the private instructor repo.
+_participation/
+_supplemental_material/
+_in_class_participation/
+_notebook/
+_lab/
+_old_files/
+_command_line_activity_solution.qmd
+_command_line_activity_solution.html
+_command_line_activity_solution_files/
+
+# Instructor solution notebooks (keep out of public repo)
+notebooks/*_instructor*.ipynb
+
+# Video lecture guides (local only, not for students)
+video_guides/
+
+# Instructor production templates (poster/video/competition aids, local only)
+_production_kit/
+
+# Admin inbox and working files (Decision 5 — admin materials stay out of git)
+_adm/
+
+# Notebook datasets (downloaded locally; link externally instead of committing)
+notebooks/data/
+
+# Brightspace LMS content (local only, instructor-facing)
+brightspace/
+
+# Large files (exclude from repo, link instead)
+*.zip
+*.mp4
+*.mp3
+*.m4a
+*.mov
+
+# >>> Instructor page (password-gated) >>>
+# instructor.qmd is the PLAINTEXT source of the gated Instructor page: it carries the
+# links to the instructor notebooks (full solutions), the quiz banks, and the midterm
+# cases in the private companion repo. It must NEVER be readable in this public repo.
+# Its backup copy lives in the private companion repo (site/instructor.qmd).
+/instructor.qmd
+# Local clone of that private companion repo (working copy, never public).
+# No trailing slash on purpose: the rule then matches even before the clone
+# exists, so `git check-ignore -v _instructor_repo` confirms the guard is live.
+_instructor_repo
+# NOTE (do not "fix" this): docs/instructor.html is deliberately NOT ignored. That file
+# is the ENCRYPTED build output produced by the post-render step, and publishing it is
+# the whole point. Ignoring it would silently take the Instructor page off the site.
+# <<< Instructor page (password-gated) <<<
+
+# Keep docs for GitHub Pages
+!docs/
+
+# Temporary
+*.tmp
+*.bak
+.scratch/
+
+**/*.quarto_ipynb

@@ -1,0 +1,60 @@
+---
+title: "QM47400: Predictive Analytics"
+subtitle: "Mitch Daniels School of Business, Purdue University (Spring 2027)"
+---
+
+<!--- # IMPORTANT REFERENCE: https://www.youtube.com/watch?v=uimdXPZc40I&list=PLkrJrLs7xfbXcEKhTCKRSr2VXH4yiBeXo&index=4 --->
+
+<br>
+
+<center>
+
+*IMPORTANT*
+
+*This document does not replace the official material in the course brightspace page*
+
+</center>
+
+<br>
+
+## Course Description and Objectives
+
+The course enables students to navigate the entire predictive analytics pipeline skillfully, from data preparation and exploration to modeling, assessment, and interpretation. Throughout the course, learners engage with real-world examples and hands-on labs emphasizing essential programming and analytical skills. By exploring topics such as linear and logistic regression, classification, resampling methods, regularization techniques, tree-based approaches, and advanced learning paradigms (including neural networks), participants gain a robust theoretical understanding and practical experience. Ultimately, students will leave the course equipped to apply predictive models to data-driven problems, communicate their findings to diverse audiences, and critically evaluate model performance to inform strategic decision-making across various business contexts.
+
+**Course Website**: [https://davi-moreira.github.io/2027S_predictive_analytics_QM474/](https://davi-moreira.github.io/2027S_predictive_analytics_QM474/){target="_blank"}
+
+### Instructor: [Professor Davi Moreira](https://davi-moreira.github.io)
+
+-   Email: [dcordeir\@purdue.edu](mailto:dcordeir@purdue.edu)
+-   Office: Young Hall 1019
+-   Class meetings: **Monday / Wednesday / Friday, in person** (room and time on Brightspace), Spring 2027 (Jan 11 – Apr 30, 2027)
+-   Office Hours: details on the course Brightspace
+-   Individual Appointments: *Book time with me through the link in the course syllabus on your Course Brightspace Page, or by appointment.*
+
+## Learning Outcomes
+
+By the conclusion of this course, students will be able to:
+
+1.  **Explain Core Predictive Analytics Concepts:** Define, distinguish, and exemplify the key ideas of statistical/machine learning.
+
+2.  **Prepare, Process, and Explore Data Effectively:** Demonstrate the ability to clean, organize, and preprocess data using appropriate tools and techniques; address missing values, apply feature engineering methods, and perform comprehensive exploratory data analysis to generate meaningful insights.
+
+3.  **Implement and Compare Diverse Predictive Modeling Techniques:** Specify, train, and evaluate a range of predictive models using appropriate algorithms; apply systematic hyperparameter optimization to enhance performance; and diagnose model limitations through quantitative and visual diagnostics to guide model refinement and selection.
+
+4.  **Evaluate, Interpret, and Communicate Model Performance:** Estimate out-of-sample performance using direct and indirect approaches (e.g., holdout sets, cross-validation, resampling); interpret metrics in the context of project objectives; and deliver clear, audience-appropriate recommendations that explicitly address uncertainty, risk trade-offs, and ethical implications.
+
+## Course Materials
+
+-   **Textbook (Recommended): [ISLP]** James, G., Witten, D., Hastie, T., & Tibshirani, R. (2023). *An Introduction to Statistical Learning with Applications in Python.* Springer. <https://doi.org/10.1007/978-1-0716-2926-2>. Free download: [https://www.statlearning.com/](https://www.statlearning.com/){target="_blank"}
+
+-   **Computing (Required):** A laptop or desktop with internet access and the capability to run Python code through Google Colab: [https://colab.research.google.com/](https://colab.research.google.com/){target="_blank"}.
+
+-   **Software (Required):**
+
+    -   [**Google Colab**](https://colab.research.google.com/){target="_blank"} is a cloud-based platform that requires no software installation on your local machine; it is accessible through a modern web browser such as Google Chrome, Mozilla Firefox, Microsoft Edge, or Safari. To use Google Colab, you need a Google account and a stable internet connection. All course notebooks are designed to run directly in Google Colab with all necessary dependencies pre-configured. While optional, having tools like a local Python installation (e.g., Anaconda) or a Python IDE (e.g., Jupyter Notebook or VS Code) can be helpful for offline development. Additionally, browser extensions, such as those for VS Code integration, can enhance your experience but are not required. This makes Google Colab convenient and easy for Python programming and data science tasks.
+    -   [**Google Gemini in Colab**](https://colab.research.google.com/){target="_blank"}: Students will use Google Gemini AI assistance directly within Colab notebooks to accelerate coding while maintaining accountability through the "vibe coding" workflow: draft code with AI assistance → verify correctness → document decisions. This approach helps students learn faster while developing critical thinking about AI-generated code.
+    -   [**Microsoft Copilot**](https://it.purdue.edu/newsroom/2024/240313-copilot-with-data-protection.php){target="_blank"}: is an AI-powered assistant designed to enhance productivity and streamline workflows across various applications and services. It utilizes large language models and is integrated within Microsoft 365 apps like Word, Excel, PowerPoint, Outlook, and Teams, providing real-time, context-aware assistance for tasks such as drafting documents, analyzing data, managing projects, and communicating more efficiently. Users can leverage Copilot to automate repetitive tasks, generate ideas, summarize information, and access data across their work environment and the web, all within a secure and privacy-conscious framework.
+
+## Course Infra-structure
+
+**Brightspace:** The Course Brightspace Page <https://purdue.brightspace.com/> should be checked on a regular basis for announcements and course material.

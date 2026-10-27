@@ -1,0 +1,42 @@
+---
+title: "Schedule"
+author: "Davi Moreira"
+editor: visual
+---
+
+```{=html}
+<style>
+  .overflow-table {
+    font-size: 0.85rem; /* Smaller font for compact display */
+    width: 100%; /* Ensure the table fits within page width */
+    line-height: 1.2; /* Tighter line spacing */
+  }
+  .overflow-table th, .overflow-table td {
+    padding: 0.3rem; /* Reduce padding for compact layout */
+    text-align: left; /* Left-align for readability */
+    word-wrap: break-word; /* Wrap long text within cells */
+    vertical-align: top; /* Align cell content to the top */
+  }
+  .overflow-table th:nth-child(1), .overflow-table td:nth-child(1) {
+    width: 4%; /* Week column */
+  }
+  .overflow-table th:nth-child(2), .overflow-table td:nth-child(2) {
+    width: 9%; /* Date column */
+  }
+  .overflow-table th:nth-child(3), .overflow-table td:nth-child(3) {
+    width: 42%; /* Topic column */
+  }
+  .overflow-table th:nth-child(4), .overflow-table td:nth-child(4) {
+    width: 13%; /* Notebook column */
+    text-align: center;
+  }
+  .overflow-table th:nth-child(5), .overflow-table td:nth-child(5) {
+    width: 32%; /* Assessment / Notes column */
+  }
+  .below-table {
+    font-size: 0.85rem; /* Match the font size of the table */
+    line-height: 1.2; /* Match line height */
+    margin-top: 1rem; /* Add spacing above the text */
+  }
+</style>
+```

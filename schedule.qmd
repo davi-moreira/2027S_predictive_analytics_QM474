@@ -1,0 +1,172 @@
+---
+title: "Schedule"
+author: "Davi Moreira"
+editor: visual
+---
+
+```{=html}
+<style>
+  .overflow-table {
+    font-size: 0.85rem; /* Smaller font for compact display */
+    width: 100%; /* Ensure the table fits within page width */
+    line-height: 1.2; /* Tighter line spacing */
+  }
+  .overflow-table th, .overflow-table td {
+    padding: 0.3rem; /* Reduce padding for compact layout */
+    text-align: left; /* Left-align for readability */
+    word-wrap: break-word; /* Wrap long text within cells */
+    vertical-align: top; /* Align cell content to the top */
+  }
+  .overflow-table th:nth-child(1), .overflow-table td:nth-child(1) {
+    width: 4%; /* Week column */
+  }
+  .overflow-table th:nth-child(2), .overflow-table td:nth-child(2) {
+    width: 9%; /* Date column */
+  }
+  .overflow-table th:nth-child(3), .overflow-table td:nth-child(3) {
+    width: 42%; /* Topic column */
+  }
+  .overflow-table th:nth-child(4), .overflow-table td:nth-child(4) {
+    width: 13%; /* Notebook column */
+    text-align: center;
+  }
+  .overflow-table th:nth-child(5), .overflow-table td:nth-child(5) {
+    width: 32%; /* Assessment / Notes column */
+  }
+  .below-table {
+    font-size: 0.85rem; /* Match the font size of the table */
+    line-height: 1.2; /* Match line height */
+    margin-top: 1rem; /* Add spacing above the text */
+  }
+</style>
+```
+
+# Course Schedule
+
+::: overflow-table
+| Wk | Date | Topic | Notebook | Assessment / Notes |
+|----|------|-------|----------|--------------------|
+| 1 | Mon Jan 11 | Course launch + Launchpad (setup, Colab, Gemini, AI policy, case competition preview, Poster-to-Product preview) | **nb00**<br>[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/davi-moreira/2027S_predictive_analytics_QM474/blob/main/notebooks/nb00_launchpad_course_setup_student.ipynb){target="_blank"} |  |
+| 1 | Wed Jan 13 | Predictive analytics fundamentals, EDA, and data splitting | **nb01**<br>[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/davi-moreira/2027S_predictive_analytics_QM474/blob/main/notebooks/nb01_eda_splits_student.ipynb){target="_blank"} | Quiz NB01: Predictive Analytics Fundamentals, EDA, and Data Splitting — due Thu Jan 14 |
+| 1 | Fri Jan 15 | Data setup and preprocessing pipelines | **nb02**<br>[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/davi-moreira/2027S_predictive_analytics_QM474/blob/main/notebooks/nb02_preprocessing_pipelines_student.ipynb){target="_blank"} | Quiz NB02: Data Preprocessing Pipelines — due Sun Jan 17 |
+| 2 | Mon Jan 18 | *No class — Martin Luther King Jr. Day* | — |  |
+| 2 | Wed Jan 20 | Regression metrics and baseline modeling | **nb03**<br>[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/davi-moreira/2027S_predictive_analytics_QM474/blob/main/notebooks/nb03_regression_metrics_baselines_student.ipynb){target="_blank"} |  |
+| 2 | Fri Jan 22 | Group Work: Final Project | — | Quiz NB03: Regression Metrics and Baseline Models — due Sun Jan 24 |
+| 3 | Mon Jan 25 | Linear regression: features, interactions, diagnostics | **nb04**<br>[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/davi-moreira/2027S_predictive_analytics_QM474/blob/main/notebooks/nb04_linear_features_diagnostics_student.ipynb){target="_blank"} | Quiz NB04: Feature Engineering and Model Diagnostics — due Tue Jan 26 |
+| 3 | Wed Jan 27 | Regularization (Ridge & Lasso) | **nb05**<br>[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/davi-moreira/2027S_predictive_analytics_QM474/blob/main/notebooks/nb05_regularization_project_proposal_student.ipynb){target="_blank"} |  |
+| 3 | Fri Jan 29 | Group Work: Final Project | — | Quiz NB05: Regularization (Ridge & Lasso) — due Sun Jan 31 |
+| 4 | Mon Feb 1 | Logistic regression: probabilities, boundaries, pipelines | **nb06**<br>[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/davi-moreira/2027S_predictive_analytics_QM474/blob/main/notebooks/nb06_logistic_pipelines_student.ipynb){target="_blank"} | Quiz NB06: Logistic Regression — Probabilities, Decision Boundaries, and Pipelines — due Tue Feb 2 |
+| 4 | Wed Feb 3 | Classification metrics: confusion matrix, ROC/PR, business costs | **nb07**<br>[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/davi-moreira/2027S_predictive_analytics_QM474/blob/main/notebooks/nb07_classification_metrics_thresholding_student.ipynb){target="_blank"} |  |
+| 4 | Fri Feb 5 | Group Work: Final Project + **Course Case Competition kickoff** (join on Kaggle, form your `Group NN` team, download the data, first submission) | — | **COURSE CASE COMPETITION OPENS**<br>Quiz NB07: Classification Metrics — Confusion Matrix, ROC/PR, and Business Costs — due Sun Feb 7<br>Milestone 00 — Instructor and TA Meetings — Round 01 Schedule + Group Contract — due Sun Feb 7<br>Milestone 01 — Initial Project Proposal — due Sun Feb 7 |
+| 5 | Mon Feb 8 | Resampling and cross-validation: comparing models on the same five folds | **nb08**<br>[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/davi-moreira/2027S_predictive_analytics_QM474/blob/main/notebooks/nb08_cross_validation_model_comparison_student.ipynb){target="_blank"} | Quiz NB08: Resampling and Cross-Validation — How to Compare Models Without Fooling Yourself — due Tue Feb 9 |
+| 5 | Wed Feb 10 | Hyperparameter tuning + feature engineering + leakage detection | **nb09**<br>[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/davi-moreira/2027S_predictive_analytics_QM474/blob/main/notebooks/nb09_tuning_feature_engineering_project_baseline_student.ipynb){target="_blank"} |  |
+| 5 | Fri Feb 12 | **MIDTERM EXAM — in class, on paper.** | — | **MIDTERM EXAM (20%)**<br>Quiz NB09: Hyperparameter Tuning, Feature Engineering, and Leakage Detection — due Sun Feb 14<br>Milestone 02 — Expanded Project Outline — due Sun Feb 14 |
+| 6 | Mon Feb 15 | Decision trees: interpretable models with sharp edges | **nb11**<br>[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/davi-moreira/2027S_predictive_analytics_QM474/blob/main/notebooks/nb11_decision_trees_student.ipynb){target="_blank"} | Quiz NB11: Decision Trees — due Tue Feb 16 |
+| 6 | Wed Feb 17 | Random forests: bagging, OOB, feature importance | **nb12**<br>[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/davi-moreira/2027S_predictive_analytics_QM474/blob/main/notebooks/nb12_random_forests_importance_student.ipynb){target="_blank"} |  |
+| 6 | Fri Feb 19 | Group Work: Final Project/Competition | — | Quiz NB12: Random Forests — Bagging, OOB Intuition, and Feature Importance — due Sun Feb 21<br>Milestone 03 — Project Draft Abstract — due Sun Feb 21<br>Extra Credit: Mid-term Course Evaluation — Individual Credit — due Fri Feb 19 |
+| 7 | Mon Feb 22 | Gradient boosting: performance with discipline | **nb13**<br>[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/davi-moreira/2027S_predictive_analytics_QM474/blob/main/notebooks/nb13_gradient_boosting_student.ipynb){target="_blank"} | Quiz NB13: Gradient Boosting — Performance with Discipline — due Tue Feb 23 |
+| 7 | Wed Feb 24 | Model selection: choosing a champion + test-set ceremony + monitoring | **nb14**<br>[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/davi-moreira/2027S_predictive_analytics_QM474/blob/main/notebooks/nb14_model_selection_protocol_student.ipynb){target="_blank"} |  |
+| 7 | Fri Feb 26 | Group Work: Final Project/Competition | — | Quiz NB14: Model Selection Protocol — Choosing a Champion, the Day the Test Set Opens, and Monitoring — due Sun Feb 28<br>Milestone 04 — Instructor and TAs Meetings — Round 01 Confirmation — due Sun Feb 28<br>Milestone 05 — Applying to the Conference (OURConnect abstract deadline Mon Mar 1) — due Sun Feb 28 |
+| 8 | Mon Mar 1 | Group Work: Final Project/Competition | — |  |
+| 8 | Wed Mar 3 | Time-series forecasting: walk-forward CV, lag features | **nb16**<br>[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/davi-moreira/2027S_predictive_analytics_QM474/blob/main/notebooks/nb16_time_series_forecasting_student.ipynb){target="_blank"} |  |
+| 8 | Fri Mar 5 | Group Work: Final Project/Competition | — | Quiz NB16: Time-Series Forecasting — Walk-Forward CV, Lag Features, and Baselines — due Sun Mar 7<br>Milestone 06 — Simple Model and Performance Evaluation — due Sun Mar 7<br>Milestone 07 — Instructor and TAs Meetings — Round 02 Schedule — due Sun Mar 7 |
+| 9 | Mon Mar 8 | Competition workflow: from notebook to `submission.csv` — the full pipeline, tree ensembles, and the champion model | **nb18**<br>[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/davi-moreira/2027S_predictive_analytics_QM474/blob/main/notebooks/nb18_competition_workflow_student.ipynb){target="_blank"} |  |
+| 9 | Wed Mar 10 | Deep learning (PyTorch + when-to-use + LLM lab) | **nb19**<br>[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/davi-moreira/2027S_predictive_analytics_QM474/blob/main/notebooks/nb19_deep_learning_student.ipynb){target="_blank"} |  |
+| 9 | Fri Mar 12 | Group Work: Final Project/Competition | — | Quiz NB19: Deep Learning — due Sun Mar 14<br>Milestone 08 — More Complex Models and Performance Evaluation — due Sun Mar 14 |
+| 10 | Mon Mar 15 | *No class — Spring Break (Mar 15–20)* | — |  |
+| 10 | Wed Mar 17 | *No class — Spring Break (Mar 15–20)* | — |  |
+| 10 | Fri Mar 19 | *No class — Spring Break (Mar 15–20)* | — |  |
+| 11 | Mon Mar 22 | Data communication and poster design | **nb17**<br>[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/davi-moreira/2027S_predictive_analytics_QM474/blob/main/notebooks/nb17_data_communication_poster_student.ipynb){target="_blank"} |  |
+| 11 | Wed Mar 24 | Group Work: Final Project | — |  |
+| 11 | Fri Mar 26 | Group Work: Final Project | — | Quiz NB17: Data Communication and Poster Design — Turning Your Model Into a Story — due Sun Mar 28<br>Milestone 09 — Poster First Draft — due Sun Mar 28 |
+| 12 | Mon Mar 29 | Group Work: Final Project | — |  |
+| 12 | Wed Mar 31 | Group Work: Final Project | — |  |
+| 12 | Fri Apr 2 | Group Work: Final Project | — | Milestone 10 — Final Poster Submission (`NN.pdf`) — due Sun Apr 4 |
+| 13 | Mon Apr 5 | Group Work: Final Project | — |  |
+| 13 | Wed Apr 7 | Group Work: Final Project | — |  |
+| 13 | Fri Apr 9 | Group Work: Final Project | — | Milestone 11 — Poster Presentation Planning — due Sun Apr 11<br>Milestone 12 — Post Invitation for Poster Presentation — due Sun Apr 11<br>Milestone 13 — Instructor and TAs Meetings — Round 02 Confirmation — due Sun Apr 11<br>Peer Review Submission — due Sun Apr 11 |
+| 14 | Mon Apr 12 | Group Work: Final Project | — |  |
+| 14 | **Tue Apr 13** | **Spring Undergraduate Research Conference — Poster Presentation (all students present)** | — | **POSTER PRESENTATION** |
+| 14 | Wed Apr 14 | *No class — time to rest and catch up on other coursework* | — |  |
+| 14 | Fri Apr 16 | Poster-to-Product kickoff — scoping, partner framing, AI-assistant assignment | — |  |
+| 15 | Mon Apr 19 | Poster-to-Product — data engineering + model validation | — |  |
+| 15 | Wed Apr 21 | Poster-to-Product — deployment + partner checkpoint | — |  |
+| 15 | Fri Apr 23 | Poster-to-Product — usability testing + iteration | — | Course Case Competition: Rank Code Submission (Kaggle final) — due Sun Apr 25<br>Extra Credit: Issues in Course Materials — due Fri Apr 23<br>Extra Credit: DataCamp — due Fri Apr 23 |
+| 16 | Mon Apr 26 | Poster-to-Product — executive brief drafting + showcase preparation | — | Poster-to-Product: team product submission (one per team) — due Mon Apr 26 |
+| 16 | Wed Apr 28 | **Poster-to-Product SHOWCASE** (partners + feedback) | — | Poster-to-Product: individual live dashboard link — due Wed Apr 28 |
+| 16 | Fri Apr 30 | Course wrap — peer evaluation, reflection survey, competition results | — | Peer Evaluation Submission: Final Project and/or Course Case Competition — due Fri Apr 30<br>Extra Credit: Final Course Evaluation — Individual Credit — due Fri Apr 30 |
+:::
+
+::: below-table
+
+## All deadlines
+
+Everything is due at **11:59 PM Eastern** on Brightspace unless it says *in class*. Each notebook's PAUSE-AND-DO exercises (participation) are due on its lecture day.
+
+- **Jan 14**: Quiz NB01: Predictive Analytics Fundamentals, EDA, and Data Splitting — Due.
+- **Jan 15**: Participation: Final Project and Course Competition [Group Check-in] — Due.
+- **Jan 17**: Quiz NB02: Data Preprocessing Pipelines — Due.
+- **Jan 17**: Participation: Syllabus Quiz — Due.
+- **Jan 17**: Participation: Students Profile Survey — Due.
+- **Jan 18**: No class — Martin Luther King Jr. Day.
+- **Jan 24**: Quiz NB03: Regression Metrics and Baseline Models — Due.
+- **Jan 26**: Quiz NB04: Feature Engineering and Model Diagnostics — Due.
+- **Jan 31**: Quiz NB05: Regularization (Ridge & Lasso) — Due.
+- **Feb 1**: Honors: John Martinson Honors College scholarly-project proposals due (spring deadline).
+- **Feb 2**: Quiz NB06: Logistic Regression — Probabilities, Decision Boundaries, and Pipelines — Due.
+- **Feb 5**: Midterm accommodations: book your Purdue Testing Services seat by today (7 days ahead).
+- **Feb 5**: Course Case Competition opens in class (Kaggle).
+- **Feb 7**: Quiz NB07: Classification Metrics — Confusion Matrix, ROC/PR, and Business Costs — Due.
+- **Feb 7**: Participation: Course Competition Team Setup — Due.
+- **Feb 7**: Final Project Milestone 00 — Instructor and TA Meetings — Round 01 Schedule + Group Contract — Due.
+- **Feb 7**: Final Project Milestone 01 — Initial Project Proposal — Due.
+- **Feb 9**: Quiz NB08: Resampling and Cross-Validation — How to Compare Models Without Fooling Yourself — Due.
+- **Feb 12**: Midterm Exam — in class, on paper, closed book, no AI tools; covers NB00–NB09.
+- **Feb 14**: Quiz NB09: Hyperparameter Tuning, Feature Engineering, and Leakage Detection — Due.
+- **Feb 14**: Final Project Milestone 02 — Expanded Project Outline — Due.
+- **Feb 16**: Quiz NB11: Decision Trees — Due.
+- **Feb 17**: Participation: Midterm Feedback — Due.
+- **Feb 19**: Extra Credit: Mid-term Course Evaluation — Individual Credit — Due.
+- **Feb 21**: Quiz NB12: Random Forests — Bagging, OOB Intuition, and Feature Importance — Due.
+- **Feb 21**: Final Project Milestone 03 — Project Draft Abstract — Due.
+- **Feb 23**: Quiz NB13: Gradient Boosting — Performance with Discipline — Due.
+- **Feb 28**: Quiz NB14: Model Selection Protocol — Choosing a Champion, the Day the Test Set Opens, and Monitoring — Due.
+- **Feb 28**: Final Project Milestone 04 — Instructor and TAs Meetings — Round 01 Confirmation — Due.
+- **Feb 28**: Final Project Milestone 05 — Applying to the Conference (OURConnect abstract deadline Mon Mar 1) — Due.
+- **Mar 1**: Conference: abstract submission deadline in OURConnect (11:59 PM).
+- **Mar 7**: Quiz NB16: Time-Series Forecasting — Walk-Forward CV, Lag Features, and Baselines — Due.
+- **Mar 7**: Final Project Milestone 06 — Simple Model and Performance Evaluation — Due.
+- **Mar 7**: Final Project Milestone 07 — Instructor and TAs Meetings — Round 02 Schedule — Due.
+- **Mar 14**: Quiz NB19: Deep Learning — Due.
+- **Mar 14**: Final Project Milestone 08 — More Complex Models and Performance Evaluation — Due.
+- **Mar 15**: No class — Spring Break (Mar 15–20).
+- **Mar 22**: Conference: final abstract edits close in OURConnect.
+- **Mar 28**: Quiz NB17: Data Communication and Poster Design — Turning Your Model Into a Story — Due.
+- **Mar 28**: Final Project Milestone 09 — Poster First Draft — Due.
+- **Apr 4**: Final Project Milestone 10 — Final Poster Submission (`NN.pdf`) — Due.
+- **Apr 11**: Final Project Milestone 11 — Poster Presentation Planning — Due.
+- **Apr 11**: Final Project Milestone 12 — Post Invitation for Poster Presentation — Due.
+- **Apr 11**: Final Project Milestone 13 — Instructor and TAs Meetings — Round 02 Confirmation — Due.
+- **Apr 11**: Final Project: Peer Review Submission — Due.
+- **Apr 13**: Final Project: Conference Poster Presentation — Spring Undergraduate Research Conference (required).
+- **Apr 14**: No class — time to rest and catch up on other coursework.
+- **Apr 23**: Extra Credit: Issues in Course Materials — Due.
+- **Apr 23**: Extra Credit: DataCamp — Due.
+- **Apr 25**: Course Case Competition: Rank Code Submission (Kaggle final) — Due.
+- **Apr 26**: Poster-to-Product: team product submission (one per team) — Due.
+- **Apr 28**: Poster-to-Product: individual live dashboard link — Due.
+- **Apr 28**: Poster-to-Product showcase (in class).
+- **Apr 30**: Participation: Reflection Survey — Due.
+- **Apr 30**: Peer Evaluation Submission: Final Project and/or Course Case Competition — Due.
+- **Apr 30**: Extra Credit: Final Course Evaluation — Individual Credit — Due.
+
+## Core Course References
+
+- **James, Witten, Hastie, Tibshirani.** *An Introduction to Statistical Learning* (ISLP) + Python labs. Download: [https://www.statlearning.com/](https://www.statlearning.com/){target="_blank"}
+- **Hastie, Tibshirani, Friedman.** *The Elements of Statistical Learning* (ESL).
+- **Provost, Fawcett.** *Data Science for Business*.
+- **Pedregosa et al.** "Scikit-learn: Machine Learning in Python." *JMLR*.
+- **scikit-learn User Guide** (pipelines, preprocessing, model selection, metrics, inspection).
+- **Chip Huyen.** *Designing Machine Learning Systems* (deployment thinking, monitoring).
+
+:::

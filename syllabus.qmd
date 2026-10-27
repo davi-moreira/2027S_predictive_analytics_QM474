@@ -1,0 +1,235 @@
+---
+title: "Syllabus"
+author: "Davi Moreira"
+editor: visual
+---
+
+<br>
+
+<center>
+
+*IMPORTANT*
+
+*This document does not replace the official syllabus in the course brightspace page*
+
+</center>
+
+<br>
+
+## Course Description and Objectives
+
+The course enables students to navigate the entire predictive analytics pipeline skillfully, from data preparation and exploration to modeling, assessment, and interpretation. Throughout the course, learners engage with real-world examples and hands-on labs emphasizing essential programming and analytical skills. By exploring topics such as linear and logistic regression, classification, resampling methods, regularization techniques, tree-based approaches, and advanced learning paradigms (including neural networks), participants gain a robust theoretical understanding and practical experience. Ultimately, students will leave the course equipped to apply predictive models to data-driven problems, communicate their findings to diverse audiences, and critically evaluate model performance to inform strategic decision-making across various business contexts.
+
+**Course Website**: [https://davi-moreira.github.io/2027S_predictive_analytics_QM474/](https://davi-moreira.github.io/2027S_predictive_analytics_QM474/){target="_blank"}
+
+## Instructor
+
+### Instructor: [Professor Davi Moreira](https://davi-moreira.github.io)
+
+-   Email: [dcordeir\@purdue.edu](mailto:dcordeir@purdue.edu)
+-   Office: Young Hall 1019
+-   Class meetings: **Monday / Wednesday / Friday, in person** (room and time on Brightspace), Spring 2027 (Jan 11 -- Apr 30, 2027)
+-   Office Hours: details on the course Brightspace
+-   Individual Appointments: *Book time with me through the link in the course syllabus on your Course Brightspace Page, or by appointment.*
+
+> **Note:** Email responses are typically within 24 business hours. If you do not receive a response by the 24-hour mark, please email me again.
+
+## Learning Outcomes
+
+By the conclusion of this course, students will be able to:
+
+1.  **Explain Core Predictive Analytics Concepts:** Define, distinguish, and exemplify the key ideas of statistical/machine learning.
+
+2.  **Prepare, Process, and Explore Data Effectively:** Demonstrate the ability to clean, organize, and preprocess data using appropriate tools and techniques; address missing values, apply feature engineering methods, and perform comprehensive exploratory data analysis to generate meaningful insights.
+
+3.  **Implement and Compare Diverse Predictive Modeling Techniques:** Specify, train, and evaluate a range of predictive models using appropriate algorithms; apply systematic hyperparameter optimization to enhance performance; and diagnose model limitations through quantitative and visual diagnostics to guide model refinement and selection.
+
+4.  **Evaluate, Interpret, and Communicate Model Performance:** Estimate out-of-sample performance using direct and indirect approaches (e.g., holdout sets, cross-validation, resampling); interpret metrics in the context of project objectives; and deliver clear, audience-appropriate recommendations that explicitly address uncertainty, risk trade-offs, and ethical implications.
+
+## Course Materials
+
+-   **Textbook (Recommended): [ISLP]** James, G., Witten, D., Hastie, T., & Tibshirani, R. (2023). *An Introduction to Statistical Learning with Applications in Python.* Springer. <https://doi.org/10.1007/978-1-0716-2926-2>. Free download: [https://www.statlearning.com/](https://www.statlearning.com/){target="_blank"}
+
+-   **Computing (Required):** A laptop or desktop with internet access and the capability to run Python code through Google Colab: [https://colab.research.google.com/](https://colab.research.google.com/){target="_blank"}.
+
+-   **Software (Required):**
+
+    -   [**Google Colab**](https://colab.research.google.com/){target="_blank"} is a cloud-based platform that requires no software installation on your local machine; it is accessible through a modern web browser such as Google Chrome, Mozilla Firefox, Microsoft Edge, or Safari. To use Google Colab, you need a Google account and a stable internet connection. All course notebooks are designed to run directly in Google Colab with all necessary dependencies pre-configured. While optional, having tools like a local Python installation (e.g., Anaconda) or a Python IDE (e.g., Jupyter Notebook or VS Code) can be helpful for offline development. Additionally, browser extensions, such as those for VS Code integration, can enhance your experience but are not required. This makes Google Colab convenient and easy for Python programming and data science tasks.
+    -   [**Google Gemini in Colab**](https://colab.research.google.com/){target="_blank"}: Students will use Google Gemini AI assistance directly within Colab notebooks to accelerate coding while maintaining accountability through the "vibe coding" workflow: draft code with AI assistance $\rightarrow$ verify correctness $\rightarrow$ document decisions. This approach helps students learn faster while developing critical thinking about AI-generated code.
+    -   [**Microsoft Copilot**](https://it.purdue.edu/newsroom/2024/240313-copilot-with-data-protection.php){target="_blank"}: is an AI-powered assistant designed to enhance productivity and streamline workflows across various applications and services. It utilizes large language models and is integrated within Microsoft 365 apps like Word, Excel, PowerPoint, Outlook, and Teams, providing real-time, context-aware assistance for tasks such as drafting documents, analyzing data, managing projects, and communicating more efficiently. Users can leverage Copilot to automate repetitive tasks, generate ideas, summarize information, and access data across their work environment and the web, all within a secure and privacy-conscious framework.
+
+### Course Infra-structure
+
+**Brightspace:** The Course Brightspace Page <https://purdue.brightspace.com/> should be checked on a regular basis for announcements and course material.
+
+## Assessments
+
+As part of a university-wide initiative, the Business School has adopted an **Official Grading Policy** that caps the overall class GPA at 3.3. Final letter grades are determined by curving final percentages, subject to any extra-credit exceptions discussed in this syllabus. While you will see your final percentage in Brightspace, individual grade thresholds will not be disclosed before official submissions.
+
+| **Assessment**                    | **Weight** |
+|-----------------------------------|-----------:|
+| Attendance                        |         1% |
+| Participation                     |         4% |
+| Quizzes                           |        15% |
+| Midterm Exam                      |        20% |
+| Course Case Competition (Kaggle)  |        20% |
+| Final Project                     |        35% |
+| Poster-to-Product                 |         5% |
+
+### Attendance (1%)
+
+Attendance is essential for success in this course. If you do not attend class regularly, you are unlikely to succeed. According to the [University regulations](https://catalog.purdue.edu/content.php?catoid=15&navoid=18634#classes){target="_blank"}, "Scheduled courses allow students to avoid conflicts and reflect the University's expectation that students should be present for every meeting of a class/laboratory for which they are registered." Attendance is recorded in class, and these records are reflected in your gradebook at the end of the semester. A minimum attendance rate of **85%** is required to meet the expectations of this course.
+
+### Participation (4%)
+
+You are required to complete participation activities (e.g., surveys, instructor requests) and all participatory PAUSE-AND-DO exercises embedded in the lecture materials. You must submit the corresponding Jupyter Notebook (`.ipynb`) containing your completed work to the course Brightspace site by the stated deadline. Your participation grade is assessed based on completeness and timeliness of these notebook submissions, with no participatory activity dropped.
+
+### Quizzes (15%)
+
+Short quizzes based on lecture and notebook content promote consistent engagement with the course material. Quizzes contribute to the final course grade with no quiz dropped. Due dates are clearly outlined on Brightspace and aligned with the course schedule. Quizzes are designed to reinforce understanding and ensure steady progress through the curriculum.
+
+### Midterm Exam (20%)
+
+The midterm exam wraps up the foundational concepts of the course in a comprehensive assessment. It is held **in person, on paper, during class time**, and covers the material through `nb09` — problem framing, exploratory data analysis, data splitting, preprocessing pipelines, regression and classification metrics, baselines, regularization, logistic regression, cost-based thresholds, cross-validation and paired model comparison, hyperparameter tuning, and leakage detection.
+
+The exam is a **business case**: you take the role of the manager responsible for a predictive model, and each question puts you inside a decision that arises during model development — an analyst proposes a feature, a cross-validation result lands, a metric drops, a leakage signature appears. You have **10 multiple-choice questions with five alternatives each**, and **45 minutes** of class time to complete them (about 4.5 minutes per question).
+
+**Answers are marked on a scantron form, and only the scantron is scored** — nothing written in the exam booklet is graded. Bring a **number 2 pencil**. Print your name, your instructor, and your section on the scantron. Several business cases are in use, so **your exam version is printed at the top of your instruction page** — for example *Version 001 (A)*. Code it on your scantron, because exams differ by version and a scantron without the correct version cannot be graded.
+
+**You may use any type of calculator**, and **one sheet of paper, 8.5" x 11", front and back, is allowed as a notesheet**. The notesheet can be prepared in any way and is not collected. Otherwise the exam is **closed book**: no textbooks, no other notes, **no AI tools**, and no phones, laptops, tablets, smart watches, earbuds, or any other device that can communicate or reach the internet.
+
+Only under exceptional circumstances, when legitimate and verifiable reasons are provided, will make-ups be given. "Exceptional circumstances" means a death in the family, a serious personal medical emergency, participation in a conflicting NCAA athletic event, or as otherwise required by University policies. *Except for emergencies, requests for a makeup must be made by email with supporting documentation no later than 7 days before the scheduled exam.*
+
+### Course Case Competition — Kaggle (20%)
+
+We will have a semester-long, team-based predictive analytics competition hosted on Kaggle. Students must work in teams and will be allowed up to five submissions per day. The Kaggle platform will automatically evaluate submissions and maintain a leaderboard throughout the competition period.
+
+### Final Project (35%)
+
+In groups, students will complete a practical predictive analytics project culminating in a poster presentation at the Undergraduate Research Conference. This edition presents at the **Spring Undergraduate Research Conference poster session on Tuesday, April 13, 2027 — required for every student**. Each milestone's instructions come as a short PDF on the course Brightspace page. A comprehensive set of project guidelines will be provided, and the assessment structure will adhere to the following criteria:
+
+1.  **Milestone Deliverables (30%):** Students will submit incremental project components on specific due dates. These deliverables allow for early feedback and ensure steady progress throughout the semester. Grades will reflect each milestone's clarity, completeness, and timely submission.
+2.  **Peer Evaluation (20%):** To encourage accountability and productive teamwork, students will evaluate their peers' contributions. These assessments help ensure balanced participation and measure collaborative effectiveness.
+3.  **Peer Review (10%):** Each group will review and provide constructive feedback on other teams' posters. This process encourages engagement, enhances critical analysis skills, and promotes a culture of constructive critique.
+4.  **Poster Presentation at the Purdue Undergraduate Research Conference (20%):** A poster template and assessment rubric will be shared, and you are encouraged to review previous award-winning student posters for inspiration. Your final posters must be submitted by the due date indicated in the syllabus, after which they will be printed and distributed during a dedicated Poster Presentation Preparation class. Additional details on the conference can be found at <https://www.purdue.edu/undergrad-research/conferences/index.php>{target="_blank"}. As the event may not coincide with our regular class time, please communicate with your other course instructors in advance regarding potential scheduling conflicts. If any issues arise, please let me know. We will not hold our usual class immediately following the Poster Presentation, allowing you time to rest and catch up on other coursework. Consult the course schedule for further details.
+5.  **Instructor/TA Evaluation (20%):** After the Undergraduate Research Conference your instructor and the TA will evaluate your final submission based on a rubric that will be shared.
+
+### Poster-to-Product (5%)
+
+After the conference, groups enter a **two-week in-class build sprint** that converts the validated model into a **stakeholder-ready dashboard/app plus an executive brief**, following an industry product workflow (scope → data engineering → model validation → UX → deployment → usability test → showcase).
+
+### Grade Challenges
+
+Students who wish to challenge a grade must do so **within 3 calendar days** of the grade's release. An exception applies for the last week of class, when assignments must be challenged **within 1 calendar day** to ensure timely computation of final course grades. Grade challenges must be grounded in legitimate disputes over predictive analytics principles or grading accuracy. Challenges based on post-hoc legalistic arguments or subjective dissatisfaction will not be considered.
+
+To challenge an assignment score:
+
+1.  **Review posted solutions** thoroughly.
+2.  If you still believe an error has been made, email the instructor with:
+    -   Course name, section, and lecture date/time
+    -   Your name and Student ID
+    -   Assignment number / title
+    -   Specific deduction being challenged
+    -   Reason for the challenge, clearly explaining why the deduction is believed to be incorrect, with reference to the solutions or grading rubric
+
+> *Grades will not be discussed in-class — before, during, or after class. Please use office hours for questions related to course content or assignment clarification. After the challenge period, all grades are final and cannot be revised further for purposes of calculating final course grades.*
+
+## Honors Contract (Optional)
+
+If you are a student in the [John Martinson Honors College](https://honors.purdue.edu/){target="_blank"}, you are welcome to earn **honors credit for this course** through an *honors contract*. You are not required to do it, and I am glad when students do.
+
+The design here is deliberately light. The honors work is not a second course bolted onto this one, it is **your own research angle on the final project you are already doing**, carried through to the poster you are already presenting at the Undergraduate Research Conference. Three short deliverables ride along with milestones that are already on your calendar. Nothing new is added to it.
+
+### How to start
+
+Send me an email or stop by office hours **during the first week of classes**. Earlier is easier, because the university deadline arrives quickly.
+
+1.  **You must provide me the research question you will answer**, and I need to approve it.
+2.  **You request the H (Honors) grade mode** through the [Scheduling Assistant](https://www.purdue.edu/registrar/currentStudents/GradeModeChanges.html){target="_blank"}.
+3.  **We complete the request form together.** You submit it and the Daniels Qualtrics survey, attaching this syllabus.
+
+> **Deadline: [[PENDING honors-intake: the Spring 2027 Daniels request-form deadline, tied to the Registrar's H grade-mode deadline (Spring 2026: Monday, January 26)]], at 11:59 p.m.** The request form closes then and cannot be extended. Step-by-step instructions are on the [Daniels Honors Contract page](https://business.purdue.edu/undergraduate/honors-program/academics/contract.php){target="_blank"}.
+>
+> If two or more teammates want to contract together, a **group honors contract** (limited to the course max group size) is allowed and is simpler for everyone.
+
+### What the honors work is
+
+| \# | Honors deliverable | Rides along with | Due |
+|-----------|--------------------------|-----------|-----------|
+| **H1** | **Honors question memo** — about two pages naming the specific question you will own inside your team's project, why it matters to the stakeholder, three to five sources you are building on, and how you plan to answer it. | Milestone 01 — Initial Project Proposal | Check the course Brightspace page |
+| **H2** | **Honors analysis** — one modeling extension beyond what your team does, submitted as a Colab notebook plus a three-page results memo. Evaluate it with the course's cross-validation protocol and compare it to your team's baseline on identical folds. | Milestone 08 — More Complex Models | Check the course Brightspace page |
+| **H3** | **Honors section and conference walkthrough** — one clearly labeled section on your team's poster carrying your extension, if it is not an honors group. | Milestone 10 — Final Poster, and the conference | Check the course Brightspace page |
+
+We also meet one-on-one three times for about fifteen minutes, late February, late March, and once after the conference. Book them through the procedure your team already uses for its instructor and TA meetings.
+
+### How it is graded
+
+Your honors work replaces ten points of group weight rather than adding to your total if it is not an entire honors group. The Final Project keeps all five of its components; each is simply scaled from 35% to 25% of the course grade.
+
+| **Assessment** | **Standard** | **Honors contract** |
+|-----------------------------------|----------------:|-----------------:|
+| Attendance | 1% | 1% |
+| Participation | 4% | 4% |
+| Quizzes | 15% | 15% |
+| Midterm Exam | 20% | 20% |
+| Course Case Competition (Kaggle) | 20% | 20% |
+| Final Project | 35% | 25% |
+| Poster-to-Product | 5% | 5% |
+| **Honors Research Extension** (H1 2% · H2 5% · H3 3%) | — | **10%** |
+| **Total** | **100%** | **100%** |
+
+Everything else is unchanged: same class, same team, same competition, same exam, same rubrics. Your teammates are not affected by this.
+
+Your Honors section is graded exclusively as part of your Honors Research Extension. It is not evaluated under the group poster rubric and therefore cannot raise or lower your team's poster grade.
+
+During the course, your gradebook will reflect only the grade earned through the regular course requirements. After you have completed the full Honors Contract, I will manually adjust your final grade to incorporate the Honors Research Extension.
+
+### It can also count as your Honors Scholarly Project
+
+Every Honors College student completes a scholarly project, original work that creates new knowledge and is presented publicly. This contract is built so that it can be that project, if you are ready to file one this term.
+
+-   **New knowledge you own individually.** H1 names your question, H2 produces your result, and H3 puts your name on a labeled panel. The most common revision reviewers ask for is a clearer individual contribution; these three deliverables exist to make yours unmistakable.
+-   **Public presentation.** The Undergraduate Research Conference is your public venue.
+-   **Faculty mentor.** I already serve as faculty mentor for the final project, and I am happy to confirm as your scholarly-project mentor.
+
+Two things stay on your side: submit the proposal through the Honors College portal by the spring deadline of **Monday, February 1, 2027**, and file the completion verification through the same portal afterward. That deadline comes before your H1 memo is due, so draft H1 first and bring it to a check-in in the last week of January, when we can read it together; approval is the Honors College's decision, not mine. [[PENDING honors-jmhc: confirm the Feb 1 order with Davi]] Details: <https://honors.purdue.edu/research/scholarly-project.php>{target="_blank"}.
+
+## Course Policies and Additional Details
+
+### Extra Credit Opportunities:  
+
+- Review the course syllabus available on the Course Brightspace page for details.
+
+### AI Policy
+
+I encourage you to use AI tools you believe will enhance your individual or group learning performance. Learning to use AI is a valuable and emerging skill, and I am available to provide support during office hours or by appointment. Be aware of the following guidelines:
+
+-   You are **not allowed to use AI tools while taking quizzes or the midterm exam**. The midterm is an in-person paper exam: no AI tools and no electronic devices. A calculator and one 8.5" x 11" notesheet, front and back, are the only permitted aids.
+-   Providing low-effort prompts will result in low-quality outputs. Refine your prompts to achieve desirable outcomes — use the course knowledge for that.
+-   Use AI to **support your learning**: ask for explanations, examples, or clarifications of doubts; **do not** simply ask for solutions.
+-   **Do not blindly trust the information** provided by the output. Any errors or omissions resulting from your use of an AI tool are your responsibility. AI works better for topics you already understand.
+-   While AI is a tool, you must **acknowledge its use**. Always cite — include a short note at the end of any document mentioning that you used AI in its development.
+
+### Netiquette Guidelines (Zoom Classes / Office Hours)
+
+-   Join with your full name; mute when not speaking.
+-   Be respectful and clear in communication.
+-   Avoid background distractions.
+
+### Accessibility, Accommodations, and Student Well-Being
+
+-   **Accessibility.** Purdue University strives to make learning experiences as accessible as possible. If you anticipate or experience physical or academic barriers based on disability, please let me know so we can discuss options. You are also encouraged to contact the **Disability Resource Center**: [drc\@purdue.edu](mailto:drc@purdue.edu) or 765-494-1247.
+-   **CAPS.** Purdue University is committed to advancing student mental health and well-being. If you or someone you know is feeling overwhelmed, depressed, or in need of support, services are available. Contact **Counseling and Psychological Services (CAPS)** at 765-494-6995 and <http://www.purdue.edu/caps/>{target="_blank"} during and after hours, on weekends and holidays, or through counselors located in the Purdue University Student Health Center (PUSH) during business hours.
+-   **Basic Needs Security.** Contact ODOS if you are facing food or housing insecurity; no appointment needed.
+-   **Non-Discrimination Statement.** Please refer to the Nondiscrimination Statement on Brightspace.
+-   **Emergency Situations.** Please refer to the Emergency Preparedness page on Brightspace.
+
+### Additional Information
+
+Refer to Brightspace for deadlines, academic integrity policies, accommodations, CAPS information, and non-discrimination statements. Registrar add/drop/modify deadlines: <http://www.purdue.edu/Registrar/>{target="_blank"}.
+
+### Subject to Change Policy
+
+While I will try to adhere to the course schedule as much as possible, I also want to adapt to your learning pace and style. The syllabus and course plan may change during the term.
+
+## [Schedule](./schedule.qmd)

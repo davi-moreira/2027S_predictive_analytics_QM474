@@ -1,0 +1,8 @@
+## Core Course References
+
+- **James, Witten, Hastie, Tibshirani.** *An Introduction to Statistical Learning* (ISLP) + Python labs. Download: [https://www.statlearning.com/](https://www.statlearning.com/){target="_blank"}
+- **Hastie, Tibshirani, Friedman.** *The Elements of Statistical Learning* (ESL).
+- **Provost, Fawcett.** *Data Science for Business*.
+- **Pedregosa et al.** "Scikit-learn: Machine Learning in Python." *JMLR*.
+- **scikit-learn User Guide** (pipelines, preprocessing, model selection, metrics, inspection).
+- **Chip Huyen.** *Designing Machine Learning Systems* (deployment thinking, monitoring).

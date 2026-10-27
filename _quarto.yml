@@ -1,0 +1,48 @@
+# IMPORTANT REFERENCE: https://www.youtube.com/watch?v=uimdXPZc40I&list=PLkrJrLs7xfbXcEKhTCKRSr2VXH4yiBeXo&index=4
+project:
+  type: website
+  output-dir: docs
+  render:
+    - "*.qmd"
+  # Fail-closed gate on the Instructor page. This step encrypts docs/instructor.html
+  # in place with the instructor password (read from the gitignored file
+  # _adm/_instructor_page/page_password.txt) so the published page is unreadable
+  # without it. If the password is missing or encryption fails, the script exits
+  # non-zero and aborts the render: the Instructor page is NEVER published in the
+  # clear. (A missing docs/instructor.html is a no-op, exit 0: there is nothing to
+  # publish.) The same step prunes docs/search.json so the public search box stops
+  # surfacing the gated page.
+  post-render:
+    - _adm/_instructor_page/scripts/postrender.sh
+
+
+website:
+  title: "QM47400: Predictive Analytics (Spring 2027)"
+  sidebar:
+    background: primary
+    logo: "images/mgmt_474_ai_logo_02-modified.png"
+    pinned: true
+    align: center
+    tools:
+      - icon: github
+        href: https://github.com/davi-moreira/2027S_predictive_analytics_QM474
+        text: GitHub
+    style: docked
+    contents:
+      - href: index.qmd
+        text: Home
+      - href: syllabus.qmd
+        text: Syllabus
+      - href: schedule.qmd
+        text: Schedule and Material
+      - href: instructor.qmd
+        text: Instructor
+
+format:
+  html:
+    theme: cosmo
+    css: styles.css
+    toc: true
+    
+editor: visual
+

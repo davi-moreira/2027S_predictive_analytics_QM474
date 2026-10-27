@@ -107,10 +107,22 @@ competition-data).
 |---|---|---|
 | 1 | Seed the repo; keep the instructor-page scripts; Fall announcements as reference | done 2026-10-27 |
 | 2 | Calendar source + generated schedule, deadlines sheet, deadlines announcement | done 2026-10-27 |
-| 3 | Site: `_quarto.yml`, `index.qmd`, `syllabus.qmd`, `README.md`, `CLAUDE.md` mission, `.Rproj` | in progress |
-| 4 | Announcements for Spring | in progress |
-| 5 | Milestone PDFs (simple narrative) + build script | in progress |
-| 6 | Render the site locally; `git init`; first commit | in progress |
+| 3 | Site: `_quarto.yml`, `index.qmd`, `syllabus.qmd`, `README.md`, `CLAUDE.md` mission, `.Rproj`, schedule handout builder | done 2026-10-27 |
+| 4 | Announcements for Spring (`_announcements/2027S/`, README with send dates) | done 2026-10-27 — 9 converted, 5 templated, 5 dropped |
+| 5 | Milestone PDFs (simple narrative) + `scripts/build_milestone_pdfs.py` | done 2026-10-27 — 19 PDFs, 1–2 pages each, dates checked against the CSV |
+| 6 | Render the site locally; `git init`; first commit | done 2026-10-27 (local only, no remote) |
 | 7 | Create the public GitHub repo + Pages, the private instructor and tasks companions | **waiting for Davi's go-ahead** |
 | 8 | Official syllabus docx for Spring | Davi (Word) |
 | 9 | Notebook rollout (review plan batches), quizzes, midterm banks, guides, Brightspace pages | after the decisions in task #56 |
+| 10 | **Spring poster rubric** (`_final_project/2027S/rubric/`): the only rubric is Fall's, which still carries the per-model 95% interval and "k = 5/10" (criterion 5), notebook 08's three-outcome rule and the Fall transition note (criterion 6), "M09 due Nov 1", and "no test-set opening required" — all contradict the Spring PDFs | **next** |
+| 11 | Where groups open their test set: the M08 PDF makes it the last step of M08, after the champion is named; M10 is the alternative | Davi to confirm |
+
+## 6. Questions for Davi raised while building (2026-10-27)
+
+From the announcement conversion (`_announcements/2027S/README.md` has the full table and suggested send dates):
+1. **Signature.** The drafts end "All the best, Davi" (as the Fall deadlines announcement does); some posted Fall messages were signed "Prof. Moreira". Which one?
+2. **M05 grading.** The deadline sheet says *completion* (as Fall's milestone reference did), but Fall actually graded M05 with a rubric and a 20% revision window. Keep the rubric + revision for Spring?
+3. **Round 02 instructor meetings.** The plan says Mar 29 – Apr 3 (Fall reference: Nov 2–7); a posted Fall announcement said "through Nov 13", whose Spring equivalent is Fri Apr 9. Which end date?
+4. **Online sessions.** Fall ran some sessions online. Do Fri Mar 12 (before spring break) and Fri Apr 16 (P2P kickoff) meet online?
+5. **P2P study reflections.** Fall's pre-conference and kickoff reflections were items of the P2P research study; they are not in the Spring sheet. Does the study run again?
+6. **Honors order.** The JMHC spring proposal deadline (Mon Feb 1) comes before H1 (Sun Feb 7); the syllabus now asks for an H1 draft first (`[[PENDING honors-jmhc]]`).

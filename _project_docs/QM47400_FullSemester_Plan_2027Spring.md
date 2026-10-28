@@ -10,8 +10,10 @@ own repo until Dec 11, 2026.
   rendered `docs/`, videos, slides, NotebookLM files, datasets, the private instructor mirror, `_archive/`, the
   administered Sep 25 midterm sitting, Fall's `_adm/` (except `_adm/_instructor_page/`, which the site's
   post-render step needs) and Fall's announcements (kept as reference in `_announcements/2026F_reference/`).
-- Planned GitHub repo (not created yet; needs Davi's go-ahead, because it is public):
-  `davi-moreira/2027S_predictive_analytics_QM474`, Pages from `main` / `docs`.
+- GitHub (created 2026-10-28): public `davi-moreira/2027S_predictive_analytics_QM474`, Pages from `main` / `docs`
+  at https://davi-moreira.github.io/2027S_predictive_analytics_QM474/; private companions
+  `davi-moreira/2027S_predictive_analytics_QM474_instructor` (instructor mirror) and
+  `davi-moreira/2027S_predictive_analytics_QM474-tasks` (course-tasks tracker).
 - Review plan of record (in the Fall repo, gitignored):
   `../2026F_predictive_analytics_QM474/_adm/doctrine_drafts/2026-10-26_amendment1_course_review/AMENDMENT1_COURSE_REVIEW_PLAN.md`;
   open decisions tracked in the Fall private tracker, task #56.
@@ -91,8 +93,8 @@ and Mar 22–28, instructor Mar 29 – Apr 3.
 | Announcements | `_announcements/2027S/` — Spring versions of every reusable Fall announcement (Fall-only events dropped and listed in its README). |
 | Notebooks | Rollout of the review (task #56) happens **here**, instructor copy first, batch by batch (review plan §11). Not started. |
 | Rules (`CLAUDE.md`, doctrine, audit script) | The D11/D12 rule texts (review plan §16.7) go in with the first converted notebook. |
-| Instructor tab | `instructor.qmd` (gitignored) and a new private companion repo `…2027S…_instructor` — to create with the GitHub repo. |
-| Course tasks | A private `2027S_predictive_analytics_QM474-tasks` companion for the course-tasks skill — to create with the GitHub repo. |
+| Instructor tab | `instructor.qmd` (gitignored) links to the private mirror `2027S_predictive_analytics_QM474_instructor`, which now also carries the case-competition solution notebooks (`case_competition/`). Its content is still Fall's (tracker #5). |
+| Course tasks | Private `2027S_predictive_analytics_QM474-tasks` (label `course-task`), seeded 2026-10-28 with tasks #1–#15. |
 
 ## 4. Placeholders for open decisions
 
@@ -111,13 +113,20 @@ competition-data).
 | 4 | Announcements for Spring (`_announcements/2027S/`, README with send dates) | done 2026-10-27 — 9 converted, 5 templated, 5 dropped |
 | 5 | Milestone PDFs (simple narrative) + `scripts/build_milestone_pdfs.py` | done 2026-10-27 — 19 PDFs, 1–2 pages each, dates checked against the CSV |
 | 6 | Render the site locally; `git init`; first commit | done 2026-10-27 (local only, no remote) |
-| 7 | Create the public GitHub repo + Pages, the private instructor and tasks companions | **waiting for Davi's go-ahead** |
-| 8 | Official syllabus docx for Spring | Davi (Word) |
-| 9 | Notebook rollout (review plan batches), quizzes, midterm banks, guides, Brightspace pages | after the decisions in task #56 |
-| 10 | **Spring poster rubric** (`_final_project/2027S/rubric/`): the only rubric is Fall's, which still carries the per-model 95% interval and "k = 5/10" (criterion 5), notebook 08's three-outcome rule and the Fall transition note (criterion 6), "M09 due Nov 1", and "no test-set opening required" — all contradict the Spring PDFs | **next** |
-| 11 | Where groups open their test set: the M08 PDF makes it the last step of M08, after the champion is named; M10 is the alternative | Davi to confirm |
+| 7 | Create the public GitHub repo + Pages, the private instructor and tasks companions | done 2026-10-28 — student-data paths and the competition solution notebooks gitignored before the first push; instructor mirror synced; tracker seeded |
+| 8 | Official syllabus docx for Spring | Davi (Word) — tracker #4 |
+| 9 | Notebook rollout (review plan batches), quizzes, midterm banks, guides, Brightspace pages | after the decisions in Fall task #56 — tracker #3 |
+| 10 | **Spring poster rubric** (`_final_project/2027S/rubric/`): the only rubric is Fall's, which still carries the per-model 95% interval and "k = 5/10" (criterion 5), notebook 08's three-outcome rule and the Fall transition note (criterion 6), "M09 due Nov 1", and "no test-set opening required" — all contradict the Spring PDFs | **next** — tracker #2 |
+| 11 | Where groups open their test set: the M08 PDF makes it the last step of M08, after the champion is named; M10 is the alternative | Davi to confirm — tracker #1 |
+
+The tracker (`davi-moreira/2027S_predictive_analytics_QM474-tasks`) also holds the term-launch tasks that have no row
+here: room and times #6, TA team #7, Brightspace #8, announcements #9, competition #10, midterm logistics #11,
+honors dates #12, P2P funding #13, OURConnect approvals #14 and lecture briefings #15.
 
 ## 6. Questions for Davi raised while building (2026-10-27)
+
+Tracked as tracker #1, with two more: the test-set step (work-list item 11) and the P2P professional review panel
+(`[[PENDING p2p-review]]`).
 
 From the announcement conversion (`_announcements/2027S/README.md` has the full table and suggested send dates):
 1. **Signature.** The drafts end "All the best, Davi" (as the Fall deadlines announcement does); some posted Fall messages were signed "Prof. Moreira". Which one?

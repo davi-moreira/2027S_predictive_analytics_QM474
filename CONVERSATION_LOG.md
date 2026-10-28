@@ -25,3 +25,22 @@ Append-only. The Fall 2026 history lives in `../2026F_predictive_analytics_QM474
   - Davi edits the official syllabus docx (`_syllabus/2027S/`).
   - The six questions in plan §6.
   - The notebook rollout after task #56's decisions.
+
+## 2026-10-28 — GitHub repos, Pages and private companions (Claude Code, Davi's go-ahead)
+
+- **Public repo:** `davi-moreira/2027S_predictive_analytics_QM474`, pushed. Pages serves `main` / `docs` at https://davi-moreira.github.io/2027S_predictive_analytics_QM474/ (HTTPS enforced). The Instructor page is served encrypted.
+- **Pre-publish check:**
+  - No commit contains the instructor password, the plaintext instructor page or `_adm/`.
+  - No tracked text file contains a Fall 2026 roster name.
+  - Student-data paths (grade exports, leaderboards) and the case-competition solution notebooks are gitignored and are not in the history.
+- **Private instructor mirror:** `davi-moreira/2027S_predictive_analytics_QM474_instructor`, synced with 20 instructor notebooks, 21 guides, 96 quiz CSVs, 14 midterm cases, the Brightspace pages and the case-competition solution notebooks. The last of these are new: the sync now copies `_course_case_competition/**/*_instructor*.ipynb` to `case_competition/`. The sync script, the pre-commit hook (re-installed) and the Instructor tab now point at the 2027S repos.
+- **Private tracker:** `davi-moreira/2027S_predictive_analytics_QM474-tasks` (label `course-task`), seeded with 15 setup tasks, #1–#15:
+  - setup questions #1, rubric #2, review rollout #3, syllabus #4, Instructor tab #5;
+  - room and times #6, TA team #7, Brightspace #8, announcements #9, competition #10;
+  - midterm logistics #11, honors dates #12, P2P funding #13, OURConnect approvals #14, lecture briefings #15.
+
+  Fall tracker #56 links to #2 and #3.
+- **Links updated** to the 2027S repos in `CLAUDE.md`, `_project_docs/NOTEBOOK_TEMPLATE.md`, `TROUBLESHOOTING.md` and `COURSE_MATERIAL_WORKFLOW.md`.
+- **Still open:**
+  - The notebooks' Colab badges still point at the 2026F repo (rollout, #3).
+  - The Instructor tab's content is still Fall's (#5).

@@ -117,9 +117,8 @@ _instructor_repo
 
 **/*.quarto_ipynb
 
-# Student data and solution notebooks never go into this public repo (2027S setup, 2026-10-27).
-# Fall's repo carried a Brightspace grade export, Kaggle leaderboards with student emails and the
-# competition's instructor notebooks; they were dropped from this repo's history before its first push.
+# Student data (grade exports, leaderboards) and solution notebooks never go into this public repo.
+# The case-competition solution notebooks are mirrored to the private instructor repo instead.
 *GradesExport*
 **/final_leaderboard/
 _course_case_competition/**/*_instructor*.ipynb

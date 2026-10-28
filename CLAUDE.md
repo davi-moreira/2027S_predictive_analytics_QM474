@@ -17,8 +17,9 @@ The same **18-notebook arc (nb00–nb09, nb11–nb14, nb16–nb19; nb10, nb15 an
 - **Instructor:** Professor Davi Moreira — office hours on Brightspace
 - **Meetings:** Sections **001 and 002**, Monday / Wednesday / Friday, **WTHR 114** (confirm on Brightspace)
 - **Prerequisite:** MGMT 305 Business Analytics or similar
-- **Repository (planned, not yet created):** https://github.com/davi-moreira/2027S_predictive_analytics_QM474
-- **Website (planned):** https://davi-moreira.github.io/2027S_predictive_analytics_QM474/
+- **Repository:** https://github.com/davi-moreira/2027S_predictive_analytics_QM474 (public, created 2026-10-27)
+- **Website:** https://davi-moreira.github.io/2027S_predictive_analytics_QM474/
+- **Private companions:** `davi-moreira/2027S_predictive_analytics_QM474_instructor` (instructor mirror, see the Instructor-tab workflow below) and `davi-moreira/2027S_predictive_analytics_QM474-tasks` (the course-tasks tracker)
 - **Deployment:** Quarto → `docs/` → GitHub Pages
 - **Edition plan:** `_project_docs/QM47400_FullSemester_Plan_2027Spring.md`
 - **Official syllabus:** `_syllabus/2027S/` (gitignored Word file, edited by Davi) is the **source of record for course policy** — when it disagrees with `syllabus.qmd`, the website is what gets fixed.
@@ -302,7 +303,7 @@ The sidebar's **Instructor** tab (it replaced the old "For Instructors" tab; the
 - **`instructor.qmd` is gitignored** (plaintext source of the gated page; backup lives at `site/instructor.qmd` in the private repo). **`docs/instructor.html` is NOT ignored** — the encrypted page is what we publish. Do not "fix" either fact.
 - **The page ships ENCRYPTED.** `_adm/_instructor_page/scripts/encrypt_instructor_page.py` (stdlib-only AES-256-GCM + PBKDF2-SHA256, 250k iterations; `--self-test` runs 22 checks) rewrites `docs/instructor.html` into a self-contained browser-decrypted gate. It runs automatically as a Quarto **post-render** hook (`postrender.sh`, wired in `_quarto.yml`), fail-closed: no password → render aborts, the page never publishes in the clear. Idempotent on the marker `<!-- qm474-encrypted-page v1 -->`. The same step prunes `docs/search.json`.
 - **Password:** gitignored `_adm/_instructor_page/page_password.txt` (or `$QM474_PAGE_PASSWORD`). NEVER hardcode it, NEVER commit it, never put it in a commit message or announcement.
-- **The actual files live in the private companion repo** `davi-moreira/2026F_predictive_analytics_QM474_instructor`: instructor notebooks → `notebooks/`, `video_guides/` → `video_guides/`, `_quizzes/` → `quizzes/`, `_midterm_exam/` → `midterm_exam/`, `instructor.qmd` → `site/instructor.qmd`. Mirror it with `_adm/_instructor_page/scripts/sync_instructor_repo.sh` (`--dry-run` supported; hard-stops unless `gh` reports the target repo PRIVATE and `_instructor_repo` is gitignored). The mirror is synced, never edited directly. **Run the sync after changing any instructor notebook, video guide, quiz bank, midterm file, or `instructor.qmd`.**
+- **The actual files live in the private companion repo** `davi-moreira/2027S_predictive_analytics_QM474_instructor`: instructor notebooks → `notebooks/`, case-competition solution notebooks → `case_competition/`, `video_guides/` → `video_guides/`, `_quizzes/` → `quizzes/`, `_midterm_exam/` → `midterm_exam/`, `instructor.qmd` → `site/instructor.qmd`. Mirror it with `_adm/_instructor_page/scripts/sync_instructor_repo.sh` (`--dry-run` supported; hard-stops unless `gh` reports the target repo PRIVATE and `_instructor_repo` is gitignored). The mirror is synced, never edited directly. **Run the sync after changing any instructor notebook, video guide, quiz bank, midterm file, or `instructor.qmd`.**
 - **Guard:** `.git/hooks/pre-commit` refuses to commit `docs/instructor.html` without the marker, `instructor.qmd`, the password file, or any staged file containing the password. `.git/hooks/` is never cloned — the copy of record + install steps live in `_adm/_instructor_page/` (`pre-commit`, `INSTALL_HOOK.md`).
 
 ---

@@ -133,6 +133,6 @@ Common issues encountered while developing or deploying course materials, with p
 
 **Solution:** Edit the header markdown cell. Badge URL must be:
 ```
-https://colab.research.google.com/github/davi-moreira/2026F_predictive_analytics_QM474/blob/main/notebooks/nbNN_topic_student.ipynb
+https://colab.research.google.com/github/davi-moreira/2027S_predictive_analytics_QM474/blob/main/notebooks/nbNN_topic_student.ipynb
 ```
 The trailing filename must end in `_student.ipynb`, never `_instructor.ipynb`.

@@ -15,7 +15,7 @@ Every student notebook MUST include these sections in order.
 
 <center>
 <div>
-<img src="https://raw.githubusercontent.com/davi-moreira/2026F_predictive_analytics_QM474/main/notebooks/figures/mgmt_474_ai_logo_02-modified.png" width="200"/>
+<img src="https://raw.githubusercontent.com/davi-moreira/2027S_predictive_analytics_QM474/main/notebooks/figures/mgmt_474_ai_logo_02-modified.png" width="200"/>
 </div>
 </center>
 
@@ -23,7 +23,7 @@ Every student notebook MUST include these sections in order.
 # <center>QM47400 Predictive Analytics</center>
 # <center>Professor: Davi Moreira </center>
 
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/davi-moreira/2026F_predictive_analytics_QM474/blob/main/notebooks/XX_topic_student.ipynb)
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/davi-moreira/2027S_predictive_analytics_QM474/blob/main/notebooks/XX_topic_student.ipynb)
 
 ---
 ```

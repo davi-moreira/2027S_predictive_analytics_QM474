@@ -44,3 +44,11 @@ Append-only. The Fall 2026 history lives in `../2026F_predictive_analytics_QM474
 - **Still open:**
   - The notebooks' Colab badges still point at the 2026F repo (rollout, #3).
   - The Instructor tab's content is still Fall's (#5).
+
+## 2026-10-28 — Fall 2026 student-reported errata carried over
+
+The Fall repo corrected student-reported errors in nb02, nb06 and nb07 and in the NB06/NB07 quiz banks
+(NB06 Q23, Q24, Q27–Q30; NB07 Q19 now follow the benign-positive convention). The Spring copies were
+byte-identical to Fall's originals, so the corrected files were copied over: three student notebooks
+(`5a3db67`), plus the gitignored instructor notebooks, nb06/nb07 video guides and quiz banks (audit PASS),
+synced to the private instructor mirror.

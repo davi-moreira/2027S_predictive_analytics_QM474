@@ -99,3 +99,14 @@ sessions (decisions, file ownership, rules): `_adm/2027S_setup_2026-11-24/COORDI
   hook during parallel work is Davi's call.
 - **Tracker:** comments on #1–#5, #8–#11, #13; #10 re-titled and re-dated (2027-03-02); new #16 (iClicker license),
   #17 (videos before Dec 14), #18 (confirm the defaults), #19 (Colab Run all).
+- **Midterm banks (rollout-core subagent, late 2026-11-24):** all 14 forms of `_midterm_exam/2026F/` brought to
+  Amendment 1/2 for the Fri Feb 12, 2027 sitting. Slot 13 now gives the five per-fold gains, the `compare_paired`
+  interval and the declared margin, and is keyed by the four outcomes. Slot 12 is keyed to fold mean ± SD, with no
+  per-model interval. Slot 14 (7 forms re-keyed): the grid winner is a nominee that faces the default. Main recomputed
+  all 14 slot-13 intervals independently (all match) and re-ran the gates: item_lint 0 FAIL, validate_banks 0
+  failures, check_exam_structure and check_pdfs PASS, answer length PASS on 14 + 3 practice CSVs, option cues PASS.
+  Open for Davi: slot 4 on NeuroLogic, NovaCure and TelcoBoost still keys "compare on the validation set"; a blind
+  solve of slots 12–15 before printing (Codex was unavailable). Full list:
+  `_midterm_exam/2026F/_rewrite/2027S_REVISION_2026-11-24.md`.
+- **Instructor repo synced** (`c971511` in the private companion): 20 notebooks, 23 Brightspace pages, 21 guides,
+  142 quiz CSVs, 14 midterm cases.

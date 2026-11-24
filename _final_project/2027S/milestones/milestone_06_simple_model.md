@@ -32,7 +32,7 @@ Write a report with these labeled sections.
 - **Split once, at the start**: 80% training set, 20% test set, with `train_test_split(X, y, test_size=0.20, random_state=474)` (add `stratify=y` for classification). Then put the test set away. You open it once, at the very end, for your chosen model only.
 - **Everything else runs on the training set, with five-fold cross-validation**: `KFold(n_splits=5, shuffle=True, random_state=474)` for regression, `StratifiedKFold` with the same settings for classification. Keep the splitter in a variable: Milestone 08 reuses exactly the same folds.
 - **Keep preprocessing and feature selection inside a pipeline**, so each fold refits them on its own training rows. Anything fitted on all the rows first leaks information.
-- **Report your baseline's five fold scores, their mean and their standard deviation.** [[PENDING D4: whether to report a per-model 95% interval — currently: report fold scores, mean and SD]]
+- **Report your baseline's five fold scores, their mean and their standard deviation.** Do not put a 95% interval around one model's score: the folds share training rows, so that interval comes out too narrow. The interval you will use is the one around the paired difference between two models, in Milestone 08.
 
 ## What to submit
 

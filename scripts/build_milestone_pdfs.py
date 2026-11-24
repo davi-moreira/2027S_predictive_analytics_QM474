@@ -85,7 +85,8 @@ ROW_KEYS = {f"M{n:02d}": f"Milestone {n:02d} —" for n in range(14)}
 ROW_KEYS.update({
     "Peer review": "Peer Review Submission",
     "Conference": "Conference Poster Presentation",
-    "Peer evaluation": "Peer Evaluation Submission",
+    "Peer evaluation 1": "Peer Evaluation 1",
+    "Peer evaluation 2": "Peer Evaluation 2",
     "P2P product": "Poster-to-Product: team product",
     "P2P live link": "Poster-to-Product: individual live dashboard link",
 })

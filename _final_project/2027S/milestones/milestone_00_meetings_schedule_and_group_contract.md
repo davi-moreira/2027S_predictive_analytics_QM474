@@ -43,6 +43,10 @@ Be specific. "We will communicate well" helps nobody. "Slack, replies within 24 
 
 Each email offers several concrete dates and times, names your course section, and copies every group member. At least one member attends each meeting, and it does not have to be the same person both times. For this milestone you submit the emails, not the meetings: you confirm that the meetings took place in Milestone 04.
 
+**Plan your presentations now.** Every meeting in every round starts with a short presentation by your
+group (about five slides, five minutes), and every member presents in each round, so put "who presents
+what" into your contract's roles section. Milestone 04 has the details.
+
 ## What to submit
 
 One member uploads three PDFs for the whole group: the signed contract, `NN_group_contract.pdf`, and a PDF of each email as sent, `NN_ta_meeting_request.pdf` and `NN_instructor_meeting_request.pdf`. Replace NN with your group number, for example `03_group_contract.pdf`.

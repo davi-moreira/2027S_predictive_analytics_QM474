@@ -10,12 +10,14 @@ box:
   - label: Submit
     value: "One PDF per group, uploaded by one member, named with your group number only: `NN.pdf` (for example `03.pdf`; no section number)"
   - label: Grading
-    value: "The poster rubric, 100 points (attached on Brightspace). On this draft, criterion 6 (model comparison and champion) gets feedback, not a deduction"
+    value: "The poster rubric, 100 points (attached on Brightspace). On this draft, criterion 6 (model comparison and champion) gets feedback, not a deduction. **Required to present at the conference**"
 ---
 
 ## What this milestone is for
 
 This is the first full version of your conference poster. Build it on the poster template and the rubric (both attached on Brightspace) and on notebook 17, *Data Communication and Poster Design*. The feedback you get on this draft is what you fix for the final poster in Milestone 10.
+
+> **This draft is required to present at the conference.** A group that does not submit its poster first draft by the deadline **will not be allowed to present at the Spring Undergraduate Research Conference** on Tuesday, April 13, and earns no credit for the conference presentation (20% of the Final Project). A draft that is incomplete still counts as submitted; a missing one does not.
 
 ## What to do
 
@@ -24,7 +26,7 @@ This is the first full version of your conference poster. Build it on the poster
 - **Title and authors.** A clear title that reflects your question, every team member's name, and your mentor acknowledged.
 - **Abstract or introduction.** The question, why it matters, and a short summary of your data, your two models (baseline and complex) and your main finding.
 - **Methods and data.** The baseline and the complex model, the dataset and its key variables, your preprocessing (feature engineering, missing data) and your tuning approach, each justified against the question. Name your **stakeholder** and the **decision** your model supports, and your **selection criteria**: the primary metric and the margin δ with what it means in the stakeholder's terms. Say when you set δ; if it was after you saw results, say so.
-- **Results.** For each model, its five fold scores, their mean and their standard deviation. [[PENDING D4: whether to report a per-model 95% interval — currently: report fold scores, mean and SD]] Then the comparison from Milestone 08: the per-fold differences on the same folds, their mean, the corrected interval, and which of the four outcomes it is (worthwhile gain, worthwhile loss, practically equivalent, unresolved). A small dot plot of the per-fold differences next to ±δ works well. Add the champion's test score, from the single opening in Milestone 08. [[PENDING R7: prediction intervals]] Interpret honestly and note limitations or anomalies.
+- **Results.** For each model, its five fold scores, their mean and their standard deviation — no separate 95% interval around each model's score; the only interval on the poster is the corrected interval of the paired difference. Then the comparison from Milestone 08: the per-fold differences on the same folds, their mean, the corrected interval, and which of the four outcomes it is (worthwhile gain, worthwhile loss, practically equivalent, unresolved). A small dot plot of the per-fold differences next to ±δ works well. Add the champion's test score, from the single opening in Milestone 08. Prediction intervals for the champion are optional. Interpret honestly and note limitations or anomalies.
 - **Conclusions and future directions.** Your champion and its four-point statement (what you recommend and for which decision; the evidence; the checks and the runner-up; what would change your mind), then the implications, possible improvements and next steps, tied back to your question.
 
 **2. Organize it.** A logical flow (introduction, exploration, methods, results, conclusions), headings and short numbered sections, and charts placed where the text refers to them.

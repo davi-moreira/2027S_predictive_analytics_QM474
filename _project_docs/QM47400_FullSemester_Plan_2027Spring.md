@@ -31,8 +31,9 @@ own repo until Dec 11, 2026.
 | Already adopted, applied here | D1 (δ band), D5 (MedScreen AUC primary), D8 (role of uncertainty), **D11 (five folds everywhere)**, **D12 (after nb08, one 80/20 split, all work on `X_train`)**, Amendment 1 (`compare_paired`, four outcomes). |
 | Milestone instructions | **PDFs** (as in HONR 464), one per milestone, in simple narrative and plain wording — not long Brightspace pages. Brightspace carries a short assignment note plus the PDF. |
 
-Weights stay as in Fall (Decision 13): Attendance 1% · Participation 4% · Quizzes 15% · Midterm 20% · Course Case
+Weights (changed 2026-11-24, §7): **Attendance 5%** · Participation 4% · **Quizzes 11%** · Midterm 20% · Course Case
 Competition 20% (peer evaluation 20% of it) · Final Project 35% (peer evaluation 20% of it) · Poster-to-Product 5%.
+(Fall, Decision 13: Attendance 1%, Quizzes 15%.)
 
 ## 2. Calendar (Purdue Registrar, verified 2026-10-27)
 
@@ -62,12 +63,12 @@ Tuesday, a Wednesday's on Sunday; everything at 11:59 PM Eastern.
 | 1 (Jan 11) | nb00 | nb01 | nb02 |
 | 2 (Jan 18) | *MLK Day* | nb03 | group work |
 | 3 (Jan 25) | nb04 | nb05 | group work |
-| 4 (Feb 1) | nb06 | nb07 | group work + **case competition kickoff** |
+| 4 (Feb 1) | nb06 | nb07 | group work |
 | 5 (Feb 8) | nb08 | nb09 | **MIDTERM** (Feb 12) |
 | 6 (Feb 15) | nb11 | nb12 | group work |
 | 7 (Feb 22) | nb13 | nb14 | group work |
-| 8 (Mar 1) | group work | nb16 | group work |
-| 9 (Mar 8) | nb18 | nb19 | group work |
+| 8 (Mar 1) | nb16 | **nb18 (new: S&P 500 competition workflow) + competition kickoff** | group work |
+| 9 (Mar 8) | nb19 | *virtual work session* | *virtual work session* |
 | 10 (Mar 15) | *spring break* | *spring break* | *spring break* |
 | 11 (Mar 22) | nb17 | group work | group work |
 | 12–13 (Mar 29 – Apr 9) | group work | group work | group work |
@@ -77,8 +78,9 @@ Tuesday, a Wednesday's on Sunday; everything at 11:59 PM Eastern.
 
 **Milestones** (Sunday, 11:59 PM): M00 + M01 Feb 7 · M02 Feb 14 · M03 Feb 21 · M04 + M05 Feb 28 (before the
 Mar 1 abstract deadline) · M06 + M07 Mar 7 · M08 Mar 14 · M09 Mar 28 · M10 Apr 4 · M11 + M12 + M13 + peer
-review Apr 11 · conference Tue Apr 13 · peer evaluation Fri Apr 30. Case competition: opens Fri Feb 5, team setup
-Sun Feb 7, Kaggle final Sun Apr 25. Poster-to-Product: team product Mon Apr 26, showcase Wed Apr 28, individual
+review Apr 11 · conference Tue Apr 13 · peer evaluation Fri Apr 30. Case competition (changed 2026-11-24, §7): S&P 500
+forecasting, opens Wed Mar 3, team setup Sun Mar 7, final forecast + code Fri Mar 26, live scoring Mar 29 – Apr 23,
+standings Sun Apr 25. Peer evaluations: midpoint (formative) Sun Mar 7, final Fri Apr 30. Poster-to-Product: team product Mon Apr 26, showcase Wed Apr 28, individual
 dashboard link Wed Apr 28. Meeting rounds: Round 01 — TA Feb 8–21, instructor Feb 22–28; Round 02 — TA Mar 8–14
 and Mar 22–28, instructor Mar 29 – Apr 3.
 
@@ -135,3 +137,30 @@ From the announcement conversion (`_announcements/2027S/README.md` has the full 
 4. **Online sessions.** Fall ran some sessions online. Do Fri Mar 12 (before spring break) and Fri Apr 16 (P2P kickoff) meet online?
 5. **P2P study reflections.** Fall's pre-conference and kickoff reflections were items of the P2P research study; they are not in the Spring sheet. Does the study run again?
 6. **Honors order.** The JMHC spring proposal deadline (Mon Feb 1) comes before H1 (Sun Feb 7); the syllabus now asks for an H1 draft first (`[[PENDING honors-jmhc]]`).
+
+## 7. Decisions of 2026-11-24 (Davi) and the setup they started
+
+Davi asked for the course to be set up end to end and answered four questions the same day. The work was split
+across parallel Claude Code sessions sharing this folder; the contract (decisions, file ownership, rules,
+reports) is `_adm/2027S_setup_2026-11-24/COORDINATION.md`, and each session's report lands in
+`_adm/2027S_setup_2026-11-24/reports/`.
+
+| # | Decision | Where it lives |
+|---|---|---|
+| 1 | **Correct every notebook and Brightspace page** to the Amendment 1 doctrine and the review plan of record; open review decisions default to the plan's own recommendations (D2 ladder, D3 nominee, D4/Amendment 2 no per-model interval, D6 nb16 descriptive, D7 fixes, R1 nominee labelled optimistic, R7 CV+ where in core, R12 one margin required and the band optional) | sessions `rollout-core` (nb08, nb09, nb14, nb17, rule texts, midterm banks), `rollout-trees` (nb11–nb13), `rollout-early` (nb00–nb07, nb19), `sp500-competition` (nb16) |
+| 2 | **Attendance 5%**, location-verified iClicker; **Quizzes 15% → 11%** | `syllabus.qmd`, `README.md`, honors table; instructor guide `_adm/_brightspace/2027S/ICLICKER_ATTENDANCE_SETUP.md` (confirm Purdue's 2026–27 iClicker license first) |
+| 3 | **Course Case Competition → group S&P 500 forecasting competition on Kaggle** (replaces Bank Churn; same 20%, same teams), with a **new nb18** and an nb16 that covers usable forecasting models | session `sp500-competition`; calendar items and syllabus text here |
+| 4 | **Weeks 8–9:** nb16 Mon Mar 1, nb18 Wed Mar 3, nb19 Mon Mar 8; **Wed Mar 10 and Fri Mar 12 virtual** | `scripts/build_2027S_calendar.py` (kind `virtual`) |
+| 5 | **Two peer evaluations:** midpoint, formative (completion; flags trigger a team check-in), Sun Mar 7; final, graded, Fri Apr 30 | calendar; `peer_evaluation_midpoint.md` (new PDF), `peer_evaluation.md` |
+| 6 | **No poster first draft (M09), no conference** | syllabus, M09, conference and overview PDFs, announcements |
+| 7 | **A presentation at every meeting** (about five slides, five minutes; uploaded before the meeting; every member presents in each round; no presentation = the meeting does not count) | M00, M04, M07, M13 PDFs (M04 opens Feb 8, M13 Mar 8), overview, syllabus |
+| 8 | **Poster-to-Product kept, adapted from the Fall 2026 Launch Journey**, without assuming Claude seats (Purdue-provided AI options) | session `p2p-spring` |
+| 9 | **AI-avatar videos: pilot nb00 and nb08 first** (ElevenLabs + HeyGen, the Fall pipeline), then decide | session `video-pilot` |
+| 10 | Help set up Brightspace | session `brightspace-build` (plan + specs; live changes only with Davi's OK, hidden items only) |
+
+Also fixed while there: the syllabus's midterm format (now 15 questions × four alternatives, about 3 minutes each,
+Decision 16); M06/M08/M09 placeholders D4, D3/R1, R12, R7 resolved with the defaults above.
+
+**Changes Davi still makes in the official Word syllabus** (the source of record): see
+`_syllabus/2027S/SYLLABUS_DOCX_CHANGES_2026-11-24.md`.
+

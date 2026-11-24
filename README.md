@@ -20,7 +20,7 @@ This full-semester course enables students to navigate the entire predictive ana
 
 Topics include exploratory data analysis, train/validation/test splits, linear and logistic regression, classification metrics, cross-validation and model comparison, regularization, tree-based methods, random forests, gradient boosting, model selection with a locked test-set ceremony, interpretation, time-series forecasting, data communication, competition workflow, and a hands-on introduction to deep learning and large language models.
 
-The course centers on **one comprehensive capstone project** completed in **groups of four randomly assigned members**, plus a **Kaggle case competition** predicting bank customer churn. The project unfolds in two integrated stages:
+The course centers on **one comprehensive capstone project** completed in **groups of four randomly assigned members**, plus a **team Kaggle competition forecasting the S&P 500** over the final weeks of the course. The project unfolds in two integrated stages:
 
 1. **Research Poster** — milestones M00–M13, culminating in a **required presentation at the Spring 2027 Purdue Undergraduate Research Conference on Tuesday, April 13, 2027** (poster due Sun Apr 4).
 2. **Poster-to-Product** — a post-conference, two-week in-class build sprint that converts the validated model into a **stakeholder-ready dashboard/app + executive brief**, with corporate-partner feedback and a final showcase (**Wed Apr 28**). *(Funding to be confirmed: the Daniels Experiential Learning Grant that funded Fall 2026 ends Dec 31, 2026.)*
@@ -29,12 +29,12 @@ Master plan and single source of truth for sequencing: [`_project_docs/QM47400_F
 
 ## Course Structure
 
-The 18-notebook arc (nb00–nb09, nb11–nb14, nb16–nb19; nb10, nb15 and nb20 are retired) is paced across ~16 weeks, organized into four units. **Mondays and Wednesdays carry the course content; Fridays are studio sessions for the final-project poster and the Course Case Competition** — the single exception is Fri Jan 15, which carries nb02. Lecture content completes on **Mon Mar 22 (nb17)**; spring break is Mar 15–20.
+The 18-notebook arc (nb00–nb09, nb11–nb14, nb16–nb19; nb10, nb15 and nb20 are retired) is paced across ~16 weeks, organized into four units. **Mondays and Wednesdays carry the course content; Fridays are studio sessions for the final-project poster and the Course Case Competition** — the single exception is Fri Jan 15, which carries nb02. Lecture content completes on **Mon Mar 22 (nb17)**; spring break is Mar 15–20. Week 8–9 carries time series (nb16, Mon Mar 1), the competition workflow (nb18, Wed Mar 3) and deep learning (nb19, Mon Mar 8); Wed Mar 10 and Fri Mar 12 are virtual work sessions.
 
 - **Unit 1 — Regression (nb00–nb05):** Colab/AI workflow, EDA, preprocessing pipelines, regression metrics, linear regression, Ridge/Lasso. *Supports M01 Initial Project Proposal (nb05).*
 - **Unit 2 — Classification (nb06–nb09):** Logistic regression, classification metrics, cross-validation, hyperparameter tuning + leakage detection. *Supports M06 Simple Model & Performance Evaluation.*
 - **Unit 3 — Ensembles + Selection (nb11–nb14):** Decision trees, random forests, gradient boosting, model selection + test-set ceremony, interpretation. *Supports M08 More Complex Models and the M03 Draft Abstract (nb15).*
-- **Unit 4 — Delivery (nb16–nb19):** Time-series forecasting, data communication & poster design, competition workflow, deep learning, course wrap.
+- **Unit 4 — Delivery (nb16–nb19):** Time-series forecasting (with the models used for the S&P 500 competition), the competition workflow, deep learning, data communication & poster design, course wrap.
 - **Poster → URC (Mar–Apr):** poster studios, dry-runs, submission (Apr 4), conference presentation (Apr 13).
 - **Poster-to-Product (Apr 16 – Apr 28):** build sprint → showcase.
 
@@ -47,7 +47,7 @@ The course follows a consistent pedagogical pattern for each topic:
 3. **Solution** covering common mistakes + extensions
 4. **Next concept + demo** ... and repeat
 
-The course's evaluation backbone is **CV-first**: cross-validation drives all performance claims from nb08 onward, the test set stays locked until nb14's one-shot ceremony, and nb18's Kaggle-submission demo is the only other authorized use of a locked test file.
+The course's evaluation backbone is **CV-first**: cross-validation drives all performance claims from nb08 onward (five folds everywhere; one 80/20 split after nb08), models are compared on the same folds with paired per-fold differences and an interval corrected for fold overlap, read against a margin declared in advance (four outcomes), and the test set stays locked until nb14's one-shot ceremony. Time series (nb16, nb18) use walk-forward validation instead.
 
 ## Technology Stack
 
@@ -81,7 +81,7 @@ All notebooks run in Google Colab with one-click access and follow a standardize
 | 15 | Milestone 03 walkthrough: complex model + tuning + draft abstract | [nb15_milestone_03_walkthrough_student.ipynb](notebooks/nb15_milestone_03_walkthrough_student.ipynb) |
 | 16 | Time-series forecasting: walk-forward CV, lag features | [nb16_time_series_forecasting_student.ipynb](notebooks/nb16_time_series_forecasting_student.ipynb) |
 | 17 | Data communication and poster design | [nb17_data_communication_poster_student.ipynb](notebooks/nb17_data_communication_poster_student.ipynb) |
-| 18 | Competition workflow: notebook to Kaggle submission | [nb18_competition_workflow_student.ipynb](notebooks/nb18_competition_workflow_student.ipynb) |
+| 18 | Competition workflow: forecasting the S&P 500 to a Kaggle submission | [nb18_competition_workflow_student.ipynb](notebooks/nb18_competition_workflow_student.ipynb) |
 | 19 | Deep learning + hands-on PyTorch + LLM lab | [nb19_deep_learning_student.ipynb](notebooks/nb19_deep_learning_student.ipynb) |
 | 20 | Course end: final submission, peer review, reflection | [nb20_final_submission_peer_review_student.ipynb](notebooks/nb20_final_submission_peer_review_student.ipynb) |
 
@@ -104,11 +104,11 @@ All notebooks run in Google Colab with one-click access and follow a standardize
 
 | Assessment Component | Weight |
 |---------------------|--------|
-| Attendance | 1% |
+| Attendance (iClicker, location-verified) | 5% |
 | Participation | 4% |
-| Quizzes | 15% |
-| Midterm Exam (in class, Fri Sep 25) | 20% |
-| Kaggle Case Competition | 20% |
+| Quizzes | 11% |
+| Midterm Exam (in class, Fri Feb 12) | 20% |
+| Kaggle Case Competition (S&P 500 forecasting, teams) | 20% |
 | Final Project (Research Poster) | 35% |
 | Poster-to-Product | 5% |
 
@@ -122,26 +122,27 @@ Milestone deliverables are due **Sundays, 11:59 PM**; the final poster is due **
 | **M01** | Initial Project Proposal | Sun Feb 7 |
 | **M02** | Expanded Project Outline | Sun Feb 14 |
 | **M03** | Project Draft Abstract | Sun Feb 21 |
-| **M04** | Instructor and TAs Meetings — Round 01 Confirmation | Sun Feb 28 |
+| **M04** | Instructor and TAs Meetings — Round 01 Presentations + Confirmation | Sun Feb 28 |
 | **M05** | Applying to the Conference (OURConnect closes Mon Mar 1) | Sun Feb 28 |
 | **M06** | Simple Model & Performance Evaluation | Sun Mar 7 |
 | **M07** | Instructor and TAs Meetings — Round 02 Schedule | Sun Mar 7 |
+| — | Peer Evaluation 1 (midpoint, formative) | Sun Mar 7 |
 | **M08** | More Complex Models & Performance Evaluation | Sun Mar 14 |
-| **M09** | Poster First Draft | Sun Mar 28 |
+| **M09** | Poster First Draft (required to present at the conference) | Sun Mar 28 |
 | **M10** | Final Poster Submission (`NN.pdf`) | Sun Apr 4 |
 | **M11** | Poster Presentation Planning | Sun Apr 11 |
 | **M12** | Post Invitation for Poster Presentation | Sun Apr 11 |
-| **M13** | Instructor and TAs Meetings — Round 02 Confirmation | Sun Apr 11 |
+| **M13** | Instructor and TAs Meetings — Round 02 Presentations + Confirmation | Sun Apr 11 |
 | — | Peer Review Submission | Sun Apr 11 |
 | — | **Conference Poster Presentation — required of every student** | Tue Apr 13 |
-| — | Peer Evaluation | Fri Apr 30 |
+| — | Peer Evaluation 2 (final, graded) | Fri Apr 30 |
 
 **Poster-to-Product (Fri Apr 16 – Wed Apr 28):** deployed dashboard/app + executive brief; team product due Mon Apr 26, showcase Wed Apr 28. Instructions: [`_final_project/2027S/milestones/`](_final_project/2027S/milestones/).
 
 ### Kaggle Case Competition
-- **Competition:** Spring 2027 QM47400 Case Competition [[PENDING competition-data: dataset and Kaggle page]]
-- **Task:** Predict bank customer churn probability (AUC-ROC)
-- **Opens:** Fri Feb 5, 2027 (in class) · **Team setup:** Sun Feb 7 · **Deadline:** Sun Apr 25, 2027 at 11:59 PM (Kaggle + Brightspace code submission)
+- **Competition:** Spring 2027 QM47400 Case Competition — S&P 500 forecasting, teams = Final Project groups (`Group NN`) [[PENDING competition-data: Kaggle page]]
+- **Task:** Forecast the S&P 500 over the trading days of the live window; practice phase on a historical window first
+- **Opens:** Wed Mar 3, 2027 (in class, nb18) · **Team setup:** Sun Mar 7 · **Final forecast + code:** Fri Mar 26, 2027 at 11:59 PM · **Live scoring:** Mar 29 – Apr 23 · **Final standings:** Sun Apr 25
 
 ## Getting Started
 

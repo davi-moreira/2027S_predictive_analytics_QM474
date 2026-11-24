@@ -68,23 +68,31 @@ As part of a university-wide initiative, the Business School has adopted an **Of
 
 | **Assessment**                    | **Weight** |
 |-----------------------------------|-----------:|
-| Attendance                        |         1% |
+| Attendance                        |         5% |
 | Participation                     |         4% |
-| Quizzes                           |        15% |
+| Quizzes                           |        11% |
 | Midterm Exam                      |        20% |
 | Course Case Competition (Kaggle)  |        20% |
 | Final Project                     |        35% |
 | Poster-to-Product                 |         5% |
 
-### Attendance (1%)
+### Attendance (5%)
 
-Attendance is essential for success in this course. If you do not attend class regularly, you are unlikely to succeed. According to the [University regulations](https://catalog.purdue.edu/content.php?catoid=15&navoid=18634#classes){target="_blank"}, "Scheduled courses allow students to avoid conflicts and reflect the University's expectation that students should be present for every meeting of a class/laboratory for which they are registered." Attendance is recorded in class, and these records are reflected in your gradebook at the end of the semester. A minimum attendance rate of **85%** is required to meet the expectations of this course.
+Attendance is essential for success in this course. If you do not attend class regularly, you are unlikely to succeed. According to the [University regulations](https://catalog.purdue.edu/content.php?catoid=15&navoid=18634#classes){target="_blank"}, "Scheduled courses allow students to avoid conflicts and reflect the University's expectation that students should be present for every meeting of a class/laboratory for which they are registered." A minimum attendance rate of **85%** is required to meet the expectations of this course.
+
+**How attendance is taken.** Attendance is recorded with **iClicker** at every in-person class meeting — lectures, group-work sessions and Poster-to-Product sessions — and synced to the Brightspace gradebook. Virtual work sessions, no-class days and the conference are not counted (the conference is graded inside the Final Project).
+
+-   **Set it up in the first week.** Join the course's iClicker section through the link on Brightspace, sign in with your Purdue Career Account, and allow the iClicker app to use your device's location while it is in use (precise location on iPhone, high-accuracy mode on Android). Check in from the phone or laptop you bring to class.
+-   **Check-in is location-verified and time-limited.** I open attendance at an unannounced moment during class, not always at the start, and close it a few minutes later. A check-in counts only from inside the classroom's location range and only while the window is open. On some days I also ask a short in-class iClicker question; on those days, attendance counts only if you check in *and* answer it during class.
+-   **Your grade.** Your attendance score is the share of in-person meetings you attended, as iClicker records them; that record is the one that counts. I review an individual record in three situations only: (1) your check-in did not work and you tell me or a TA, or email me, **during that class session**, while we are still in the room — not that evening or later; (2) a very important appointment or event (for example a job interview) falls during class and you notify me **before** class; (3) a documented emergency or an absence recognized by University regulations (for example a death in the family, a serious personal medical emergency, a conflicting NCAA athletic event, military service, jury duty, parenting leave, religious observance, or an absence documented by the Office of the Dean of Students) — send the documentation with your email. Outside those situations the record stands.
+-   **Integrity.** Checking in for someone else, or from outside the classroom, is falsifying a course record and is treated as an academic integrity violation for every student involved. Head counts are compared with check-in counts on random days.
+-   **Privacy.** iClicker uses your location only while you check in during a session I start, and records your distance from the classroom check-in point rather than your exact location; it does not monitor your location before or after class. If you cannot or prefer not to share your location, or you need an accommodation, talk to me in the first week and we will set up an alternative.
 
 ### Participation (4%)
 
 You are required to complete participation activities (e.g., surveys, instructor requests) and all participatory PAUSE-AND-DO exercises embedded in the lecture materials. You must submit the corresponding Jupyter Notebook (`.ipynb`) containing your completed work to the course Brightspace site by the stated deadline. Your participation grade is assessed based on completeness and timeliness of these notebook submissions, with no participatory activity dropped.
 
-### Quizzes (15%)
+### Quizzes (11%)
 
 Short quizzes based on lecture and notebook content promote consistent engagement with the course material. Quizzes contribute to the final course grade with no quiz dropped. Due dates are clearly outlined on Brightspace and aligned with the course schedule. Quizzes are designed to reinforce understanding and ensure steady progress through the curriculum.
 
@@ -92,7 +100,7 @@ Short quizzes based on lecture and notebook content promote consistent engagemen
 
 The midterm exam wraps up the foundational concepts of the course in a comprehensive assessment. It is held **in person, on paper, during class time**, and covers the material through `nb09` — problem framing, exploratory data analysis, data splitting, preprocessing pipelines, regression and classification metrics, baselines, regularization, logistic regression, cost-based thresholds, cross-validation and paired model comparison, hyperparameter tuning, and leakage detection.
 
-The exam is a **business case**: you take the role of the manager responsible for a predictive model, and each question puts you inside a decision that arises during model development — an analyst proposes a feature, a cross-validation result lands, a metric drops, a leakage signature appears. You have **10 multiple-choice questions with five alternatives each**, and **45 minutes** of class time to complete them (about 4.5 minutes per question).
+The exam is a **business case**: you take the role of the manager responsible for a predictive model, and each question puts you inside a decision that arises during model development — an analyst proposes a feature, a cross-validation result lands, a metric drops, a leakage signature appears. You have **15 multiple-choice questions with four alternatives each**, and **45 minutes** of class time to complete them (about 3 minutes per question).
 
 **Answers are marked on a scantron form, and only the scantron is scored** — nothing written in the exam booklet is graded. Bring a **number 2 pencil**. Print your name, your instructor, and your section on the scantron. Several business cases are in use, so **your exam version is printed at the top of your instruction page** — for example *Version 001 (A)*. Code it on your scantron, because exams differ by version and a scantron without the correct version cannot be graded.
 
@@ -102,17 +110,23 @@ Only under exceptional circumstances, when legitimate and verifiable reasons are
 
 ### Course Case Competition — Kaggle (20%)
 
-We will have a semester-long, team-based predictive analytics competition hosted on Kaggle. Students must work in teams and will be allowed up to five submissions per day. The Kaggle platform will automatically evaluate submissions and maintain a leaderboard throughout the competition period.
+This term's competition is a **team forecasting competition on the S&P 500**, hosted on Kaggle. You compete with your Final Project group (Kaggle team name `Group NN`). The competition opens in class on **Wednesday, March 3**, with notebook 18, right after notebook 16 on time-series forecasting. You first practice on a historical window, where the leaderboard scores your forecasts immediately. Then each team locks a **final forecast of the index for the trading days of the coming weeks** — the final forecast and the code that produced it are due **Friday, March 26, at 11:59 PM** — and the market scores it as those days happen, from **March 29 through April 23**. Final standings are posted on **Sunday, April 25**.
+
+Because day-to-day market moves are largely unpredictable, the grade rewards a reproducible, honestly validated forecasting method and an honest comparison with the simple "tomorrow looks like today" forecast more than it rewards leaderboard luck. The Course Case Competition grade combines your team's method and code, your leaderboard result, and the peer evaluation (20% of the competition grade); the exact weights and the scoring rule are in the competition instructions on Brightspace. [[PENDING competition-grading: weights from the sp500-competition design]]
 
 ### Final Project (35%)
 
 In groups, students will complete a practical predictive analytics project culminating in a poster presentation at the Undergraduate Research Conference. This edition presents at the **Spring Undergraduate Research Conference poster session on Tuesday, April 13, 2027 — required for every student**. Each milestone's instructions come as a short PDF on the course Brightspace page. A comprehensive set of project guidelines will be provided, and the assessment structure will adhere to the following criteria:
 
 1.  **Milestone Deliverables (30%):** Students will submit incremental project components on specific due dates. These deliverables allow for early feedback and ensure steady progress throughout the semester. Grades will reflect each milestone's clarity, completeness, and timely submission.
-2.  **Peer Evaluation (20%):** To encourage accountability and productive teamwork, students will evaluate their peers' contributions. These assessments help ensure balanced participation and measure collaborative effectiveness.
+2.  **Peer Evaluation (20%):** To encourage accountability and productive teamwork, students will evaluate their peers' contributions twice. The **midpoint peer evaluation** (Sunday, March 7) is formative: it counts for completion only, and its purpose is to catch problems early — I meet with any team whose evaluations raise a concern, while there is still time to fix it. The **final peer evaluation** (Friday, April 30) carries this 20% (and the 20% peer-evaluation share of the Course Case Competition). These assessments help ensure balanced participation and measure collaborative effectiveness.
 3.  **Peer Review (10%):** Each group will review and provide constructive feedback on other teams' posters. This process encourages engagement, enhances critical analysis skills, and promotes a culture of constructive critique.
 4.  **Poster Presentation at the Purdue Undergraduate Research Conference (20%):** A poster template and assessment rubric will be shared, and you are encouraged to review previous award-winning student posters for inspiration. Your final posters must be submitted by the due date indicated in the syllabus, after which they will be printed and distributed during a dedicated Poster Presentation Preparation class. Additional details on the conference can be found at <https://www.purdue.edu/undergrad-research/conferences/index.php>{target="_blank"}. As the event may not coincide with our regular class time, please communicate with your other course instructors in advance regarding potential scheduling conflicts. If any issues arise, please let me know. We will not hold our usual class immediately following the Poster Presentation, allowing you time to rest and catch up on other coursework. Consult the course schedule for further details.
 5.  **Instructor/TA Evaluation (20%):** After the Undergraduate Research Conference your instructor and the TA will evaluate your final submission based on a rubric that will be shared.
+
+**Meetings with the instructor and TAs — a presentation every time.** Your group meets with a TA and then with me in two rounds (Round 01 in February, Round 02 in March and early April). **At every meeting, your group presents a short project presentation** — about five slides and five minutes: the stakeholder and the decision, the data, what you did since the last meeting, your current results, and the questions you want help with. Upload the slides to Brightspace before the meeting; the round's confirmation milestone (Milestone 04 for Round 01, Milestone 13 for Round 02) collects them, and a meeting held without a presentation does not count.
+
+**The poster first draft is required to present at the conference.** A group that does not submit the poster first draft (Milestone 09, Sunday, March 28) **will not be allowed to present at the Undergraduate Research Conference**, and earns no credit for the conference presentation component.
 
 ### Poster-to-Product (5%)
 
@@ -168,9 +182,9 @@ Your honors work replaces ten points of group weight rather than adding to your 
 
 | **Assessment** | **Standard** | **Honors contract** |
 |-----------------------------------|----------------:|-----------------:|
-| Attendance | 1% | 1% |
+| Attendance | 5% | 5% |
 | Participation | 4% | 4% |
-| Quizzes | 15% | 15% |
+| Quizzes | 11% | 11% |
 | Midterm Exam | 20% | 20% |
 | Course Case Competition (Kaggle) | 20% | 20% |
 | Final Project | 35% | 25% |

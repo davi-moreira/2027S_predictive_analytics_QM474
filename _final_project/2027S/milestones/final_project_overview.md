@@ -15,9 +15,9 @@ box:
 
 ## What the Final Project is
 
-The Final Project is your group's capstone. You take a real prediction problem, build and evaluate models on real data, choose the one your stakeholder should use, and present the work as a research poster at Purdue's **Spring Undergraduate Research Conference** on Tuesday, April 13, with Professor Moreira as your faculty mentor. It runs as milestones M00 to M13 (no gaps in the numbering), plus a peer review, the conference and a peer evaluation.
+The Final Project is your group's capstone. You take a real prediction problem, build and evaluate models on real data, choose the one your stakeholder should use, and present the work as a research poster at Purdue's **Spring Undergraduate Research Conference** on Tuesday, April 13, with Professor Moreira as your faculty mentor. It runs as milestones M00 to M13 (no gaps in the numbering), plus a peer review, the conference and two peer evaluations.
 
-The project must use **real data**: observations collected from actual people, organizations, transactions, markets, public records, surveys, experiments, devices or other real processes. Synthetic, simulated, artificially generated and AI-generated datasets are not eligible, and neither is the synthetic Bank Churn data of the Course Case Competition.
+The project must use **real data**: observations collected from actual people, organizations, transactions, markets, public records, surveys, experiments, devices or other real processes. Synthetic, simulated, artificially generated and AI-generated datasets are not eligible, and the Course Case Competition's S&P 500 forecasting task cannot double as your Final Project.
 
 For inspiration, see award-winning posters from earlier editions of this course: <https://davi-moreira.github.io/applied_projects.html>. Conference information: <https://www.purdue.edu/undergrad-research/conferences/index.php>.
 
@@ -26,7 +26,7 @@ For inspiration, see award-winning posters from earlier editions of this course:
 | Component | Share of the project | Share of the course | What it covers |
 |--------------------|------:|------:|----------------------------|
 | Milestone deliverables | 30% | 10.5% | The milestones below: clarity, completeness, timeliness |
-| Peer evaluation (of teammates) | 20% | 7% | Your teammates' confidential ratings of you |
+| Peer evaluation (of teammates) | 20% | 7% | Your teammates' confidential ratings of you, from the final peer evaluation (the midpoint one is formative) |
 | Peer review (of posters) | 10% | 3.5% | Your group's feedback on other groups' posters |
 | Conference presentation | 20% | 7% | Presenting your poster at the conference |
 | Instructor/TA evaluation | 20% | 7% | Your final poster, scored with the poster rubric |
@@ -42,25 +42,26 @@ Everything is due at 11:59 PM Eastern unless noted. Each item has its own PDF wi
 | M01 | Initial project proposal | Wed Jan 27 | Sun Feb 7 | 50 points |
 | M02 | Expanded project outline | Mon Feb 8 | Sun Feb 14 | 50 points |
 | M03 | Project draft abstract | Mon Feb 15 | Sun Feb 21 | 30 points |
-| M04 | Round 01 meetings: confirmation | Thu Feb 18 | Sun Feb 28 | completion |
+| M04 | Round 01 meetings: presentations and confirmation | Mon Feb 8 | Sun Feb 28 | completion (presentation required) |
 | M05 | Apply to the conference (OURConnect) | Thu Feb 18 | Sun Feb 28 | completion |
 | M06 | Simple model and evaluation | Thu Feb 18 | Sun Mar 7 | 100 points |
 | M07 | Round 02 meeting requests | Thu Feb 18 | Sun Mar 7 | completion |
+| Peer evaluation 1 | Midpoint: rate your teammates (individual) | Mon Mar 1 | Sun Mar 7 | completion (formative) |
 | M08 | More complex models and evaluation | Thu Feb 18 | Sun Mar 14 | 100 points |
-| M09 | Poster first draft (`NN.pdf`) | Mon Mar 22 | Sun Mar 28 | poster rubric (feedback) |
+| M09 | Poster first draft (`NN.pdf`); **no draft, no conference** | Mon Mar 22 | Sun Mar 28 | poster rubric (feedback) |
 | M10 | Final poster (`NN.pdf`) | Mon Mar 29 | Sun Apr 4 | poster rubric |
 | M11 | Poster presentation planning | Sun Apr 4 | Sun Apr 11 | rubric |
 | M12 | Post an invitation to your presentation | Sun Apr 4 | Sun Apr 11 | completion |
-| M13 | Round 02 meetings: confirmation | Sun Apr 4 | Sun Apr 11 | completion |
+| M13 | Round 02 meetings: presentations and confirmation | Mon Mar 8 | Sun Apr 11 | completion (presentation required) |
 | Peer review | Review five other groups' posters | Sun Apr 4 | Sun Apr 11 | 10% of the project |
 | Conference | Present your poster (required; in person) | Tue Apr 13 | Tue Apr 13 | 20% of the project |
 | P2P product | Poster-to-Product: team product | Fri Apr 16 | Mon Apr 26 | part of P2P's 5% |
 | P2P live link | Poster-to-Product: your live link | Fri Apr 16 | Wed Apr 28 | part of P2P's 5% |
-| Peer evaluation | Rate your teammates (individual) | Mon Apr 26 | Fri Apr 30 | 20% of the project |
+| Peer evaluation 2 | Final: rate your teammates (individual) | Mon Apr 26 | Fri Apr 30 | 20% of the project |
 
 ## The meeting cycle
 
-In each of two rounds your group asks for a meeting with the TA and one with Professor Moreira, then confirms they happened. At least one member attends each meeting, not necessarily the same one, and there are no meetings during spring break (March 15 to March 20). Round 01 is about your prediction problem, your data and your modeling plan; Round 02 is about your models, your modeling strategy and your poster.
+In each of two rounds your group asks for a meeting with the TA and one with Professor Moreira, presents the project at both, and confirms they happened. **Every meeting starts with your group's presentation** (about five slides, five minutes), uploaded before the meeting; every member attends at least one meeting of each round and presents part of the deck. A meeting without a presentation does not count. There are no meetings during spring break (March 15 to March 20). Round 01 is about your prediction problem, your data and your modeling plan; Round 02 is about your models, your modeling strategy and your poster.
 
 | Round | Ask for the meetings | TA meeting | Meeting with Professor Moreira | Confirm |
 |------|----------|-------------|-----------|----------|
@@ -74,5 +75,7 @@ As in the course from notebook 08 on: one 80/20 train/test split; all modeling o
 ## Good to know
 
 - **The conference may not fall at our class time:** tell your other instructors early about any conflict. No class on Wednesday, April 14.
+- **No poster draft, no conference:** a group that does not submit the poster first draft (M09, Sunday, March 28) is not allowed to present at the conference and earns no credit for the conference presentation.
+- **Two peer evaluations:** the midpoint one (Sunday, March 7) counts for completion and exists to catch team problems early; Professor Moreira meets with any team whose evaluations raise a concern. The final one (Friday, April 30) is graded.
 - **Peer review is not peer evaluation:** one is feedback on other groups' posters, the other your confidential rating of your teammates.
 - **Honors contract?** The syllabus explains how your weights change. **Notebook checkpoints** ("M1" to "M4") are skill checks, not milestones.

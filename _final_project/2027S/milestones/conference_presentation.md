@@ -13,7 +13,7 @@ box:
 
 ## What this milestone is for
 
-This is the day the project goes public. **Presenting at the Spring Undergraduate Research Conference is required for everyone in the course.** You stand at your poster, explain your work to faculty, classmates, judges and visitors, and answer their questions, using the plan you wrote in Milestone 11.
+This is the day the project goes public. **Presenting at the Spring Undergraduate Research Conference is required for everyone in the course** — and only groups that submitted the poster first draft (Milestone 09, Sunday, March 28) are allowed to present. A group without a first draft is withdrawn from the conference and earns no credit for this component. You stand at your poster, explain your work to faculty, classmates, judges and visitors, and answer their questions, using the plan you wrote in Milestone 11.
 
 ## What to do
 

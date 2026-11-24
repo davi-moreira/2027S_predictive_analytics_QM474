@@ -21,6 +21,12 @@ How the calendar was built (plan: _project_docs/QM47400_FullSemester_Plan_2027Sp
     term, so M10 (final poster) lands nine days before the conference, as in Fall.
   * Fall's due-date rules: participation (PAUSE-AND-DO) on the lecture day; a Monday notebook's quiz
     on Tuesday, a Wednesday's on Sunday, 11:59 PM ET.
+  * Davi, 2026-11-24: nb16 moves to Mon Mar 1, the new nb18 (S&P 500 forecasting competition workflow)
+    to Wed Mar 3, nb19 to Mon Mar 8; Wed Mar 10 and Fri Mar 12 are virtual work sessions. The Course
+    Case Competition becomes a group S&P 500 forecasting competition (opens Mar 3, final forecast + code
+    Fri Mar 26 — Good Friday, NYSE closed — live scoring Mar 29 – Apr 23). Two peer evaluations: a
+    formative midpoint (Sun Mar 7) and the graded final (Fri Apr 30). Attendance (iClicker) is 5%,
+    Quizzes 11%. M04/M13 require the team's meeting presentation; no M09 draft = no conference.
 Usage:  python3 scripts/build_2027S_calendar.py
 """
 from __future__ import annotations
@@ -48,29 +54,32 @@ NOTEBOOKS = {  # number -> (file stem, schedule topic, quiz title)
     "nb12": ("nb12_random_forests_importance", "Random forests: bagging, OOB, feature importance", "Random Forests — Bagging, OOB Intuition, and Feature Importance"),
     "nb13": ("nb13_gradient_boosting", "Gradient boosting: performance with discipline", "Gradient Boosting — Performance with Discipline"),
     "nb14": ("nb14_model_selection_protocol", "Model selection: choosing a champion + test-set ceremony + monitoring", "Model Selection Protocol — Choosing a Champion, the Day the Test Set Opens, and Monitoring"),
-    "nb16": ("nb16_time_series_forecasting", "Time-series forecasting: walk-forward CV, lag features", "Time-Series Forecasting — Walk-Forward CV, Lag Features, and Baselines"),
+    "nb16": ("nb16_time_series_forecasting", "Time-series forecasting: walk-forward CV, lag features, and models you can use on the S&P 500", "Time-Series Forecasting — Walk-Forward CV, Lag Features, and Baselines"),
     "nb17": ("nb17_data_communication_poster", "Data communication and poster design", "Data Communication and Poster Design — Turning Your Model Into a Story"),
-    "nb18": ("nb18_competition_workflow", "Competition workflow: from notebook to `submission.csv` — the full pipeline, tree ensembles, and the champion model", None),
+    "nb18": ("nb18_competition_workflow", "Competition workflow: forecasting the S&P 500 — from the data pull to a reproducible Kaggle submission", None),
     "nb19": ("nb19_deep_learning", "Deep learning (PyTorch + when-to-use + LLM lab)", "Deep Learning"),
 }
 
 GW = "Group Work: Final Project"
 GWC = "Group Work: Final Project/Competition"
-# (date, topic, notebook or None, kind)   kind: lecture | group | none | exam | conf | p2p | wrap
+VIRTUAL = ("*Virtual work session — no in-person meeting.* Teams work on the Course Case Competition and the "
+           "Final Project; the instructor and TAs are online during class time (link on Brightspace).")
+# (date, topic, notebook or None, kind)   kind: lecture | group | virtual | none | exam | conf | p2p | wrap
 SESSIONS = [
     (D(2027, 1, 11), None, "nb00", "lecture"), (D(2027, 1, 13), None, "nb01", "lecture"), (D(2027, 1, 15), None, "nb02", "lecture"),
     (D(2027, 1, 18), "*No class — Martin Luther King Jr. Day*", None, "none"), (D(2027, 1, 20), None, "nb03", "lecture"), (D(2027, 1, 22), GW, None, "group"),
     (D(2027, 1, 25), None, "nb04", "lecture"), (D(2027, 1, 27), None, "nb05", "lecture"), (D(2027, 1, 29), GW, None, "group"),
     (D(2027, 2, 1), None, "nb06", "lecture"), (D(2027, 2, 3), None, "nb07", "lecture"),
-    (D(2027, 2, 5), "Group Work: Final Project + **Course Case Competition kickoff** (join on Kaggle, form your `Group NN` team, download the data, first submission)", None, "group"),
+    (D(2027, 2, 5), GW, None, "group"),
     (D(2027, 2, 8), None, "nb08", "lecture"), (D(2027, 2, 10), None, "nb09", "lecture"), (D(2027, 2, 12), "**MIDTERM EXAM — in class, on paper.**", None, "exam"),
-    (D(2027, 2, 15), None, "nb11", "lecture"), (D(2027, 2, 17), None, "nb12", "lecture"), (D(2027, 2, 19), GWC, None, "group"),
-    (D(2027, 2, 22), None, "nb13", "lecture"), (D(2027, 2, 24), None, "nb14", "lecture"), (D(2027, 2, 26), GWC, None, "group"),
-    (D(2027, 3, 1), GWC, None, "group"), (D(2027, 3, 3), None, "nb16", "lecture"), (D(2027, 3, 5), GWC, None, "group"),
-    (D(2027, 3, 8), None, "nb18", "lecture"), (D(2027, 3, 10), None, "nb19", "lecture"), (D(2027, 3, 12), GWC, None, "group"),
+    (D(2027, 2, 15), None, "nb11", "lecture"), (D(2027, 2, 17), None, "nb12", "lecture"), (D(2027, 2, 19), GW, None, "group"),
+    (D(2027, 2, 22), None, "nb13", "lecture"), (D(2027, 2, 24), None, "nb14", "lecture"), (D(2027, 2, 26), GW, None, "group"),
+    (D(2027, 3, 1), None, "nb16", "lecture"), (D(2027, 3, 3), None, "nb18", "lecture"), (D(2027, 3, 5), GWC, None, "group"),
+    (D(2027, 3, 8), None, "nb19", "lecture"), (D(2027, 3, 10), VIRTUAL, None, "virtual"), (D(2027, 3, 12), VIRTUAL, None, "virtual"),
     (D(2027, 3, 15), "*No class — Spring Break (Mar 15–20)*", None, "none"), (D(2027, 3, 17), "*No class — Spring Break (Mar 15–20)*", None, "none"),
     (D(2027, 3, 19), "*No class — Spring Break (Mar 15–20)*", None, "none"),
-    (D(2027, 3, 22), None, "nb17", "lecture"), (D(2027, 3, 24), GW, None, "group"), (D(2027, 3, 26), GW, None, "group"),
+    (D(2027, 3, 22), None, "nb17", "lecture"), (D(2027, 3, 24), GWC, None, "group"),
+    (D(2027, 3, 26), "Group Work: Final Project/Competition — **final competition forecast + code due tonight**", None, "group"),
     (D(2027, 3, 29), GW, None, "group"), (D(2027, 3, 31), GW, None, "group"), (D(2027, 4, 2), GW, None, "group"),
     (D(2027, 4, 5), GW, None, "group"), (D(2027, 4, 7), GW, None, "group"), (D(2027, 4, 9), GW, None, "group"),
     (D(2027, 4, 12), GW, None, "group"),
@@ -120,7 +129,7 @@ for d, topic, nb, kind in SESSIONS:
 add("Participation", "Final Project and Course Competition [Group Check-in]", D(2027, 1, 13), D(2027, 1, 15), T, "completion")
 add("Participation", "Syllabus Quiz", D(2027, 1, 11), D(2027, 1, 17), T, "completion")
 add("Participation", "Students Profile Survey", D(2027, 1, 11), D(2027, 1, 17), T, "completion")
-add("Participation", "Course Competition Team Setup", D(2027, 2, 5), D(2027, 2, 7), T, "completion")
+add("Participation", "Course Case Competition: Kaggle Team Setup (`Group NN`)", D(2027, 3, 3), D(2027, 3, 7), T, "completion")
 add("Participation", "Midterm Feedback", D(2027, 2, 15), D(2027, 2, 17), T, "completion")
 add("Participation", "Reflection Survey", D(2027, 4, 26), D(2027, 4, 30), T, "completion")
 
@@ -129,24 +138,26 @@ MS = [  # (code, title, opens, due, grading)
     ("M01", "Initial Project Proposal", D(2027, 1, 27), D(2027, 2, 7), "50 pts"),
     ("M02", "Expanded Project Outline", D(2027, 2, 8), D(2027, 2, 14), "50 pts"),
     ("M03", "Project Draft Abstract", D(2027, 2, 15), D(2027, 2, 21), "30 pts"),
-    ("M04", "Instructor and TAs Meetings — Round 01 Confirmation", D(2027, 2, 18), D(2027, 2, 28), "completion"),
+    ("M04", "Instructor and TAs Meetings — Round 01 Presentation + Confirmation", D(2027, 2, 8), D(2027, 2, 28), "completion (presentation required)"),
     ("M05", "Applying to the Conference (OURConnect abstract deadline Mon Mar 1)", D(2027, 2, 18), D(2027, 2, 28), "completion"),
     ("M06", "Simple Model and Performance Evaluation", D(2027, 2, 18), D(2027, 3, 7), "100 pts"),
     ("M07", "Instructor and TAs Meetings — Round 02 Schedule", D(2027, 2, 18), D(2027, 3, 7), "completion"),
     ("M08", "More Complex Models and Performance Evaluation", D(2027, 2, 18), D(2027, 3, 14), "100 pts"),
-    ("M09", "Poster First Draft", D(2027, 3, 22), D(2027, 3, 28), "poster rubric (feedback)"),
+    ("M09", "Poster First Draft", D(2027, 3, 22), D(2027, 3, 28), "poster rubric (feedback); no draft = no conference presentation"),
     ("M10", "Final Poster Submission (`NN.pdf`)", D(2027, 3, 29), D(2027, 4, 4), "poster rubric"),
     ("M11", "Poster Presentation Planning", D(2027, 4, 4), D(2027, 4, 11), "rubric"),
     ("M12", "Post Invitation for Poster Presentation", D(2027, 4, 4), D(2027, 4, 11), "completion"),
-    ("M13", "Instructor and TAs Meetings — Round 02 Confirmation", D(2027, 4, 4), D(2027, 4, 11), "completion"),
+    ("M13", "Instructor and TAs Meetings — Round 02 Presentation + Confirmation", D(2027, 3, 8), D(2027, 4, 11), "completion (presentation required)"),
 ]
 for code, title, o, due, g in MS:
     add("Final Project", f"Milestone {code[1:]} — {title}", o, due, T, g)
 add("Final Project", "Peer Review Submission", D(2027, 4, 4), D(2027, 4, 11), T, "10% of the project")
 add("Final Project", "Conference Poster Presentation — Spring Undergraduate Research Conference (required)", D(2027, 4, 13), D(2027, 4, 13), "in person", "20% of the project")
-add("Peer Evaluation", "Peer Evaluation Submission: Final Project and/or Course Case Competition", D(2027, 4, 26), D(2027, 4, 30), T, "20% of each")
+add("Peer Evaluation", "Peer Evaluation 1 (midpoint, formative): Final Project team", D(2027, 3, 1), D(2027, 3, 7), T, "completion (formative)")
+add("Peer Evaluation", "Peer Evaluation 2 (final): Final Project and Course Case Competition", D(2027, 4, 26), D(2027, 4, 30), T, "20% of each")
+add("Attendance", "Attendance — iClicker check-in at every in-person class meeting (synced to Brightspace)", D(2027, 1, 11), D(2027, 4, 30), "in class", "5%")
 add("Midterm", "Midterm Exam — in class, on paper, closed book, no AI tools; covers NB00–NB09", D(2027, 2, 12), D(2027, 2, 12), "in class", "20%")
-add("Course Case Competition", "Course Case Competition: Rank Code Submission (Kaggle final)", D(2027, 2, 5), D(2027, 4, 25), T, "20% (incl. peer evaluation)")
+add("Course Case Competition", "Course Case Competition (S&P 500 forecasting): Final Forecast on Kaggle + Code on Brightspace", D(2027, 3, 3), D(2027, 3, 26), T, "20% (incl. peer evaluation)")
 add("Poster-to-Product", "Poster-to-Product: team product submission (one per team)", D(2027, 4, 16), D(2027, 4, 26), T, "5% (funding to be confirmed)")
 add("Poster-to-Product", "Poster-to-Product: individual live dashboard link", D(2027, 4, 16), D(2027, 4, 28), T, "part of the 5%")
 add("Extra Credit", "Extra Credit: Mid-term Course Evaluation — Individual Credit", D(2027, 2, 15), D(2027, 2, 19), T, "extra credit")
@@ -158,7 +169,11 @@ KEY = [  # dated facts that are not gradebook items: (date, text)
     (D(2027, 1, 18), "No class — Martin Luther King Jr. Day."),
     (D(2027, 2, 1), "Honors: John Martinson Honors College scholarly-project proposals due (spring deadline)."),
     (D(2027, 2, 5), "Midterm accommodations: book your Purdue Testing Services seat by today (7 days ahead)."),
-    (D(2027, 2, 5), "Course Case Competition opens in class (Kaggle)."),
+    (D(2027, 3, 3), "Course Case Competition (S&P 500 forecasting, Kaggle, teams) opens in class with nb18."),
+    (D(2027, 3, 10), "Virtual work session — no in-person meeting (Mar 10 and Mar 12)."),
+    (D(2027, 3, 29), "Course Case Competition: the live scoring window opens (trading days Mar 29 – Apr 23)."),
+    (D(2027, 4, 23), "Course Case Competition: the live scoring window closes at the market close."),
+    (D(2027, 4, 25), "Course Case Competition: final standings posted."),
     (D(2027, 3, 1), "Conference: abstract submission deadline in OURConnect (11:59 PM)."),
     (D(2027, 3, 15), "No class — Spring Break (Mar 15–20)."),
     (D(2027, 3, 22), "Conference: final abstract edits close in OURConnect."),
@@ -200,8 +215,10 @@ def schedule_rows():
             notes.append("**MIDTERM EXAM (20%)**")
         if kind == "conf":
             notes.append("**POSTER PRESENTATION**")
-        if d == D(2027, 2, 5):
+        if d == D(2027, 3, 3):
             notes.append("**COURSE CASE COMPETITION OPENS**")
+        if kind == "virtual":
+            notes.append("**VIRTUAL**")
         notes += due_between(d, nxt)
         date_txt = f"**{FMT(d)}**" if kind == "conf" else FMT(d)
         rows.append(f"| {week(d)} | {date_txt} | {topic_txt} | {nb_txt} | {'<br>'.join(notes)} |")
@@ -218,7 +235,7 @@ def label(cat, title):
 
 def dated_list():
     ev = [(due, f"{label(cat, title)} — Due." if cat not in ("Midterm",) and time not in ("in person",) else f"{label(cat, title)}.")
-          for cat, title, o, due, time, g, n in ITEMS]
+          for cat, title, o, due, time, g, n in ITEMS if cat != "Attendance"]
     ev += [(d, t) for d, t in KEY]
     ev.sort(key=lambda x: (x[0], 0 if "No class" in x[1] else 1))
     return ev

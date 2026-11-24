@@ -1,7 +1,7 @@
 ---
 kicker: "Final Project"
-title: "Peer Evaluation of Your Teammates"
-csv: ["Peer Evaluation Submission"]
+title: "Peer Evaluation 2 (Final): Your Teammates"
+csv: ["Peer Evaluation 2"]
 box:
   - label: Due
     value: "**Friday, April 30, 2027, 11:59 PM ET**"
@@ -15,7 +15,7 @@ box:
 
 ## What this milestone is for
 
-Each of you rates, confidentially, how every teammate contributed. It keeps everyone accountable, it rewards the people who carried their share, and it lets Professor Moreira see how the work was really divided.
+Each of you rates, confidentially, how every teammate contributed. It keeps everyone accountable, it rewards the people who carried their share, and it lets Professor Moreira see how the work was really divided. This is the second and final peer evaluation of the term, and the graded one; the midpoint peer evaluation (Sunday, March 7) used the same questions to catch problems early.
 
 Peer *evaluation* is not peer *review*. Peer review (due Sunday, April 11) was your group reviewing other groups' posters. Here you rate **your own teammates**.
 

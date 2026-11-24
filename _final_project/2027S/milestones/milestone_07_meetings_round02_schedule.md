@@ -26,7 +26,7 @@ Send two emails, one to the TA and one to Professor Moreira, asking for a meetin
 
 Each email offers several concrete dates and times, names your course section, and copies every group member. At least one member attends each meeting, and it does not have to be the same person both times.
 
-The meeting with Professor Moreira comes just before your final poster is due (Milestone 10, Sunday, April 4), so bring your poster draft and its open questions. You confirm that both meetings took place in Milestone 13.
+The meeting with Professor Moreira comes just before your final poster is due (Milestone 10, Sunday, April 4), so bring your poster draft and its open questions. As in Round 01, **every meeting starts with your group's presentation** (about five slides, five minutes) and every member presents in the round; Milestone 13 has the details and collects the slides and the confirmation.
 
 ## What to submit
 

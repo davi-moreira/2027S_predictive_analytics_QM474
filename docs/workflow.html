@@ -276,7 +276,7 @@ div.csl-indent {
     <div>
     <div class="quarto-title-meta-heading">Modified</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">October 27, 2026</p>
+      <p class="date-modified">November 24, 2026</p>
     </div>
   </div>
     
@@ -466,7 +466,7 @@ div.csl-indent {
 <li><strong>Project mission</strong> (course code, run dates, pedagogy).</li>
 <li><strong>A small table of “see also” reference files</strong>, so the constitution stays slim and detailed material lives elsewhere.</li>
 <li><strong>Critical rules</strong> with a 🚨 prefix that flag the regressions I have actually been bitten by.</li>
-<li><strong>Style guidelines as a table</strong> (random seed <code>474</code>, train/val/test split <code>60/20/20</code>, figure size, money in markdown cells, emoji vocabulary).</li>
+<li><strong>Style guidelines as a table</strong> (random seed <code>474</code>, the data split — <code>60/20/20</code> through nb08, one <code>80/20</code> split from nb09 on — five CV folds everywhere, figure size, money in markdown cells, emoji vocabulary).</li>
 <li><strong>Anti-patterns</strong> drawn from real prior mistakes, not from hypotheticals.</li>
 <li><strong>A session-end checklist</strong>.</li>
 </ul>
@@ -610,7 +610,7 @@ div.csl-indent {
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Scans every <code>notebooks/*_student.ipynb</code> for model-evaluation uses of <code>X_test</code> and <code>y_test</code> that violate the CV-first rule. The only acceptable hits are the two authorized openings in notebook 14 (the test-set ceremony) and notebook 18 (the Kaggle-submission demo). Anything else is flagged and must be fixed before commit.</p>
+<p>Scans every <code>notebooks/*_student.ipynb</code> for model-evaluation uses of <code>X_test</code> and <code>y_test</code> that violate the CV-first rule. The only acceptable hits are the two authorized openings in notebook 14 (the test-set ceremony, one per business case). Notebook 18, the S&amp;P 500 forecasting-competition notebook from Spring 2027, uses a temporal split and walk-forward origins, so it has no <code>X_test</code> and no exception. Anything else is flagged and must be fixed before commit.</p>
 </div>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">

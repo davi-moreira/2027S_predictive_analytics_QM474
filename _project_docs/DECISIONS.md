@@ -327,3 +327,43 @@ questions with four alternatives each".
 - The notebook defects in `_midterm_exam/2026F/NOTEBOOK_ISSUES_2026-10-07.md`.
 - Whether NovaCure was released as practice in August.
 - A common mixed-family design (classification and regression on every form) for future sittings.
+
+---
+
+## Decision 17: Five Folds Everywhere; Train/Test Only After nb08 (2026-10-27; applied 2026-11-24)
+
+**Decision (Davi, 2026-10-27 — D11 and D12 in the Fall review plan, applied to the Spring 2027 edition on 2026-11-24):**
+
+1. **D11 — five folds everywhere.** Every cross-validation in the course uses five folds: outer, inner and
+   grid search. Classification: `StratifiedKFold(n_splits=5, shuffle=True, random_state=474)`; regression:
+   `KFold(n_splits=5, shuffle=True, random_state=474)`; nested CV is 5 outer × 5 inner. No 3-fold or 10-fold
+   splitter anywhere. If a 5-fold grid is too slow in Colab, shrink the search (e.g. `RandomizedSearchCV`
+   with a fixed `n_iter`), never the folds.
+2. **D12 — after nb08, train/test only.** From nb09 on each notebook splits each dataset once:
+   `train_test_split(X, y, test_size=0.20, random_state=474)`, stratified for classification → `X_train` /
+   `X_test`. No `X_val`, no `*_temp`, no 60/20/20, no carve-out inside a cell. All model work runs on
+   `X_train` with D11's splitters; `X_test` stays locked except nb14 cells 30/34 and nb18's Kaggle demo.
+   nb01–nb07 keep the train/validation/test split (where it is taught; Decision 2); nb08 uses it only to
+   motivate CV and ends on the 80/20 + 5-fold pattern; **nb16 is the temporal exception** (temporal
+   train/test + walk-forward CV), and from Spring 2027 so is the S&P 500 competition notebook nb18.
+
+**Rationale:**
+- Once CV is taught, the validation set's only job — an untouched sample for choosing — is done better by
+  5-fold CV on more rows; a third partition after nb08 contradicted the CV-first rule (Decision 9).
+- One fold count makes every `compare_paired` interval, its correction term √(1/k + 1/(k−1)), its *t*
+  quantile and every grid comparable across notebooks.
+- The locked test rows do not move: the first `train_test_split` call is unchanged, so `X_test` is the
+  identical set of rows and the new `X_train` is the old training rows plus the old validation rows
+  (verified in the review plan §16.1 and printed by nb08 §5).
+
+**Replacements for the validation set:** held-out predictions, classification reports and threshold choice
+→ `cross_val_predict` on `X_train`; probability quality → cross-validated Brier; calibration →
+`CalibratedClassifierCV(cv=5)` evaluated by CV; permutation importance → inside the 5-fold loop on each
+fold's held-out rows, averaged; prediction intervals → **CV+** (Barber, Candès, Ramdas & Tibshirani, 2021),
+the plan's R7 recommendation, adopted by default on 2026-11-24.
+
+**Enforcement:** `scripts/audit_cv_first.py`, check 2 ("data roles"), on the nb09–nb19 student copies
+(nb16 and nb18 exempt). Supersedes Decision 2's sentence that 60/20/20 "still applies to every one" of the
+notebooks. **Open edges** (review plan §16.9): milestones M06/M08 and the poster rubric still allow
+"k = 5 or 10" (main session owns those files); nb16's walk-forward origins are not "five folds" in the k-fold
+sense.

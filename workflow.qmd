@@ -96,7 +96,7 @@ Everything in [Recommendations](#sec-recommendations) below is a consequence of 
 - **Project mission** (course code, run dates, pedagogy).
 - **A small table of "see also" reference files**, so the constitution stays slim and detailed material lives elsewhere.
 - **Critical rules** with a 🚨 prefix that flag the regressions I have actually been bitten by.
-- **Style guidelines as a table** (random seed `474`, train/val/test split `60/20/20`, figure size, money in markdown cells, emoji vocabulary).
+- **Style guidelines as a table** (random seed `474`, the data split — `60/20/20` through nb08, one `80/20` split from nb09 on — five CV folds everywhere, figure size, money in markdown cells, emoji vocabulary).
 - **Anti-patterns** drawn from real prior mistakes, not from hypotheticals.
 - **A session-end checklist**.
 

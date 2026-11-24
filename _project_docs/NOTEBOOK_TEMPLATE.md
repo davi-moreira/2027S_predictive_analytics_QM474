@@ -224,7 +224,8 @@ Thank you!
 | Setting | Value |
 |---|---|
 | Random seed | `RANDOM_SEED = 474` |
-| Train/Val/Test split | 60/20/20 |
+| Data split | 60/20/20 in nb01–nb07 (and nb08's motivation); 80/20 from nb09 (nb16 and the 2027S nb18 temporal) |
+| CV folds | 5 everywhere: outer, inner, grid search (nested = 5 × 5) |
 | Figure size | `plt.rcParams['figure.figsize'] = (10, 6)` |
 | Display precision | `pd.set_option('display.precision', 3)` |
 | Money in markdown | Always escape: `\$50,000` (unescaped `$` triggers LaTeX in Colab) |

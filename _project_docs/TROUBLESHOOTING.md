@@ -107,11 +107,11 @@ Common issues encountered while developing or deploying course materials, with p
 **Cause:** Model-evaluation code (e.g., `model.score(X_test, ...)`, `roc_auc_score(y_test, ...)`) snuck into nb09–nb20 evaluation logic.
 
 **Solutions:**
-1. Replace `.score(X_test, ...)` with `cross_val_score(model, X_train, y_train, cv=...)` and report mean ± 95% CI.
+1. Replace `.score(X_test, ...)` with `cross_val_score(model, X_train, y_train, cv=cv_clf)` (or `cv_reg`) and report the fold scores, their mean and their SD — no per-model 95% interval; compare models with `compare_paired`.
 2. Replace `classification_report(y_test, model.predict(X_test))` with `classification_report(y_train, cross_val_predict(model, X_train, y_train, cv=...))`.
-3. For permutation importance that needs a held-out sample: split `X_train` further (75/25 inside the cell) — never touch `X_test`.
-4. For calibration: use `CalibratedClassifierCV(base, cv=5)` on `X_train`; evaluate Brier on `X_val`.
-5. Re-run `python scripts/audit_cv_first.py` until only the nb14/nb18 exceptions remain.
+3. For permutation importance: run it inside the 5-fold loop — for each fold, fit on the fold's training rows and run `permutation_importance` on its held-out rows; average across folds. No carve-out; never touch `X_test`.
+4. For calibration: use `CalibratedClassifierCV(base, cv=5)` and evaluate the calibrated pipeline by 5-fold CV on `X_train` (cross-validated Brier: `scoring='neg_brier_score'`, or `brier_score_loss` on `cross_val_predict(..., method='predict_proba')`). There is no `X_val` after nb08.
+5. Re-run `python scripts/audit_cv_first.py` until it prints `RESULT: PASS` (only the `[authorized]` nb14/nb18 hits, and a clean data-roles check).
 
 ---
 

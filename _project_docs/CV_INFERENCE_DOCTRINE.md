@@ -13,6 +13,16 @@ authored to fit that notebook's voice, but the *claims* below are fixed.
 > Rationale and the rollout list are in the "Amendment 1" section below. Any
 > material that still reads a verdict from fold signs is pre-amendment.
 
+> **Amendment 2 (adopted 2026-11-24 for the Spring 2027 rollout) — C1 replaced,
+> C4 amended.** The per-model 95% interval (`mean ± t·s/√k` around one model's
+> CV score) leaves the course material; a single model is reported by its fold
+> scores, their mean and their SD. The only interval in model evaluation is the
+> corrected interval of a paired gain, computed by the course's one function,
+> `compare_paired` (challenger = A, current champion = B), and every case ends
+> with one champion chosen on a simplest-first ladder and stated in four points.
+> See "Amendment 2" and "Data roles after nb08" below. Any material that still
+> computes or plots a per-model CV interval is pre-amendment.
+
 ## What was wrong
 
 **W1 — "Student's *t* is the conservative choice because the folds are correlated."**
@@ -43,6 +53,8 @@ narrow by W1.
 ## What we teach instead
 
 **C1 — Report the fold spread honestly, and name it descriptively.**
+*(Superseded by Amendment 2, 2026-11-24: report fold scores, mean and SD; no
+per-model interval. The August text is kept below for the record.)*
 Keep `mean ± t_crit * s / sqrt(k)`. Keep calling the arithmetic what it is. But
 label it a **descriptive interval** or **approximate 95% interval**, and state
 once per notebook that it is optimistic because folds share training data. The
@@ -127,7 +139,10 @@ baseline, k = 5 unless stated. Every number below was computed (A1).
 | Large, one tiny negative (k = 10) | −.001, then nine of .030 | .0269 | (.0167, .0371) | 1. worthwhile gain | inconclusive |
 | Clear loss | −.030 −.025 −.035 −.028 −.032 | −.0300 | (−.0371, −.0229) | 2. worthwhile loss | real difference (baseline) |
 
-**Reference implementation** (instructor-facing; notebooks adopt it per A4):
+**Reference implementation** (instructor-facing; notebooks adopt it per A4).
+*Since Amendment 2 the notebooks paste `compare_paired` (same arithmetic, the
+challenger always passed first; see the Amendment 2 section) instead of this
+function:*
 
 ```python
 import numpy as np
@@ -158,6 +173,9 @@ holds the same rows for both models. When scoring with `neg_mean_absolute_error`
 keep `higher_is_better=True`.
 
 **C4 — The test-set ceremony compares against the predeclared tolerance, not the CV interval.**
+*(Amended by Amendment 2: the ship decision is the test score against the
+deployment bar declared in advance; INSIDE / ABOVE / BELOW, if kept, describes
+the test score against the champion's CV mean ± δ.)*
 Open the locked test set once, report the score, and judge it against the
 business tolerance agreed in C3 — plus the CV mean as a rough expectation, stated
 as such. Keep the INSIDE / ABOVE / BELOW vocabulary if it is useful as a shorthand
@@ -247,6 +265,144 @@ is what outcome 1 of the amended C3 does with the paired difference.
 | Quiz banks and midterm banks | Any item keyed on the sign rule or on "under the margin = equivalent"; re-run `audit_answer_length.py` | PENDING |
 | Video guides and Brightspace pages | Same wording sweep; `voice_check_guides.py` | PENDING |
 
+*Status 2026-11-24:* the Fall 2026 notebooks were left as taught (D10). The
+rollout is applied to the **Spring 2027** edition together with Amendment 2 and
+the D11/D12 data roles, by parallel sessions (coordination note
+`_adm/2027S_setup_2026-11-24/COORDINATION.md`; per-session reports in
+`_adm/2027S_setup_2026-11-24/reports/`). The plan of record is the Fall review
+plan, `../2026F_predictive_analytics_QM474/_adm/doctrine_drafts/2026-10-26_amendment1_course_review/AMENDMENT1_COURSE_REVIEW_PLAN.md`.
+
+## Amendment 2 — 2026-11-24: no per-model interval; one comparison function, a ladder and a champion statement
+
+**Why.** Davi's decision of 2026-10-26 (D4 in the review plan, adopted by
+default for the Spring 2027 rollout on 2026-11-24): keeping a "descriptive"
+95% interval around each model's CV score kept inviting the two retired
+readings — overlap as a test, and a model's own lower bound as a tiebreaker —
+and it answers a question no stakeholder asks. The question is always whether
+a challenger is better than the model run today by enough to matter.
+
+**C1 (new).** Report a single model's CV performance as its fold scores, their
+mean and their SD (a dot strip of the fold scores is the picture). Do not
+compute or plot a per-model confidence interval; no `t_crit`, no
+`ci_low`/`ci_high`, no error bars around one model's score. Explain why once,
+in the Q&A below (nb08 §2; reused where nb09/nb14 used to teach the interval).
+The only interval in model evaluation is the corrected interval of a paired
+gain (C2).
+
+> **A question that often comes up here:** *"Why don't we put a 95% confidence interval around each model's CV score, the way a statistics course would?"* Because the arithmetic `mean ± t·s/√k` assumes the five fold scores are independent, and they are not: any two folds share three-quarters of their training rows, so the scores move together and the interval comes out too narrow — Bengio and Grandvalet (2004) showed there is no unbiased way to estimate that variability from one run of k-fold CV, and Bates, Hastie and Tibshirani (2024) found such intervals cover the truth far less often than 95%. Worse, the question the HomeValue CFO actually asks is never "how good is Ridge?" in isolation but "is the forest better than what we run today by enough to matter?", and two separate intervals cannot answer that: they can overlap generously while one model wins on every fold. So you report each model's fold scores, mean and spread, and you put the interval where it belongs — around the per-fold *gain* of one model over the other, corrected for the shared training rows, read against the margin you declared.
+
+**C2/C3 in code — `compare_paired`.** Every notebook that compares models
+pastes this function into its setup cell, with this name and signature:
+
+```python
+import numpy as np
+from scipy import stats
+
+def compare_paired(scores_a, scores_b, margin):
+    """Paired comparison on identical folds; higher score = better."""
+    d = np.asarray(scores_a) - np.asarray(scores_b)
+    k = len(d)
+    t = stats.t.ppf(0.975, k - 1)
+    se = d.std(ddof=1) * np.sqrt(1/k + 1/(k - 1))   # Nadeau–Bengio correction
+    lo, hi = d.mean() - t*se, d.mean() + t*se
+    if lo > margin:
+        verdict = "A is better by a worthwhile amount"
+    elif hi < -margin:
+        verdict = "B is better by a worthwhile amount"
+    elif -margin < lo and hi < margin:
+        verdict = "Practically equivalent: choose the simpler model"
+    else:
+        verdict = "Unresolved: apply the default you declared"
+    return d, d.mean(), (lo, hi), verdict
+```
+
+Conventions: **A is always the challenger and B the current champion**, so
+"A is better by a worthwhile amount" is the only outcome that changes the
+champion, and "the simpler model" / "the default you declared" both mean keep
+B. Higher must mean better (`'r2'`, `'roc_auc'`, `'neg_mean_absolute_error'`;
+for a raw error, pass the negative). Both score arrays come from **one splitter
+object** kept in a variable. Fold wins are reported as description, never as
+the verdict.
+
+**C3 additions — the margin band, the ladder, the champion statement.**
+
+- *Margin band.* Before scoring, each case declares three margins with a
+  business scenario each: **small** (sensitivity), **base** (decides), **large**
+  (sensitivity). HomeValue 0.005 / **0.01** / 0.02 R²; MedScreen 0.005 /
+  **0.01** / 0.02 ROC-AUC; TechCorp and competition ROC-AUC cases 0.005 /
+  **0.01** / 0.02; the workforce planner 12,500 / **25,000** / 50,000 employees
+  of MAE. Report "robust across the three declared margins (for this candidate
+  order and these folds)" or "margin-sensitive", and the pairwise switching
+  cutoff for the closest rival (a worthwhile gain only for δ below that pair's
+  `L`; practically equivalent only for δ above `max(|L|, |U|)`).
+- *Ladder (D2).* The incumbent is the model the stakeholder runs today
+  (HomeValue: OLS; MedScreen: `LogisticRegression(C=1)`). Challengers are
+  visited in a declared order of operational burden; each faces the current
+  champion with `compare_paired` and is promoted only on a worthwhile gain.
+  Guardrails (declared before scoring, each with its own margin γ) can block a
+  promotion, never create one: a business guardrail vetoes only when the upper
+  limit of the guardrail gain is below −γ; a safety guardrail requires
+  non-inferiority (lower limit above −γ) against the **fixed** approved
+  incumbent; a missing guardrail result blocks the promotion.
+- *Grid searches (D3).* The best cell of a search is a **nominee**, not a
+  champion: it faces the family default with `compare_paired` and replaces it
+  only on a worthwhile gain. Its score is optimistic (it was searched and scored
+  on the same folds); nested CV appears only as a "going further" Q&A (R1).
+- *Champion statement.* Four points in the stakeholder's terms — **Champion**
+  (model, stakeholder, decision); **Evidence** (outcome against the current
+  champion on the same five folds, mean gain with a business translation, the
+  corrected interval, the δ declared before comparing); **Checks** (the band,
+  guardrails, secondary metrics); **What would change our mind** (the runner-up
+  as a candidate for a future evaluation, never an automatic fallback, and the
+  trigger). For an unresolved result: *"The evidence does not show a gain large
+  enough to justify [challenger], so under our policy we keep [champion]."*
+
+**C4 (amended).** The locked-test ceremony opens the test set once per business
+case, for the **frozen** champion only, after refitting it on `X_train`. The
+ship decision is the test score against the **deployment bar declared in
+advance** (MedScreen ROC-AUC ≥ 0.95; HomeValue R² ≥ 0.75). INSIDE / ABOVE /
+BELOW, if kept, describes where the test score falls relative to **the
+champion's CV mean ± δ**, never relative to a CV interval. The test score never
+re-picks the champion; a failed bar means "no model approved under this
+protocol", not a fallback to the runner-up.
+
+**Predictive uncertainty (D8, R7).** Its role is fixed by what the stakeholder
+does with the output, before scoring: primary only when the stakeholder acts on
+the range or probability; otherwise a guardrail; never a tiebreaker that adds
+complexity. Wording: "better-supported predictions", "a better interval score",
+"a lower observed mean Brier score" — never "less uncertain" or "better
+calibrated". Prediction intervals, where the core uses them, are **CV+** on the
+five folds of `X_train` (Barber, Candès, Ramdas & Tibshirani, 2021) — no
+reserved calibration rows.
+
+**A5 search terms added by Amendment 2:** `t_crit`, `ci_low`, `ci_high`,
+`half_w`, "95% interval", "approximate 95", "descriptive interval", "CI band",
+"error bar", "CV-CI", "dot plot ranks", "top two", "runner-up question",
+"tie-breaker", "fit time" used as a vote.
+
+## Data roles after nb08 (D11, D12 — 2026-10-27)
+
+From nb09 onward every notebook splits each dataset once, 80/20 (`test_size=0.20`, seed 474, stratified for
+classification). `X_test` is locked except nb14 cells 30 and 34 and nb18's Kaggle demo. Every model choice,
+comparison, threshold, calibration check, importance measure and prediction interval comes from 5-fold CV on
+`X_train`: `compare_paired` reads the same five folds for both models; a grid search or nested CV uses five
+inner folds. There is no validation set after nb08, and no rows are set aside inside `X_train`. nb16 is the
+one exception (temporal split + walk-forward CV); from Spring 2027 the S&P 500 competition notebook nb18 is
+a second, temporal exception.
+
+- **Five folds, always (D11):** `cv_clf = StratifiedKFold(n_splits=5, shuffle=True, random_state=474)`;
+  `cv_reg = KFold(n_splits=5, shuffle=True, random_state=474)`. Grid searches and nested CV use the same
+  splitters (nested = 5 × 5). If a grid is too slow in Colab, shrink the search
+  (`RandomizedSearchCV(..., n_iter=N, random_state=474)`), never the folds.
+- **The same test rows.** Dropping the second split cannot move a test row: the first call is unchanged, and
+  the new `X_train` is exactly the old training rows plus the old validation rows (nb08 §5 prints both checks).
+- **Replacements for the validation set:** held-out predictions, classification reports and threshold choice
+  → `cross_val_predict` on `X_train`; probability quality → cross-validated Brier; calibration →
+  `CalibratedClassifierCV(base, cv=5)` evaluated by 5-fold CV; permutation importance → inside the 5-fold
+  loop on each fold's held-out rows, averaged; prediction intervals → CV+.
+- **Audit.** `scripts/audit_cv_first.py` enforces it (check 2, "data roles") on the nb09–nb19 student copies,
+  nb16 and nb18 exempt.
+
 ## References
 
 - Bengio, Y., & Grandvalet, Y. (2004). No unbiased estimator of the variance of
@@ -282,6 +438,18 @@ Added with Amendment 1:
 - scikit-learn. Statistical comparison of models using grid search (corrected
   paired t-test and Bayesian ROPE).
   https://scikit-learn.org/stable/auto_examples/model_selection/plot_grid_search_stats.html
+
+Added with Amendment 2 (verified in the Fall review plan, §12 and §5.7):
+
+- Barber, R. F., Candès, E. J., Ramdas, A., & Tibshirani, R. J. (2021).
+  Predictive inference with the jackknife+. *Annals of Statistics* 49(1),
+  486–507. https://doi.org/10.1214/20-AOS1965
+- Cawley, G. C., & Talbot, N. L. C. (2010). On over-fitting in model selection
+  and subsequent selection bias in performance evaluation. *JMLR* 11,
+  2079–2107.
+- Assel, M., Sjoberg, D. D., & Vickers, A. J. (2017). The Brier score does not
+  evaluate the clinical utility of diagnostic tests or prediction models.
+  *Diagnostic and Prognostic Research* 1, 19.
 
 ---
 

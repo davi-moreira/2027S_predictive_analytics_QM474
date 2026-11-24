@@ -133,10 +133,11 @@ The idempotent check (`if 'A question that often comes up' in src`) is critical 
 
 | Where | What to use |
 |---|---|
-| nb01–nb07 | Single train/val/test split is introduced; `X_val` for mid-course evaluation |
-| nb08 | k-fold CV + Student's *t* **descriptive** \~95% interval becomes the course's evaluation spine (see the CV-inference doctrine below) |
-| nb09–nb13, nb16, nb17 | `cross_val_score`, `cross_val_predict`, `GridSearchCV`, `RandomizedSearchCV` on `X_train`; held-out evaluation uses `X_val`, never `X_test` |
-| **nb14 cells 30 + 34 ONLY** | `X_test` / `y_test` opened for the one-shot ceremony (INSIDE/ABOVE/BELOW verdict) — cell 30 is the **classification** spine, cell 34 the **regression** spine; one opening per business case |
+| nb01–nb07 | Train/validation/test split is taught (60/20/20); `X_val` for mid-course evaluation |
+| nb08 | k-fold CV becomes the evaluation spine: fold scores, mean and SD per model, `compare_paired` for every comparison; a validation split appears only to motivate CV, and the notebook ends on the 80/20 + 5-fold pattern |
+| nb09–nb13, nb17, nb19 | One split per dataset — `train_test_split(X, y, test_size=0.20, random_state=474)`, stratified for classification → `X_train` / `X_test`. `cross_val_score`, `cross_val_predict`, `GridSearchCV`, `RandomizedSearchCV` on `X_train` with 5 folds. No `X_val`, no second split, no carve-out inside a cell |
+| nb16 (and the 2027S S&P 500 nb18) | The temporal exceptions: temporal train/test split + walk-forward CV on the training window |
+| **nb14 cells 30 + 34 ONLY** | `X_test` / `y_test` opened once per business case for the **frozen** champion, refit on `X_train` — cell 30 is the **classification** spine, cell 34 the **regression** spine. The ship decision is the test score against the deployment bar declared in advance; INSIDE/ABOVE/BELOW only describes it against the champion's CV mean ± δ |
 | nb18 | `X_test` may appear in the Kaggle-submission demo (production-pipeline pattern, not model evaluation) |
 
 **The CV-first principle is not a style preference; it is the course's pedagogical spine.** nb14's ceremony loses its meaning if the test set has been touched 30 times before students get there.
@@ -147,14 +148,18 @@ The idempotent check (`if 'A question that often comes up' in src`) is critical 
 python scripts/audit_cv_first.py
 ```
 
-The only acceptable output is hits in `nb14` cells 30 + 34 (one per spine) plus `nb18`'s Kaggle-submission demo. Anything else is a regression and must be fixed before commit.
+The script runs two checks and must print `RESULT: PASS`: (1) the test-set lock — the only acceptable hits are `nb14` cells 30 + 34 (one per spine) plus `nb18`'s Kaggle-submission demo, which it reports as `[authorized]`; (2) the **data roles** after nb08 (D11/D12) — in the nb09–nb19 student copies (nb16 and nb18 exempt) no `*_val` or `*_temp` object, only the single 80/20 split, 5 folds only, no `validation_fraction` / `early_stopping=True` / `validation_split` / `validation_data`, and no modelling of a loaded dataset before the split. Anything else is a regression and must be fixed before commit.
 
 **Common CV-first patterns to reach for:**
 
-- Classifier comparison: `cross_val_score(model, X_train, y_train, cv=StratifiedKFold(5, ...), scoring='roc_auc')`, then report `mean ± (t_crit * sd / sqrt(k))` as an **approximate 95% interval** — descriptive, since the folds share training rows. **Model-vs-model verdicts come from paired per-fold differences on identical folds, read from the fold-corrected interval `mean(d) ± t·sd(d)·√(1/k + 1/(k−1))` against a predeclared margin — never from whether two marginal intervals overlap, from fold signs alone, or from either model's own interval lower bound** — the full rule, its four outcomes (Amendment 1, 2026-10-26), and its authoring rules are binding in `_project_docs/CV_INFERENCE_DOCTRINE.md`.
-- `classification_report` on held-out predictions: `y_pred = cross_val_predict(model, X_train, y_train, cv=cv_strat)` — every prediction comes from a fold that never saw it during fitting.
-- Permutation importance that would otherwise touch `X_test`: split `X_train` further (e.g., 75/25 inside the cell), fit on the 75% slice, measure permutation importance on the 25% slice. Test set stays locked.
-- Calibration that needs a held-out sample: use `CalibratedClassifierCV(base, cv=5)` fit on `X_train` (internal CV handles the calibrator fit), evaluate Brier on `X_val`.
+- **Single model:** report its fold scores, their mean and their SD (a dot strip of the fold scores is the picture) — **no per-model 95% interval** (doctrine Amendment 2).
+- **Model comparison:** paste `compare_paired` (doctrine, Amendment 2) into the setup cell and call `compare_paired(challenger_scores, champion_scores, DELTA)` with both arrays from **one** splitter object. **Verdicts come from the fold-corrected paired interval `mean(d) ± t·sd(d)·√(1/k + 1/(k−1))` read against a margin declared before scoring, as one of four outcomes; only "A is better by a worthwhile amount" promotes the challenger — never from whether two marginal intervals overlap, from fold signs alone, or from either model's own interval lower bound.** Each case declares a margin band (small / **base** / large; base decides) and ends with one champion from a simplest-first ladder (incumbent first; a grid's best cell is a nominee that faces the default), written as the four-point champion statement. The full rule, the four outcomes (Amendment 1, 2026-10-26), Amendment 2 and the authoring rules are binding in `_project_docs/CV_INFERENCE_DOCTRINE.md`.
+- **Five folds, always (D11):** `cv_clf = StratifiedKFold(n_splits=5, shuffle=True, random_state=474)`; `cv_reg = KFold(n_splits=5, shuffle=True, random_state=474)`. Grid searches and nested CV use the same splitters (nested = 5 × 5). If a grid is too slow in Colab, shrink the search (`RandomizedSearchCV(..., n_iter=N, random_state=474)`), never the folds.
+- `classification_report` on held-out predictions: `y_pred = cross_val_predict(model, X_train, y_train, cv=cv_clf)` — every prediction comes from a fold that never saw it during fitting.
+- **Permutation importance:** inside the 5-fold loop — for each fold, fit on the fold's training rows and run `permutation_importance` on its held-out rows; average across folds. No carve-out; the test set stays locked.
+- **Probability quality and calibration:** cross-validated Brier (`cross_val_score(..., scoring='neg_brier_score')`, or `brier_score_loss` on `cross_val_predict(..., method='predict_proba')`); calibrate with `CalibratedClassifierCV(base, cv=5)` and evaluate the calibrated pipeline by 5-fold CV on `X_train`.
+- **Threshold choice:** from `cross_val_predict(..., method='predict_proba')` probabilities on `X_train`.
+- **Prediction intervals:** CV+ on the five folds of `X_train` (Barber et al., 2021) — no reserved calibration rows.
 
 ---
 
@@ -315,7 +320,8 @@ These values are referenced by tooling and student expectations — do not chang
 | Setting | Value |
 |---|---|
 | Random seed | `RANDOM_SEED = 474` (course number) |
-| Train/Val/Test split | 60 / 20 / 20 |
+| Data split | 60 / 20 / 20 in nb01–nb07 (and nb08's motivation); 80 / 20 from nb09 (nb16 and the 2027S nb18 temporal) |
+| CV folds | 5 everywhere: outer, inner, grid search (nested = 5 × 5) |
 | Figure size | `plt.rcParams['figure.figsize'] = (10, 6)` |
 | Display precision | `pd.set_option('display.precision', 3)` |
 | Money in markdown cells | Always escape: `\$50,000` (unescaped `$` triggers LaTeX in Colab) |
@@ -372,7 +378,7 @@ Before ending any session that touched course content:
 
 - [ ] All changes committed with clear `<type>: <subject>` messages and `Co-Authored-By:` line.
 - [ ] **Voice-check grep run** on any modified student notebook (`grep -iE '\bstudents?\b|\bthe instructor\b|on camera|speaking prompt' notebooks/nbNN_*_student.ipynb` returns zero non-`Student's t` hits). If video guides changed: `python scripts/voice_check_guides.py` is clean.
-- [ ] **CV-first audit run** if any nb09–nb19 evaluation code changed: `python scripts/audit_cv_first.py` returns only the nb14 cells 30 + 34 (one per spine) + nb18 Kaggle-submission exceptions.
+- [ ] **CV-first audit run** if any nb09–nb19 evaluation code changed: `python scripts/audit_cv_first.py` prints `RESULT: PASS` — the test-set lock shows only the `[authorized]` nb14 cells 30 + 34 (one per spine) and nb18's Kaggle-submission demo, and the data-roles check (one 80/20 split, 5 folds, no validation set) is clean.
 - [ ] **Answer-length audit run** if any quiz/exam CSV was created or edited: `python scripts/audit_answer_length.py --file <csv>` returns PASS for every touched bank.
 - [ ] **Narrative polish applied** if any new or rewritten student markdown cells landed: named stakeholder in Why-This-Matters, narrative prose over bullet lists in Reading-the-output, at least one `"A question that often comes up here"` Q&A, warm wrap-up with bridge to the next notebook.
 - [ ] **`quarto render` run** if ANY content changed (`.qmd`, notebooks, images), AND `docs/` committed.

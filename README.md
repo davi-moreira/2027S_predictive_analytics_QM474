@@ -23,7 +23,7 @@ Topics include exploratory data analysis, train/validation/test splits, linear a
 The course centers on **one comprehensive capstone project** completed in **groups of four randomly assigned members**, plus a **team Kaggle competition forecasting the S&P 500** over the final weeks of the course. The project unfolds in two integrated stages:
 
 1. **Research Poster** — milestones M00–M13, culminating in a **required presentation at the Spring 2027 Purdue Undergraduate Research Conference on Tuesday, April 13, 2027** (poster due Sun Apr 4).
-2. **Poster-to-Product** — a post-conference, two-week in-class build sprint that converts the validated model into a **stakeholder-ready dashboard/app + executive brief**, with corporate-partner feedback and a final showcase (**Wed Apr 28**). *(Funding to be confirmed: the Daniels Experiential Learning Grant that funded Fall 2026 ends Dec 31, 2026.)*
+2. **Poster-to-Product** — a post-conference, two-week **Launch Sprint** (Apr 14 – Apr 30) that turns the validated model into an **interactive product built with AI** (at a public link), a one-page brief and a three-minute video, presented at two in-class **Demo Days (Wed Apr 28 and Fri Apr 30)**. Teams use Purdue's no-cost AI tools (Google Antigravity, Microsoft 365 Copilot Chat).
 
 Master plan and single source of truth for sequencing: [`_project_docs/QM47400_FullSemester_Plan_2027Spring.md`](_project_docs/QM47400_FullSemester_Plan_2027Spring.md). Milestone instructions (PDFs) and the deadline sheet: [`_final_project/2027S/`](_final_project/2027S/).
 
@@ -36,7 +36,7 @@ The 18-notebook arc (nb00–nb09, nb11–nb14, nb16–nb19; nb10, nb15 and nb20 
 - **Unit 3 — Ensembles + Selection (nb11–nb14):** Decision trees, random forests, gradient boosting, model selection + test-set ceremony, interpretation. *Supports M08 More Complex Models and the M03 Draft Abstract (nb15).*
 - **Unit 4 — Delivery (nb16–nb19):** Time-series forecasting (with the models used for the S&P 500 competition), the competition workflow, deep learning, data communication & poster design, course wrap.
 - **Poster → URC (Mar–Apr):** poster studios, dry-runs, submission (Apr 4), conference presentation (Apr 13).
-- **Poster-to-Product (Apr 16 – Apr 28):** build sprint → showcase.
+- **Poster-to-Product (Apr 14 – Apr 30):** Launch Sprint → Demo Days (Apr 28, Apr 30).
 
 ## Learning Approach
 
@@ -137,7 +137,7 @@ Milestone deliverables are due **Sundays, 11:59 PM**; the final poster is due **
 | — | **Conference Poster Presentation — required of every student** | Tue Apr 13 |
 | — | Peer Evaluation 2 (final, graded) | Fri Apr 30 |
 
-**Poster-to-Product (Fri Apr 16 – Wed Apr 28):** deployed dashboard/app + executive brief; team product due Mon Apr 26, showcase Wed Apr 28. Instructions: [`_final_project/2027S/milestones/`](_final_project/2027S/milestones/).
+**Poster-to-Product (Wed Apr 14 – Fri Apr 30):** interactive product + brief + video; Launch Package due Mon Apr 26, Demo Days Wed Apr 28 and Fri Apr 30, live link due Wed Apr 28. Instructions: [`_final_project/2027S/milestones/`](_final_project/2027S/milestones/).
 
 ### Kaggle Case Competition
 - **Competition:** Spring 2027 QM47400 Case Competition — S&P 500 forecasting, teams = Final Project groups (`Group NN`) [[PENDING competition-data: Kaggle page]]

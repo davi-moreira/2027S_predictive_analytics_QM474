@@ -219,7 +219,7 @@ This document records design decisions made during course development and the re
 
 **Addendum — Amendment 1 (2026-10-26).** Point 2's verdict rule is replaced. A literature check on the CV-interval lower-bound tiebreaker (Claude and a Codex partner run, sources and numbers re-verified) found that the August rule's "same sign on every fold" is weak evidence at k = 5 (1 in 16 by chance with independent folds, about 1 in 6.5 with correlated folds) and that "same sign but under the margin" was being read as practical equivalence, which is absence of evidence (Lakens 2017). The verdict now comes from the **Nadeau–Bengio corrected paired interval**, `mean(d) ± t·sd(d)·√(1/k + 1/(k−1))`, read against ±margin, with **four outcomes**: worthwhile gain (`L > δ`), worthwhile loss (`U < −δ`), practically equivalent (interval inside ±δ), unresolved (anything else). The parsimony rule survives as a **stated business policy**: the complex model is adopted only on a worthwhile gain, and only the equivalent outcome may be called "practically equivalent". A2 now reads "keep the four outcomes distinct". Applied 2026-10-26 to the doctrine, this file, `CLAUDE.md`, and poster rubric criterion 6 (with a Fall 2026 transition clause that accepts the August verdict for full credit); the notebook, quiz, midterm, guide, and Brightspace rollout is pending — the doctrine's Amendment 1 section tracks it.
 
-**Addendum — Amendment 2 and the Spring 2027 rollout (2026-11-24).** Davi asked (2026-11-24) for every notebook and Brightspace page of the Spring 2027 edition to be corrected to the review plan of record (`../2026F_predictive_analytics_QM474/_adm/doctrine_drafts/2026-10-26_amendment1_course_review/AMENDMENT1_COURSE_REVIEW_PLAN.md`), with its open decisions defaulted to the plan's own recommendations. Point 1 of this decision is therefore replaced: **no per-model 95% interval** — a single model is reported by its fold scores, mean and SD, and the only interval in model evaluation is the corrected interval of a paired gain (doctrine Amendment 2, the plan's D4). Every comparison uses the course's one function, `compare_paired` (challenger = A, current champion = B; only "A is better by a worthwhile amount" promotes). Each business case declares a **margin band** before scoring (small / base / large; base decides; report robust or margin-sensitive), climbs a **simplest-first ladder** from the incumbent the stakeholder runs today (D2), treats a grid's best cell as a **nominee** that faces the default (D3), and ends with a **four-point champion statement**. Point 3 is amended: the nb14 ceremony opens the test set once per case for the frozen champion, refit on `X_train`, and the ship decision is the deployment bar declared in advance; INSIDE/ABOVE/BELOW only describes the test score against the champion's CV mean ± δ. Predictive uncertainty is a declared guardrail or primary metric, never a tiebreaker (D8); prediction intervals use CV+ (R7). The defaults Davi has not yet confirmed (D2, D3, D4, D6, D7, R1, R7) are listed in the rollout sessions' reports under `_adm/2027S_setup_2026-11-24/reports/` so he can overturn any of them.
+**Addendum — Amendment 2 and the Spring 2027 rollout (2026-11-24).** Davi asked (2026-11-24) for every notebook and Brightspace page of the Spring 2027 edition to be corrected to the review plan of record (`../2026F_predictive_analytics_QM474/_adm/doctrine_drafts/2026-10-26_amendment1_course_review/AMENDMENT1_COURSE_REVIEW_PLAN.md`), with its open decisions defaulted to the plan's own recommendations. Point 1 of this decision is therefore replaced: **no per-model 95% interval** — a single model is reported by its fold scores, mean and SD, and the only interval in model evaluation is the corrected interval of a paired gain (doctrine Amendment 2, the plan's D4). Every comparison uses the course's one function, `compare_paired` (challenger = A, current champion = B; only "A is better by a worthwhile amount" promotes). Each business case declares a **margin band** before scoring (small / base / large; base decides; report robust or margin-sensitive), climbs a **simplest-first ladder** from the incumbent the stakeholder runs today (D2), treats a grid's best cell as a **nominee** that faces the default (D3), and ends with a **four-point champion statement**. Point 3 is amended: the nb14 ceremony opens the test set once per case for the frozen champion, refit on `X_train`, and the ship decision is the deployment bar declared in advance; INSIDE/ABOVE/BELOW only describes the test score against the champion's CV mean ± δ. Predictive uncertainty is a declared guardrail or primary metric, never a tiebreaker (D8); prediction intervals use CV+ (R7). The defaults Davi has not yet confirmed (D2, D3, D4, D6, D7, R1, R7) are listed in the rollout sessions' reports under `_adm/2027S_setup_2026-11-24/reports/` so he can overturn any of them. Two nb14 guardrail details remain open and are kept out of the student text (doctrine, "Open items in nb14"): the MedScreen recall and Brier tolerances (*medscreen-guardrail-margins*) and whether HomeValue gets a CV+ price-range guardrail at all (*homevalue-range-guardrail*).
 
 ---
 
@@ -342,7 +342,8 @@ questions with four alternatives each".
 2. **D12 — after nb08, train/test only.** From nb09 on each notebook splits each dataset once:
    `train_test_split(X, y, test_size=0.20, random_state=474)`, stratified for classification → `X_train` /
    `X_test`. No `X_val`, no `*_temp`, no 60/20/20, no carve-out inside a cell. All model work runs on
-   `X_train` with D11's splitters; `X_test` stays locked except nb14 cells 30/34 and nb18's Kaggle demo.
+   `X_train` with D11's splitters; `X_test` stays locked except nb14 cells 30/34 (nb18's Fall 2026 Kaggle-demo
+   allowance was dropped on 2026-11-24, when nb18 became the temporal S&P 500 competition notebook; Decision 18).
    nb01–nb07 keep the train/validation/test split (where it is taught; Decision 2); nb08 uses it only to
    motivate CV and ends on the 80/20 + 5-fold pattern; **nb16 is the temporal exception** (temporal
    train/test + walk-forward CV), and from Spring 2027 so is the S&P 500 competition notebook nb18.
@@ -367,3 +368,69 @@ the plan's R7 recommendation, adopted by default on 2026-11-24.
 notebooks. **Open edges** (review plan §16.9): milestones M06/M08 and the poster rubric still allow
 "k = 5 or 10" (main session owns those files); nb16's walk-forward origins are not "five folds" in the k-fold
 sense.
+
+---
+
+## Decision 18: Course Case Competition Becomes a Group S&P 500 Forecasting Competition (2026-11-24)
+
+**Decision (Davi, 2026-11-24, Spring 2027 edition):** the Course Case Competition is no longer a churning
+bank-customer classification case. It is a **group S&P 500 forecasting competition**. Design of record:
+`_course_case_competition/2027S/course_case_competition_reference.md` (student instructions:
+`course_case_competition_instructions.pdf` in the same folder).
+
+- **The task.** Each team forecasts the **cumulative log return** of the S&P 500 at **1, 5, 10, 15 and 20
+  trading days** ahead, as **quantile forecasts** (q10, q25, q50, q75, q90).
+- **The score.** **Scaled pinball loss** against a **random-walk benchmark**; skill = 1 − team loss ÷
+  benchmark loss, so a positive skill beats the benchmark.
+- **Two rounds.** An **ungraded practice round hosted on Kaggle**, then a **live round scored by the host**
+  (`scripts/score_live_round.py`): the live forecast origin is Thu Mar 25, 2027; forecast, code and memo are
+  due Fri Mar 26, 11:59 PM (NYSE closed for Good Friday); the live window runs Mon Mar 29 – Fri Apr 23; host
+  scoring Apr 24–25; final peer evaluation Fri Apr 30.
+- **Grading (of 100).** Live forecast 15 (valid, on time and reproduced 10; rank 5 —
+  `[[PENDING sp500-rank-weight]]`) · walk-forward **method notebook 45** · **memo 20** · **final peer
+  evaluation 20**. The competition's share of the course grade is unchanged (Decision 13; Decision 19 for the
+  Spring 2027 weights).
+- **Notebooks.** The old nb18 (competition workflow on the bank-churn case) is **replaced** by the S&P 500
+  competition notebook (kickoff Wed Mar 3, 2027); **nb16** (time series) is **extended** to carry the
+  forecasting methods the competition needs.
+- **Data roles.** nb18 is a second **temporal exception** to Decision 17: it locks the most-recent window
+  (an information cutoff) and scores walk-forward origins, with no random split. It has no `X_test`, so the
+  Fall 2026 allowance for "nb18's Kaggle-submission demo" was removed from `scripts/audit_cv_first.py`; the
+  only authorized test-set openings are nb14 cells 30 + 34.
+
+**Rationale (reference §4, computed 2026-11-24 by `scripts/luck_analysis.py`):** a forecast range is
+essential — a point-only forecast loses to the random-walk benchmark in 88% of single months — but between
+two reasonable ranges one live month is close to a coin toss (the benchmark beats a band half as wide in 49%
+of single weeks although it is better on average). So the live forecast carries only 15 of the 100 points
+and the grade rests mainly on the walk-forward method notebook (45) and the memo (20).
+
+**Open:** the rank weight inside the live-forecast 15 points (`[[PENDING sp500-rank-weight]]`).
+
+---
+
+## Decision 19: Spring 2027 Grading and Process Changes (2026-11-24)
+
+**Decision (Davi, 2026-11-24, Spring 2027 edition).** Sources of record: `syllabus.qmd` and §7 of
+`_project_docs/QM47400_FullSemester_Plan_2027Spring.md`; dates live in `scripts/build_2027S_calendar.py`.
+
+1. **Weights.** **Attendance 1% → 5%**, taken by **location-verified iClicker**; **Quizzes 15% → 11%**.
+   Every other weight in Decision 13 is unchanged (Participation 4%, Midterm Exam 20%, Course Case
+   Competition 20%, Final Project 35%, Poster-to-Product 5%; peer evaluation 20% of each group component).
+2. **Two peer evaluations.** A **midpoint, formative** evaluation (Sun Mar 7, 2027) whose flags trigger a
+   check-in with the team, and a **final, graded** evaluation (Fri Apr 30, 2027) that carries the 20% peer
+   shares.
+3. **A presentation at every TA/instructor meeting** (M00, M04, M07, M13): about five slides in five
+   minutes, uploaded before the meeting, every member presenting each round. **No presentation means the
+   meeting does not count.**
+4. **No M09 draft, no conference.** A team that does not submit the M09 poster draft (Sun Mar 28, 2027) does
+   not present at the Spring Undergraduate Research Conference (Tue Apr 13, 2027).
+5. **Brightspace instructions only as an attached PDF.** Every assignment's instructions are the attached
+   PDF (milestones built by `scripts/build_milestone_pdfs.py`); the Brightspace instructions field carries at
+   most a short note.
+
+**Where each change lands** (plan §7, rows 2 and 5–7): weights → `syllabus.qmd`, `README.md`, the honors
+table, and the iClicker setup guide `_adm/_brightspace/2027S/ICLICKER_ATTENDANCE_SETUP.md` (confirm Purdue's
+2026–27 iClicker license first); peer evaluations → the calendar, `peer_evaluation_midpoint.md` (new PDF) and
+`peer_evaluation.md`; M09 rule → syllabus, M09, conference and overview PDFs, announcements; meeting
+presentations → the M00, M04, M07 and M13 PDFs (M04 opens Feb 8, M13 Mar 8), the overview and the syllabus.
+No separate rationale was recorded with these decisions.

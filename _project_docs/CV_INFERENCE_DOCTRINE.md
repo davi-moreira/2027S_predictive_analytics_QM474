@@ -219,7 +219,8 @@ final pass over `nb08`/`nb09`/`nb13`/`nb14` guides and the `13`/`14` pages.
 **Records — DONE.** `CLAUDE.md` (CV-first rule + comparison pattern),
 `_project_docs/DECISIONS.md` Decision 14. Decision 9 (test-set lock) stands
 unchanged, and `scripts/audit_cv_first.py` still reports only the authorized
-`nb14` cells 30/34 and the `nb18` Kaggle demo.
+`nb14` cells 30/34 and the `nb18` Kaggle demo. *(Spring 2027 note: the nb18
+exception was dropped on 2026-11-24 — see "Data roles after nb08".)*
 
 Locate any future instance by its **wording**, not by cell index — indices move.
 
@@ -375,6 +376,19 @@ calibrated". Prediction intervals, where the core uses them, are **CV+** on the
 five folds of `X_train` (Barber, Candès, Ramdas & Tibshirani, 2021) — no
 reserved calibration rows.
 
+**Open items in nb14 (2026-11-24, not yet decided by Davi).** Two guardrail
+details are deliberately left out of the student notebook, which says only
+what is settled: (1) *medscreen-guardrail-margins* — nb14 declares MedScreen's
+safety guardrails (malignant recall at the nb07 operating threshold,
+non-inferior to the fixed incumbent; the Brier score of the probabilities) but
+the numeric tolerances γ for recall and for Brier are not yet fixed; the
+student text says "a tolerance the board fixes before the comparison".
+(2) *homevalue-range-guardrail* — a HomeValue prediction-range guardrail (CV+
+90% intervals, veto only if the upper limit of the interval-score gain is below
+−\$10,000) needs a named business use of the price range; until one exists the
+notebook says the CFO acts on the point estimate, so no range guardrail
+applies. Either decision, once made, goes into nb14 cell 10 and Exercise 1–2.
+
 **A5 search terms added by Amendment 2:** `t_crit`, `ci_low`, `ci_high`,
 `half_w`, "95% interval", "approximate 95", "descriptive interval", "CI band",
 "error bar", "CV-CI", "dot plot ranks", "top two", "runner-up question",
@@ -383,12 +397,14 @@ reserved calibration rows.
 ## Data roles after nb08 (D11, D12 — 2026-10-27)
 
 From nb09 onward every notebook splits each dataset once, 80/20 (`test_size=0.20`, seed 474, stratified for
-classification). `X_test` is locked except nb14 cells 30 and 34 and nb18's Kaggle demo. Every model choice,
+classification). `X_test` is locked except nb14 cells 30 and 34 (one opening per business case). Every model choice,
 comparison, threshold, calibration check, importance measure and prediction interval comes from 5-fold CV on
 `X_train`: `compare_paired` reads the same five folds for both models; a grid search or nested CV uses five
 inner folds. There is no validation set after nb08, and no rows are set aside inside `X_train`. nb16 is the
 one exception (temporal split + walk-forward CV); from Spring 2027 the S&P 500 competition notebook nb18 is
-a second, temporal exception.
+a second, temporal exception — it locks the most-recent window (an information cutoff) and scores
+walk-forward origins, with no random split and no `X_test`. The Fall 2026 allowance for nb18's
+Kaggle-submission demo to touch `X_test` was therefore dropped from the audit on 2026-11-24.
 
 - **Five folds, always (D11):** `cv_clf = StratifiedKFold(n_splits=5, shuffle=True, random_state=474)`;
   `cv_reg = KFold(n_splits=5, shuffle=True, random_state=474)`. Grid searches and nested CV use the same

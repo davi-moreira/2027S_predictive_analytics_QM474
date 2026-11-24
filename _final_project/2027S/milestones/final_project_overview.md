@@ -55,8 +55,8 @@ Everything is due at 11:59 PM Eastern unless noted. Each item has its own PDF wi
 | M13 | Round 02 meetings: presentations and confirmation | Mon Mar 8 | Sun Apr 11 | completion (presentation required) |
 | Peer review | Review five other groups' posters | Sun Apr 4 | Sun Apr 11 | 10% of the project |
 | Conference | Present your poster (required; in person) | Tue Apr 13 | Tue Apr 13 | 20% of the project |
-| P2P product | Poster-to-Product: team product | Fri Apr 16 | Mon Apr 26 | part of P2P's 5% |
-| P2P live link | Poster-to-Product: your live link | Fri Apr 16 | Wed Apr 28 | part of P2P's 5% |
+| P2P product | Poster-to-Product: team product (G4 Launch Package) | Wed Apr 14 | Mon Apr 26 | part of P2P's 5% |
+| P2P live link | Poster-to-Product: your live link (I5 Go Live) | Wed Apr 14 | Wed Apr 28 | part of P2P's 5% |
 | Peer evaluation 2 | Final: rate your teammates (individual) | Mon Apr 26 | Fri Apr 30 | 20% of the project |
 
 ## The meeting cycle

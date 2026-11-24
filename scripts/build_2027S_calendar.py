@@ -79,19 +79,19 @@ SESSIONS = [
     (D(2027, 3, 15), "*No class — Spring Break (Mar 15–20)*", None, "none"), (D(2027, 3, 17), "*No class — Spring Break (Mar 15–20)*", None, "none"),
     (D(2027, 3, 19), "*No class — Spring Break (Mar 15–20)*", None, "none"),
     (D(2027, 3, 22), None, "nb17", "lecture"), (D(2027, 3, 24), GWC, None, "group"),
-    (D(2027, 3, 26), "Group Work: Final Project/Competition — **final competition forecast + code due tonight**", None, "group"),
+    (D(2027, 3, 26), "Group Work: Final Project/Competition — **competition live forecast, method notebook and memo due tonight** (NYSE closed, Good Friday)", None, "group"),
     (D(2027, 3, 29), GW, None, "group"), (D(2027, 3, 31), GW, None, "group"), (D(2027, 4, 2), GW, None, "group"),
     (D(2027, 4, 5), GW, None, "group"), (D(2027, 4, 7), GW, None, "group"), (D(2027, 4, 9), GW, None, "group"),
     (D(2027, 4, 12), GW, None, "group"),
     (D(2027, 4, 13), "**Spring Undergraduate Research Conference — Poster Presentation (all students present)**", None, "conf"),
     (D(2027, 4, 14), "*No class — time to rest and catch up on other coursework*", None, "none"),
-    (D(2027, 4, 16), "Poster-to-Product kickoff — scoping, partner framing, AI-assistant assignment", None, "p2p"),
-    (D(2027, 4, 19), "Poster-to-Product — data engineering + model validation", None, "p2p"),
-    (D(2027, 4, 21), "Poster-to-Product — deployment + partner checkpoint", None, "p2p"),
-    (D(2027, 4, 23), "Poster-to-Product — usability testing + iteration", None, "p2p"),
-    (D(2027, 4, 26), "Poster-to-Product — executive brief drafting + showcase preparation", None, "p2p"),
-    (D(2027, 4, 28), "**Poster-to-Product SHOWCASE** (partners + feedback)", None, "p2p"),
-    (D(2027, 4, 30), "Course wrap — peer evaluation, reflection survey, competition results", None, "wrap"),
+    (D(2027, 4, 16), "Poster-to-Product kickoff — Stage 1, Map: one decision-maker, one decision", None, "p2p"),
+    (D(2027, 4, 19), "Poster-to-Product — Stage 2, Sketch & Decide; lock the evidence (export cell)", None, "p2p"),
+    (D(2027, 4, 21), "Poster-to-Product — Stage 3, Prototype: build version 1 with AI (bring a laptop)", None, "p2p"),
+    (D(2027, 4, 23), "Poster-to-Product — Stages 4–5, Test: truth, then users (Round 03 Sprint Reviews Thu Apr 22 – Fri Apr 23)", None, "p2p"),
+    (D(2027, 4, 26), "Poster-to-Product — Stage 6, Launch Day: Launch Package due tonight", None, "p2p"),
+    (D(2027, 4, 28), "**Poster-to-Product Demo Day I** (half the teams present)", None, "p2p"),
+    (D(2027, 4, 30), "**Poster-to-Product Demo Day II** + course wrap — Reflection Survey, final peer evaluation, competition results", None, "wrap"),
 ]
 TERM_START = D(2027, 1, 11)
 
@@ -154,12 +154,24 @@ for code, title, o, due, g in MS:
 add("Final Project", "Peer Review Submission", D(2027, 4, 4), D(2027, 4, 11), T, "10% of the project")
 add("Final Project", "Conference Poster Presentation — Spring Undergraduate Research Conference (required)", D(2027, 4, 13), D(2027, 4, 13), "in person", "20% of the project")
 add("Peer Evaluation", "Peer Evaluation 1 (midpoint, formative): Final Project team", D(2027, 3, 1), D(2027, 3, 7), T, "completion (formative)")
-add("Peer Evaluation", "Peer Evaluation 2 (final): Final Project and Course Case Competition", D(2027, 4, 26), D(2027, 4, 30), T, "20% of each")
+add("Peer Evaluation", "Peer Evaluation 2 (final): Final Project, Course Case Competition and Poster-to-Product", D(2027, 4, 26), D(2027, 4, 30), T, "20% of each")
 add("Attendance", "Attendance — iClicker check-in at every in-person class meeting (synced to Brightspace)", D(2027, 1, 11), D(2027, 4, 30), "in class", "5%")
 add("Midterm", "Midterm Exam — in class, on paper, closed book, no AI tools; covers NB00–NB09", D(2027, 2, 12), D(2027, 2, 12), "in class", "20%")
-add("Course Case Competition", "Course Case Competition (S&P 500 forecasting): Final Forecast on Kaggle + Code on Brightspace", D(2027, 3, 3), D(2027, 3, 26), T, "20% (incl. peer evaluation)")
-add("Poster-to-Product", "Poster-to-Product: team product submission (one per team)", D(2027, 4, 16), D(2027, 4, 26), T, "5% (funding to be confirmed)")
-add("Poster-to-Product", "Poster-to-Product: individual live dashboard link", D(2027, 4, 16), D(2027, 4, 28), T, "part of the 5%")
+add("Course Case Competition", "Course Case Competition (S&P 500 forecasting): live forecast, method notebook and forecast memo (Brightspace)", D(2027, 3, 3), D(2027, 3, 26), T, "20%: live forecast 15 · method notebook 45 · memo 20 · peer evaluation 20")
+# Poster-to-Product (5%, 100 points), Spring 2027 Launch Journey (p2p-spring session, 2026-11-24). All open Wed Apr 14, 8:00 AM.
+P2P_OPEN = D(2027, 4, 14)
+add("Poster-to-Product", "Poster-to-Product: I1 Get Your Keys (Purdue AI tools + first build)", P2P_OPEN, D(2027, 4, 18), T, "5 of 100 P2P points")
+add("Poster-to-Product", "Poster-to-Product: G2 Round 03 Scheduling (team; the booking email)", P2P_OPEN, D(2027, 4, 18), T, "ungraded (missing: −5 of 40 on G2)")
+add("Poster-to-Product", "Poster-to-Product: G1 Sprint Blueprint (team)", P2P_OPEN, D(2027, 4, 20), T, "5 of 100 P2P points")
+add("Poster-to-Product", "Poster-to-Product: I2 Team Up with AI (Anthropic Academy course)", P2P_OPEN, D(2027, 4, 20), T, "5 of 100 P2P points")
+add("Poster-to-Product", "Poster-to-Product: I3 Design for Decisions (DataCamp course)", P2P_OPEN, D(2027, 4, 21), T, "5 of 100 P2P points")
+add("Poster-to-Product", "Poster-to-Product: G2 Sprint Review, Round 03 meeting (team; slides due 11:59 PM the day before your slot, Thu Apr 22 – Fri Apr 23)", P2P_OPEN, D(2027, 4, 22), T, "10 of 100 P2P points (presentation required)")
+add("Poster-to-Product", "Poster-to-Product: G3 Test Report (team)", P2P_OPEN, D(2027, 4, 25), T, "5 of 100 P2P points")
+add("Poster-to-Product", "Poster-to-Product: I4 Tell the Story (DataCamp course)", P2P_OPEN, D(2027, 4, 25), T, "5 of 100 P2P points")
+add("Poster-to-Product", "Poster-to-Product: team product — G4 Launch Package (one per team)", P2P_OPEN, D(2027, 4, 26), T, "15 of 100 P2P points")
+add("Poster-to-Product", "Poster-to-Product: individual live dashboard link — I5 Go Live", P2P_OPEN, D(2027, 4, 28), T, "5 of 100 P2P points")
+add("Poster-to-Product", "Poster-to-Product: G5 Demo Day presentation (team; your Demo Day, Apr 28 or Apr 30)", D(2027, 4, 28), D(2027, 4, 30), "in class", "15 of 100 P2P points")
+add("Poster-to-Product", "Poster-to-Product: I6 Audience Reviews (both Demo Days)", D(2027, 4, 28), D(2027, 4, 30), "in class", "5 of 100 P2P points")
 add("Extra Credit", "Extra Credit: Mid-term Course Evaluation — Individual Credit", D(2027, 2, 15), D(2027, 2, 19), T, "extra credit")
 add("Extra Credit", "Extra Credit: Issues in Course Materials", D(2027, 1, 11), D(2027, 4, 23), T, "extra credit")
 add("Extra Credit", "Extra Credit: DataCamp", D(2027, 1, 11), D(2027, 4, 23), T, "extra credit")
@@ -171,6 +183,7 @@ KEY = [  # dated facts that are not gradebook items: (date, text)
     (D(2027, 2, 5), "Midterm accommodations: book your Purdue Testing Services seat by today (7 days ahead)."),
     (D(2027, 3, 3), "Course Case Competition (S&P 500 forecasting, Kaggle, teams) opens in class with nb18."),
     (D(2027, 3, 10), "Virtual work session — no in-person meeting (Mar 10 and Mar 12)."),
+    (D(2027, 3, 25), "Course Case Competition: the Kaggle practice round closes (11:59 PM); your live forecast uses data through today's close."),
     (D(2027, 3, 29), "Course Case Competition: the live scoring window opens (trading days Mar 29 – Apr 23)."),
     (D(2027, 4, 23), "Course Case Competition: the live scoring window closes at the market close."),
     (D(2027, 4, 25), "Course Case Competition: final standings posted."),
@@ -178,7 +191,11 @@ KEY = [  # dated facts that are not gradebook items: (date, text)
     (D(2027, 3, 15), "No class — Spring Break (Mar 15–20)."),
     (D(2027, 3, 22), "Conference: final abstract edits close in OURConnect."),
     (D(2027, 4, 14), "No class — time to rest and catch up on other coursework."),
-    (D(2027, 4, 28), "Poster-to-Product showcase (in class)."),
+    (D(2027, 4, 14), "Poster-to-Product opens at 8:00 AM (Stage 0, on your own): sign in to the Purdue AI tools and make a first build."),
+    (D(2027, 4, 22), "Poster-to-Product: Round 03 Sprint Reviews with your TA (Thu Apr 22 – Fri Apr 23)."),
+    (D(2027, 4, 27), "Poster-to-Product: the Showcase Gallery opens at noon (Brightspace)."),
+    (D(2027, 4, 28), "Poster-to-Product Demo Day I (in class)."),
+    (D(2027, 4, 30), "Poster-to-Product Demo Day II (in class), then the Reflection Survey and the final peer evaluation."),
 ]
 
 FMT = lambda d: d.strftime("%a %b ") + str(d.day)

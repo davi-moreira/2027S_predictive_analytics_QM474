@@ -102,7 +102,7 @@ Common issues encountered while developing or deploying course materials, with p
 
 ## Issue: CV-First Audit Returns Unexpected Hits
 
-**Symptoms:** `python scripts/audit_cv_first.py` returns hits outside `nb14` cells 30 + 34 (one ceremony per spine) and the `nb18` Kaggle-submission demo.
+**Symptoms:** `python scripts/audit_cv_first.py` returns hits outside `nb14` cells 30 + 34 (one ceremony per spine). (The Fall 2026 `nb18` Kaggle-submission allowance is gone from Spring 2027: nb18 is temporal and has no `X_test`.)
 
 **Cause:** Model-evaluation code (e.g., `model.score(X_test, ...)`, `roc_auc_score(y_test, ...)`) snuck into nb09–nb20 evaluation logic.
 
@@ -111,7 +111,7 @@ Common issues encountered while developing or deploying course materials, with p
 2. Replace `classification_report(y_test, model.predict(X_test))` with `classification_report(y_train, cross_val_predict(model, X_train, y_train, cv=...))`.
 3. For permutation importance: run it inside the 5-fold loop — for each fold, fit on the fold's training rows and run `permutation_importance` on its held-out rows; average across folds. No carve-out; never touch `X_test`.
 4. For calibration: use `CalibratedClassifierCV(base, cv=5)` and evaluate the calibrated pipeline by 5-fold CV on `X_train` (cross-validated Brier: `scoring='neg_brier_score'`, or `brier_score_loss` on `cross_val_predict(..., method='predict_proba')`). There is no `X_val` after nb08.
-5. Re-run `python scripts/audit_cv_first.py` until it prints `RESULT: PASS` (only the `[authorized]` nb14/nb18 hits, and a clean data-roles check).
+5. Re-run `python scripts/audit_cv_first.py` until it prints `RESULT: PASS` (only the `[authorized]` nb14 cells 30 + 34, and a clean data-roles check).
 
 ---
 

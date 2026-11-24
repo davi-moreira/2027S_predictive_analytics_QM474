@@ -26,10 +26,10 @@ own repo until Dec 11, 2026.
 |---|---|
 | Meetings | Same as Fall: **Monday / Wednesday / Friday**, sections 001 + 002, WTHR 114 (correct room/time on Brightspace if they change). Mondays and Wednesdays carry the notebooks; Fridays are group-work days. |
 | Conference | **Required:** every student presents at the **Spring Undergraduate Research Conference poster session, Tue Apr 13, 2027**. |
-| Poster-to-Product | **Kept** at 5%, in the last three weeks; **funding to be confirmed** (the Daniels Experiential Learning Grant that funded Fall ends Dec 31, 2026). |
+| Poster-to-Product | **Kept** at 5%, **Wed Apr 14 – Fri Apr 30** (two weeks, seven sessions), on Purdue's no-cost AI tools (Google Antigravity + Microsoft 365 Copilot Chat); no paid seats by default (2026-11-24). Plan of record: `_adm/_qm474_poster_product/2027S/P2P_PLAN_2027S.md`. |
 | Open review decisions (task #56) | **Left as visible placeholders** until Davi decides. Every affected spot carries `[[PENDING <id>: …]]` (greppable). |
 | Already adopted, applied here | D1 (δ band), D5 (MedScreen AUC primary), D8 (role of uncertainty), **D11 (five folds everywhere)**, **D12 (after nb08, one 80/20 split, all work on `X_train`)**, Amendment 1 (`compare_paired`, four outcomes). |
-| Milestone instructions | **PDFs** (as in HONR 464), one per milestone, in simple narrative and plain wording — not long Brightspace pages. Brightspace carries a short assignment note plus the PDF. |
+| Milestone instructions | **PDFs** (as in HONR 464), one per milestone, in simple narrative and plain wording — not long Brightspace pages. Brightspace carries the PDF as an attachment and **nothing in the assignment body** (Davi, 2026-11-24); external forms are link attachments. |
 
 Weights (changed 2026-11-24, §7): **Attendance 5%** · Participation 4% · **Quizzes 11%** · Midterm 20% · Course Case
 Competition 20% (peer evaluation 20% of it) · Final Project 35% (peer evaluation 20% of it) · Poster-to-Product 5%.
@@ -72,15 +72,15 @@ Tuesday, a Wednesday's on Sunday; everything at 11:59 PM Eastern.
 | 10 (Mar 15) | *spring break* | *spring break* | *spring break* |
 | 11 (Mar 22) | nb17 | group work | group work |
 | 12–13 (Mar 29 – Apr 9) | group work | group work | group work |
-| 14 (Apr 12) | group work · **Tue Apr 13 conference** | *no class (rest)* | P2P kickoff |
+| 14 (Apr 12) | group work · **Tue Apr 13 conference** | *no class (rest)* · P2P opens (Stage 0, on your own) | P2P kickoff |
 | 15 (Apr 19) | P2P | P2P | P2P |
-| 16 (Apr 26) | P2P | **P2P showcase** | course wrap |
+| 16 (Apr 26) | P2P Launch Day | **Demo Day I** | **Demo Day II** + course wrap |
 
 **Milestones** (Sunday, 11:59 PM): M00 + M01 Feb 7 · M02 Feb 14 · M03 Feb 21 · M04 + M05 Feb 28 (before the
 Mar 1 abstract deadline) · M06 + M07 Mar 7 · M08 Mar 14 · M09 Mar 28 · M10 Apr 4 · M11 + M12 + M13 + peer
 review Apr 11 · conference Tue Apr 13 · peer evaluation Fri Apr 30. Case competition (changed 2026-11-24, §7): S&P 500
 forecasting, opens Wed Mar 3, team setup Sun Mar 7, final forecast + code Fri Mar 26, live scoring Mar 29 – Apr 23,
-standings Sun Apr 25. Peer evaluations: midpoint (formative) Sun Mar 7, final Fri Apr 30. Poster-to-Product: team product Mon Apr 26, showcase Wed Apr 28, individual
+standings Sun Apr 25. Peer evaluations: midpoint (formative) Sun Mar 7, final Fri Apr 30. Poster-to-Product: Launch Package Mon Apr 26, Demo Days Wed Apr 28 and Fri Apr 30, individual
 dashboard link Wed Apr 28. Meeting rounds: Round 01 — TA Feb 8–21, instructor Feb 22–28; Round 02 — TA Mar 8–14
 and Mar 22–28, instructor Mar 29 – Apr 3.
 

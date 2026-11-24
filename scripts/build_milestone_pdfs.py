@@ -3,8 +3,8 @@
 
 Every Markdown file in `_final_project/2027S/milestones/` becomes a PDF with the SAME STEM, beside it:
 milestone_00 … milestone_13, final_project_overview, peer_review, conference_presentation,
-peer_evaluation and poster_to_product. Brightspace carries a short assignment note plus the PDF
-(Spring 2027 plan, §1: "Milestone instructions").
+peer_evaluation, peer_evaluation_midpoint and poster_to_product. Brightspace carries the PDF as an
+attachment and nothing in the assignment body (Davi, 2026-11-24; Spring 2027 plan, §1).
 
 Pipeline, one command, idempotent (same sources -> same PDFs, byte for byte):
 

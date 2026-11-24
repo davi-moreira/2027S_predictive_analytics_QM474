@@ -9,12 +9,12 @@ Test-Set Lock" and _project_docs/CV_INFERENCE_DOCTRINE.md -> "Data roles
 after nb08").
 
 1. Test-set lock. Model-evaluation uses of X_test / y_test. The only
-   authorized hits are:
-     * nb14_model_selection_protocol_student.ipynb cells 30 (classification
-       ceremony) and 34 (regression ceremony) -- one test-set opening per
-       business case, for the frozen champion only;
-     * nb18_*_student.ipynb (the competition notebook's submission demo --
-       a production pipeline, not model evaluation).
+   authorized hits are nb14_model_selection_protocol_student.ipynb cells 30
+   (classification ceremony) and 34 (regression ceremony) -- one test-set
+   opening per business case, for the frozen champion only. (Until Fall 2026
+   nb18's Kaggle-submission demo was also allowed; from Spring 2027 nb18 is the
+   S&P 500 forecasting-competition notebook, which locks the most-recent window
+   and uses walk-forward origins, so it has no X_test and no exception.)
 
 2. Data roles (D11 + D12, adopted 2026-10-27; landed 2026-11-24). From nb09
    on every notebook splits each dataset ONCE, 80/20, and does all model
@@ -67,7 +67,7 @@ MODEL_EVAL_TEST_PATTERNS = [
     r"permutation_importance\([^,)]+,\s*X_test",
 ]
 AUTHORIZED_CELLS = {14: {30, 34}}      # nb14: one ceremony per business case
-AUTHORIZED_NOTEBOOKS = {18}            # nb18: competition submission demo
+AUTHORIZED_NOTEBOOKS: set[int] = set()  # none since Spring 2027 (nb18 is temporal, no X_test)
 
 
 def nb_number(path: Path) -> int | None:
@@ -184,7 +184,7 @@ def main(argv: list[str]) -> int:
                 print(f"  cell {cell}: {pat}   [{'authorized' if ok else 'NOT AUTHORIZED'}]")
         if not any_hits:
             print("Clean — no model-evaluation uses of X_test/y_test found.")
-        print("Authorized: nb14 cells 30 + 34 (one ceremony per business case); nb18 (submission demo).")
+        print("Authorized: nb14 cells 30 + 34 (one ceremony per business case).")
         print()
 
     if run_roles:

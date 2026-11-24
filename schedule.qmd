@@ -78,7 +78,7 @@ editor: visual
 | 10 | Fri Mar 19 | *No class — Spring Break (Mar 15–20)* | — |  |
 | 11 | Mon Mar 22 | Data communication and poster design | **nb17**<br>[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/davi-moreira/2027S_predictive_analytics_QM474/blob/main/notebooks/nb17_data_communication_poster_student.ipynb){target="_blank"} |  |
 | 11 | Wed Mar 24 | Group Work: Final Project/Competition | — |  |
-| 11 | Fri Mar 26 | Group Work: Final Project/Competition — **final competition forecast + code due tonight** | — | Quiz NB17: Data Communication and Poster Design — Turning Your Model Into a Story — due Sun Mar 28<br>Milestone 09 — Poster First Draft — due Sun Mar 28<br>Course Case Competition (S&P 500 forecasting): Final Forecast on Kaggle + Code on Brightspace — due Fri Mar 26 |
+| 11 | Fri Mar 26 | Group Work: Final Project/Competition — **competition live forecast, method notebook and memo due tonight** (NYSE closed, Good Friday) | — | Quiz NB17: Data Communication and Poster Design — Turning Your Model Into a Story — due Sun Mar 28<br>Milestone 09 — Poster First Draft — due Sun Mar 28<br>Course Case Competition (S&P 500 forecasting): live forecast, method notebook and forecast memo (Brightspace) — due Fri Mar 26 |
 | 12 | Mon Mar 29 | Group Work: Final Project | — |  |
 | 12 | Wed Mar 31 | Group Work: Final Project | — |  |
 | 12 | Fri Apr 2 | Group Work: Final Project | — | Milestone 10 — Final Poster Submission (`NN.pdf`) — due Sun Apr 4 |
@@ -88,13 +88,13 @@ editor: visual
 | 14 | Mon Apr 12 | Group Work: Final Project | — |  |
 | 14 | **Tue Apr 13** | **Spring Undergraduate Research Conference — Poster Presentation (all students present)** | — | **POSTER PRESENTATION** |
 | 14 | Wed Apr 14 | *No class — time to rest and catch up on other coursework* | — |  |
-| 14 | Fri Apr 16 | Poster-to-Product kickoff — scoping, partner framing, AI-assistant assignment | — |  |
-| 15 | Mon Apr 19 | Poster-to-Product — data engineering + model validation | — |  |
-| 15 | Wed Apr 21 | Poster-to-Product — deployment + partner checkpoint | — |  |
-| 15 | Fri Apr 23 | Poster-to-Product — usability testing + iteration | — | Extra Credit: Issues in Course Materials — due Fri Apr 23<br>Extra Credit: DataCamp — due Fri Apr 23 |
-| 16 | Mon Apr 26 | Poster-to-Product — executive brief drafting + showcase preparation | — | Poster-to-Product: team product submission (one per team) — due Mon Apr 26 |
-| 16 | Wed Apr 28 | **Poster-to-Product SHOWCASE** (partners + feedback) | — | Poster-to-Product: individual live dashboard link — due Wed Apr 28 |
-| 16 | Fri Apr 30 | Course wrap — peer evaluation, reflection survey, competition results | — | Peer Evaluation 2 (final): Final Project and Course Case Competition — due Fri Apr 30<br>Extra Credit: Final Course Evaluation — Individual Credit — due Fri Apr 30 |
+| 14 | Fri Apr 16 | Poster-to-Product kickoff — Stage 1, Map: one decision-maker, one decision | — | Poster-to-Product: I1 Get Your Keys (Purdue AI tools + first build) — due Sun Apr 18<br>Poster-to-Product: G2 Round 03 Scheduling (team; the booking email) — due Sun Apr 18 |
+| 15 | Mon Apr 19 | Poster-to-Product — Stage 2, Sketch & Decide; lock the evidence (export cell) | — | Poster-to-Product: G1 Sprint Blueprint (team) — due Tue Apr 20<br>Poster-to-Product: I2 Team Up with AI (Anthropic Academy course) — due Tue Apr 20 |
+| 15 | Wed Apr 21 | Poster-to-Product — Stage 3, Prototype: build version 1 with AI (bring a laptop) | — | Poster-to-Product: I3 Design for Decisions (DataCamp course) — due Wed Apr 21<br>Poster-to-Product: G2 Sprint Review, Round 03 meeting (team; slides due 11:59 PM the day before your slot, Thu Apr 22 – Fri Apr 23) — due Thu Apr 22 |
+| 15 | Fri Apr 23 | Poster-to-Product — Stages 4–5, Test: truth, then users (Round 03 Sprint Reviews Thu Apr 22 – Fri Apr 23) | — | Poster-to-Product: G3 Test Report (team) — due Sun Apr 25<br>Poster-to-Product: I4 Tell the Story (DataCamp course) — due Sun Apr 25<br>Extra Credit: Issues in Course Materials — due Fri Apr 23<br>Extra Credit: DataCamp — due Fri Apr 23 |
+| 16 | Mon Apr 26 | Poster-to-Product — Stage 6, Launch Day: Launch Package due tonight | — | Poster-to-Product: team product — G4 Launch Package (one per team) — due Mon Apr 26 |
+| 16 | Wed Apr 28 | **Poster-to-Product Demo Day I** (half the teams present) | — | Poster-to-Product: individual live dashboard link — I5 Go Live — due Wed Apr 28 |
+| 16 | Fri Apr 30 | **Poster-to-Product Demo Day II** + course wrap — Reflection Survey, final peer evaluation, competition results | — | Peer Evaluation 2 (final): Final Project, Course Case Competition and Poster-to-Product — due Fri Apr 30<br>Extra Credit: Final Course Evaluation — Individual Credit — due Fri Apr 30 |
 :::
 
 ::: below-table
@@ -143,7 +143,8 @@ Everything is due at **11:59 PM Eastern** on Brightspace unless it says *in clas
 - **Mar 14**: Final Project Milestone 08 — More Complex Models and Performance Evaluation — Due.
 - **Mar 15**: No class — Spring Break (Mar 15–20).
 - **Mar 22**: Conference: final abstract edits close in OURConnect.
-- **Mar 26**: Course Case Competition (S&P 500 forecasting): Final Forecast on Kaggle + Code on Brightspace — Due.
+- **Mar 25**: Course Case Competition: the Kaggle practice round closes (11:59 PM); your live forecast uses data through today's close.
+- **Mar 26**: Course Case Competition (S&P 500 forecasting): live forecast, method notebook and forecast memo (Brightspace) — Due.
 - **Mar 28**: Quiz NB17: Data Communication and Poster Design — Turning Your Model Into a Story — Due.
 - **Mar 28**: Final Project Milestone 09 — Poster First Draft — Due.
 - **Mar 29**: Course Case Competition: the live scoring window opens (trading days Mar 29 – Apr 23).
@@ -154,16 +155,30 @@ Everything is due at **11:59 PM Eastern** on Brightspace unless it says *in clas
 - **Apr 11**: Final Project: Peer Review Submission — Due.
 - **Apr 13**: Final Project: Conference Poster Presentation — Spring Undergraduate Research Conference (required).
 - **Apr 14**: No class — time to rest and catch up on other coursework.
+- **Apr 14**: Poster-to-Product opens at 8:00 AM (Stage 0, on your own): sign in to the Purdue AI tools and make a first build.
+- **Apr 18**: Poster-to-Product: I1 Get Your Keys (Purdue AI tools + first build) — Due.
+- **Apr 18**: Poster-to-Product: G2 Round 03 Scheduling (team; the booking email) — Due.
+- **Apr 20**: Poster-to-Product: G1 Sprint Blueprint (team) — Due.
+- **Apr 20**: Poster-to-Product: I2 Team Up with AI (Anthropic Academy course) — Due.
+- **Apr 21**: Poster-to-Product: I3 Design for Decisions (DataCamp course) — Due.
+- **Apr 22**: Poster-to-Product: G2 Sprint Review, Round 03 meeting (team; slides due 11:59 PM the day before your slot, Thu Apr 22 – Fri Apr 23) — Due.
+- **Apr 22**: Poster-to-Product: Round 03 Sprint Reviews with your TA (Thu Apr 22 – Fri Apr 23).
 - **Apr 23**: Extra Credit: Issues in Course Materials — Due.
 - **Apr 23**: Extra Credit: DataCamp — Due.
 - **Apr 23**: Course Case Competition: the live scoring window closes at the market close.
+- **Apr 25**: Poster-to-Product: G3 Test Report (team) — Due.
+- **Apr 25**: Poster-to-Product: I4 Tell the Story (DataCamp course) — Due.
 - **Apr 25**: Course Case Competition: final standings posted.
-- **Apr 26**: Poster-to-Product: team product submission (one per team) — Due.
-- **Apr 28**: Poster-to-Product: individual live dashboard link — Due.
-- **Apr 28**: Poster-to-Product showcase (in class).
+- **Apr 26**: Poster-to-Product: team product — G4 Launch Package (one per team) — Due.
+- **Apr 27**: Poster-to-Product: the Showcase Gallery opens at noon (Brightspace).
+- **Apr 28**: Poster-to-Product: individual live dashboard link — I5 Go Live — Due.
+- **Apr 28**: Poster-to-Product Demo Day I (in class).
 - **Apr 30**: Participation: Reflection Survey — Due.
-- **Apr 30**: Peer Evaluation 2 (final): Final Project and Course Case Competition — Due.
+- **Apr 30**: Peer Evaluation 2 (final): Final Project, Course Case Competition and Poster-to-Product — Due.
+- **Apr 30**: Poster-to-Product: G5 Demo Day presentation (team; your Demo Day, Apr 28 or Apr 30) — Due.
+- **Apr 30**: Poster-to-Product: I6 Audience Reviews (both Demo Days) — Due.
 - **Apr 30**: Extra Credit: Final Course Evaluation — Individual Credit — Due.
+- **Apr 30**: Poster-to-Product Demo Day II (in class), then the Reflection Survey and the final peer evaluation.
 
 ## Core Course References
 

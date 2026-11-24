@@ -163,7 +163,7 @@ The most reliable rules in this project are the ones I made the assistant **enfo
 
 ::: {.callout-note}
 ## `scripts/audit_cv_first.py`
-Scans every `notebooks/*_student.ipynb` for model-evaluation uses of `X_test` and `y_test` that violate the CV-first rule. The only acceptable hits are the two authorized openings in notebook 14 (the test-set ceremony) and notebook 18 (the Kaggle-submission demo). Anything else is flagged and must be fixed before commit.
+Scans every `notebooks/*_student.ipynb` for model-evaluation uses of `X_test` and `y_test` that violate the CV-first rule. The only acceptable hits are the two authorized openings in notebook 14 (the test-set ceremony, one per business case). Notebook 18, the S&P 500 forecasting-competition notebook from Spring 2027, uses a temporal split and walk-forward origins, so it has no `X_test` and no exception. Anything else is flagged and must be fixed before commit.
 :::
 
 ::: {.callout-note}

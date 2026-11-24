@@ -97,31 +97,45 @@ Canonical reference: [`_final_project/2026F/final_project_milestone_reference.md
 
 ## Notebook Sequence Rationale
 
+> **Spring 2027 rollout (2026-11-24).** The Spring 2027 rollout of 2026-11-24 changed the notebooks' content as described below (diagram annotations and the two paragraphs after it). The dates in this section remain Fall 2026's; the Spring 2027 calendar — including the teaching order nb16 Mon Mar 1 → nb18 Wed Mar 3 → nb19 Mon Mar 8 → nb17 Mon Mar 22 — is in [`QM47400_FullSemester_Plan_2027Spring.md`](QM47400_FullSemester_Plan_2027Spring.md). Spring runs **18** notebooks: nb15 and nb20 are retired.
+
 The 20-notebook progression is **identical to the established arc** — each notebook builds one conceptual layer, assumes only prior notebooks, and prepares the next. The four-unit organization below replaces the four "weekly arcs" of the intensive format; the dependency chain is unchanged.
 
 ```
 Orientation
-  00 Launchpad / Setup  (platform fluency, AI policy, Kaggle preview, P2P preview)
+  00 Launchpad / Setup  (platform fluency, AI policy, competition preview — the group S&P 500 forecasting
+                         competition on Kaggle since the rollout — P2P preview)
 
 Unit 1 — REGRESSION
   01 EDA/Splits → 02 Pipelines → 03 Metrics/Baselines → 04 Features/Diagnostics → 05 Regularization
-  (M01 Proposal at nb05)
+  (M01 Proposal at nb05; nb01–nb07 use the 60/20/20 split, and a single-split leader is an incumbent
+   or nominee, never a champion — nb03's template records the incumbent and the decision margins)
 
 Unit 2 — CLASSIFICATION
   06 LogReg → 07 Clf Metrics → 08 Cross-Validation → 09 Tuning+FE+Leakage
+  (nb06 names LogisticRegression(C=1) MedScreen's incumbent; nb07 adds Section 6, Brier score + reliability
+   curve, and declares MedScreen's decision rules; nb08 teaches compare_paired and the four outcomes and ends
+   on one 80/20 split + five folds; in nb09 a search's best cell is a nominee that faces the default)
   (M06 Baseline in this unit; the in-class midterm — Fri Sep 25 — closes this unit's toolkit; nb10, the old midterm casebook, stays retired)
 
 Unit 3 — ENSEMBLES + SELECTION
   11 Trees → 12 Random Forests → 13 Gradient Boosting → 14 Selection + Test-Set Ceremony → 15 M03 Walkthrough
+  (nb11–nb13 climb a simplest-first champion ladder with compare_paired; nb14: criteria block → fold scores →
+   champion_ladder → frozen champion → one ceremony per case refit on X_train; champions
+   LogisticRegression(C=1) (robust) and the default random forest (margin-sensitive vs the tuned GBM);
+   nb15 retired in Spring 2027)
   (nb15 walks the complex-model + abstract milestone retrospectively on Fri Oct 30 — after M03 and M08 have been submitted — inside the studio whose structured peer review of poster drafts feeds M09)
 
 Unit 4 — DELIVERY
   16 Time Series → 17 Communication/Poster Design → 18 Competition Workflow → 19 Deep Learning → 20 Course Wrap
+  (nb16: walk-forward validation, described per-origin differences, S&P 500 Part B; nb17 §14: paired-gain
+   chart + champion statement; nb18: the S&P 500 group forecasting competition workflow, built on nb16 Part B;
+   nb19: an MLP vs the nb14 champions with compare_paired; nb20 retired in Spring 2027)
 ```
 
-**Delivery is sequenced out of diagram order to serve the calendar.** The *conceptual* dependency chain above is unchanged, but the delivery notebooks move: **nb18 (Competition Workflow) lands on Mon Oct 19**, once random forests, gradient boosting, and the nb14 selection protocol are taught and the champion model can be pushed through the submission pipeline — while **Fri Sep 25, right after nb09 closes the mid-course toolkit, hosts the in-class midterm exam**. **nb17 (Communication & Poster Design) lands in week 10 (Mon Oct 26)**, immediately before poster production begins, and **nb15 (M03 walkthrough, Fri Oct 30) and nb20 (course wrap, Fri Nov 6)** are folded into Friday studios. **nb14 keeps its in-person Wed Oct 7 slot** — the test-set ceremony is a live event.
+**Delivery is sequenced out of diagram order to serve the calendar.** The *conceptual* dependency chain above is unchanged, but the delivery notebooks move: **nb18 (Competition Workflow) lands on Mon Oct 19**, once random forests, gradient boosting, and the nb14 selection protocol are taught and the champion model can be pushed through the submission pipeline (that was Fall 2026's bank-churn nb18; the Spring 2027 nb18 is the S&P 500 forecasting workflow, which builds on nb16 and follows it directly) — while **Fri Sep 25, right after nb09 closes the mid-course toolkit, hosts the in-class midterm exam**. **nb17 (Communication & Poster Design) lands in week 10 (Mon Oct 26)**, immediately before poster production begins, and **nb15 (M03 walkthrough, Fri Oct 30) and nb20 (course wrap, Fri Nov 6)** are folded into Friday studios. **nb14 keeps its in-person Wed Oct 7 slot** — the test-set ceremony is a live event.
 
-The CV-first / test-set-lock discipline is preserved exactly: cross-validation is the evaluation spine from nb08 onward, the test set stays locked until nb14's one-shot ceremony, and nb18's Kaggle-submission demo is the only other authorized use of a locked test file. *(See `CLAUDE.md` for the full CV-first rule and `scripts/audit_cv_first.py`.)*
+The CV-first / test-set-lock discipline is preserved, and the rollout tightened it: cross-validation is the evaluation spine from nb08 onward. nb01–nb07 keep the 60/20/20 split and nb08's validation split only motivates cross-validation; from nb09 on each dataset is split once 80/20 and every model is scored on the same five folds of `X_train`. Fold scores, mean and SD describe a model — there is no per-model 95% interval — and every comparison is `compare_paired`: paired per-fold gains with an interval corrected for fold overlap, read against a margin band declared before scoring (0.005 / 0.01 / 0.02; the base margin decides) as one of four outcomes. A search's best cell is a nominee that faces the family default, and each case's champion comes from a simplest-first ladder: MedScreen `LogisticRegression(C=1)` (robust) and HomeValue the default random forest (the tuned GBM's gain is unresolved; the call is margin-sensitive at δ = 0.005). The test set stays locked until nb14's ceremony — one per business case, for the frozen champion refit on `X_train`. nb16 and nb18 are the temporal exceptions: a locked most-recent window or an information cutoff plus walk-forward origins, with per-origin differences described rather than given a four-outcome verdict. The Spring nb18 uses no `X_test` (Fall 2026's bank-churn nb18 scored the unlabeled Kaggle test file as production prediction). *(See `CLAUDE.md` for the full CV-first rule and `scripts/audit_cv_first.py`.)*
 
 ---
 

@@ -93,7 +93,7 @@ and Mar 22–28, instructor Mar 29 – Apr 3.
 | Milestones | `_final_project/2027S/milestones/` — one Markdown source + one PDF per milestone, simple narrative, built by `scripts/build_milestone_pdfs.py`. |
 | Deadlines | `_final_project/2027S/deadlines_2027S.csv` — every gradebook item with opens/due, ready to enter in Brightspace. |
 | Announcements | `_announcements/2027S/` — Spring versions of every reusable Fall announcement (Fall-only events dropped and listed in its README). |
-| Notebooks | Rollout of the review (task #56) happens **here**, instructor copy first, batch by batch (review plan §11). Not started. |
+| Notebooks | Rollout of the review **done 2026-11-24** (§7): instructor copy first, every notebook executed headless and gated by three parallel sessions; Colab "Run all" still to do (`notebooks/COMPLETION_STATUS.md`). |
 | Rules (`CLAUDE.md`, doctrine, audit script) | The D11/D12 rule texts (review plan §16.7) go in with the first converted notebook. |
 | Instructor tab | `instructor.qmd` (gitignored) links to the private mirror `2027S_predictive_analytics_QM474_instructor`, which now also carries the case-competition solution notebooks (`case_competition/`). Its content is still Fall's (tracker #5). |
 | Course tasks | Private `2027S_predictive_analytics_QM474-tasks` (label `course-task`), seeded 2026-10-28 with tasks #1–#15. |
@@ -117,7 +117,7 @@ competition-data).
 | 6 | Render the site locally; `git init`; first commit | done 2026-10-27 (local only, no remote) |
 | 7 | Create the public GitHub repo + Pages, the private instructor and tasks companions | done 2026-10-28 — student-data paths and the competition solution notebooks gitignored before the first push; instructor mirror synced; tracker seeded |
 | 8 | Official syllabus docx for Spring | Davi (Word) — tracker #4 |
-| 9 | Notebook rollout (review plan batches), quizzes, midterm banks, guides, Brightspace pages | after the decisions in Fall task #56 — tracker #3 |
+| 9 | Notebook rollout (review plan batches), quizzes, midterm banks, guides, Brightspace pages | **done 2026-11-24** with the review plan's defaults for the open decisions (§7); quiz banks of record `_quizzes/2027S/`; Colab "Run all" and Davi's confirmation of the defaults remain — tracker #3 |
 | 10 | **Spring poster rubric** (`_final_project/2027S/rubric/`): the only rubric is Fall's, which still carries the per-model 95% interval and "k = 5/10" (criterion 5), notebook 08's three-outcome rule and the Fall transition note (criterion 6), "M09 due Nov 1", and "no test-set opening required" — all contradict the Spring PDFs | **next** — tracker #2 |
 | 11 | Where groups open their test set: the M08 PDF makes it the last step of M08, after the champion is named; M10 is the alternative | Davi to confirm — tracker #1 |
 

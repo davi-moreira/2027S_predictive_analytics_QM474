@@ -52,3 +52,50 @@ The Fall repo corrected student-reported errors in nb02, nb06 and nb07 and in th
 byte-identical to Fall's originals, so the corrected files were copied over: three student notebooks
 (`5a3db67`), plus the gitignored instructor notebooks, nb06/nb07 video guides and quiz banks (audit PASS),
 synced to the private instructor mirror.
+
+## 2026-11-24 — Spring 2027 setup in one push: rollout, competition, grading, P2P, videos, Brightspace (Claude Code, main + seven parallel sessions)
+
+Davi asked for the course to be set up end to end, with sub-sessions, working non-stop. Contract for the parallel
+sessions (decisions, file ownership, rules): `_adm/2027S_setup_2026-11-24/COORDINATION.md`; each session's report is in
+`_adm/2027S_setup_2026-11-24/reports/`. Record of decisions: `_project_docs/QM47400_FullSemester_Plan_2027Spring.md` §7;
+`DECISIONS.md` 17–19.
+
+- **Davi's answers (same day):** Attendance 1% → **5%**, taken from **Quizzes 15% → 11%**; the Course Case Competition
+  becomes a **group S&P 500 forecasting competition** replacing Bank Churn, with a **new nb18**; **nb16 Mon Mar 1, nb18
+  Wed Mar 3, nb19 Mon Mar 8, Wed Mar 10 and Fri Mar 12 virtual**; the **midpoint peer evaluation is formative**
+  (Sun Mar 7) and the final one graded (Fri Apr 30); **pilot two avatar videos first** (nb00, nb08); adapt P2P from
+  the Fall 2026 version as run. Also: a **presentation at every TA/instructor meeting**; **no M09 poster draft = no
+  conference**. Later in a side session: **Brightspace instructions only as an attached PDF**; peer evaluations on Qualtrics.
+- **Model-comparison rollout (sessions rollout-core, rollout-trees, rollout-early, sp500-competition):** all 18
+  notebooks converted to Amendment 1/2 + D11/D12, instructor first, executed headless, gates clean
+  (`audit_cv_first.py` RESULT: PASS with the new data-roles check; nb18 is no longer an authorized test-set use).
+  Open review decisions defaulted to the plan's recommendations (D2, D3, D4, D6, D7, R1, R7, R12) — tracker #18 to
+  confirm. Champions as executed: MedScreen `LogisticRegression(C=1)` (robust); HomeValue the default random forest
+  (tuned GBM unresolved, margin-sensitive at δ = 0.005). nb07 gains Brier + reliability (Section 6); nb19 compares an
+  MLP with the nb14 champions via `compare_paired`. Guides, Brightspace pages, rule files (CLAUDE.md, doctrine,
+  DECISIONS 14 addendum, 17, 18, 19, template, troubleshooting, workflow.qmd) updated. Quiz banks of record now
+  `_quizzes/2027S/` (16 masters, 460 questions, all 62 files PASS). Midterm banks: rollout-core pass (see its report §6).
+- **Competition (sp500-competition):** `_course_case_competition/2027S/` — quantile forecasts of cumulative log returns
+  at 1/5/10/15/20 trading days, scaled pinball loss vs random walk; Kaggle cannot rescore after launch, so Kaggle hosts an
+  ungraded practice round and the live round (Mar 29 – Apr 23) is host-scored; FRED not used (its terms bar ML use).
+  Grade 15 live forecast · 45 method notebook · 20 memo · 20 peer. Instructions PDF built. Codex partner run stopped
+  on credits (salvaged, verified).
+- **Poster-to-Product (p2p-spring):** Purdue gives students Google Antigravity, Microsoft 365 Copilot Chat and GenAI
+  Studio at no cost; Spring P2P builds on those, no paid seats by default. Launch Sprint Wed Apr 14 – Fri Apr 30, Round
+  03 Sprint Reviews with a team presentation, Demo Days Apr 28 and Apr 30; 12 P2P gradebook items in the calendar.
+  Plan `_adm/_qm474_poster_product/2027S/P2P_PLAN_2027S.md`.
+- **Main session:** calendar (`build_2027S_calendar.py`: 77 items, 18 key dates), syllabus (weights, iClicker policy,
+  competition, peer evaluations, presentations, gate, P2P, midterm format 15 × 4), 20 milestone PDFs + new
+  `peer_evaluation_midpoint`, announcements, README, Instructor page (competition + quiz sections), Word-syllabus change
+  list `_syllabus/2027S/SYLLABUS_DOCX_CHANGES_2026-11-24.md`, iClicker guide `_adm/_brightspace/2027S/ICLICKER_ATTENDANCE_SETUP.md`
+  (Purdue's 2026–27 student license unconfirmed — tracker #16), planning docs (subagent). Site rendered and pushed (`f12f27a`).
+- **Brightspace (brightspace-build):** plan + generated specs only (Davi: "plan only for now");
+  `_adm/_brightspace/2027S/BRIGHTSPACE_BUILD_PLAN_2027S.md`.
+- **Videos (video-pilot):** voice-only drafts for nb00 and nb08 (overviews + Colab walkthroughs), ≈ \$2.81 of voice
+  credits; HeyGen waits on Davi's review — tracker #17 (HeyGen renews and the ElevenLabs key expires ~Dec 14).
+- **Git:** the project's auto-commit Stop hook fired on every session stop and pushed intermediate states ("chore:
+  Auto-commit", d31d45d …); no solution leaked (checked). A 4th pre-commit check now refuses any staged
+  `*_student.ipynb` containing `INSTRUCTOR SOLUTION` (`.git/hooks/pre-commit` + copy of record). Whether to pause the
+  hook during parallel work is Davi's call.
+- **Tracker:** comments on #1–#5, #8–#11, #13; #10 re-titled and re-dated (2027-03-02); new #16 (iClicker license),
+  #17 (videos before Dec 14), #18 (confirm the defaults), #19 (Colab Run all).
